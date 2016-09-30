@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+	<title>数学1+1</title>
+	<style type="text/css">
+	/*最大块*/
+		#main_body{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width:100%;
+			height:900px;
+			background-image: url(../picResources/background.png);
+			background-size:100% 100%;
+		}
+		/*中间最大块*/
+		#login_body{
+			width:1200px;
+			height:700px;
+			margin:0 auto;
+			/*background-color:#eeeeee;*/
+			margin-top:20px;
+		}
+		/*上部的logo*/
+		#logo_body{
+			width:1200px;
+			height:80px;
+			/*background-color:#eeeeee;*/
+			margin:0 auto;
+		}
+		#logo_img_box{
+			height: 50px;
+			width: 180px;
+			background-image: url(../picResources/logo.png);
+			background-size: 100% 100%;
+			float: left;
+			margin-top: 20px;
+		}
+		/*包含表单的部分*/
+		#login_box{
+			width:350px;
+			height:280px;
+			/*background-color:#dddddd;
+			margin-top:150px;
+			margin-left:650px;*/
+			margin:0 auto;		
+		}
+		/*输入框*/
+		input[type=text],input[type=password]{
+			width:80%;
+			height:15%;
+			margin-left:15px;
+			margin-top:30px;
+			border-radius:20px;
+			outline:none;
+			padding-left:20px;
+			padding-right: 20px;
+			font-family: 黑体;
+			font-size:1.3em;
+			border: solid 1px #C0C0C0;
+		}
+		input[type=text]:hover,input[type=password]:hover{
+			background-color:#eeeeee;
+		}
+		input[type=text]:focus,input[type=password]:focus{
+			border-color:#808A87;
+		}
+		/*下拉菜单*/
+		select{
+			width:90%;
+			height:15%;
+			margin-left:15px;
+			margin-top:30px;
+			border-radius:20px;
+			outline:none;
+			padding-left:20px;
+			padding-right: 20px;
+			font-size:1.3em;
+			border: solid 1px #C0C0C0;
+			font-family: 黑体;
+		}
+		/*提交按钮*/
+		input[type=button]{
+			width:100px;
+			height:40px;
+			border-radius:20px;
+			margin-left:18px;
+			margin-top:30px;
+			outline:none;
+			font-family: 黑体;
+			font-size:1.3em;
+			font-weight: bold;
+			border: none;
+		}
+		#registButton{
+			background-color:#3D9140;
+			border: solid 1px #3D9140;
+			color:#ffffff;
+		}
+		#loginButton{
+			background-color:#F5F5F5;
+			border: solid 1px #C0C0C0;
+			color:#c0c0c0;
+		}
+		input[type=button]:hover{
+			cursor: pointer;
+		}
+		#registButton:active{
+			background-color: #308014;
+		}
+		#loginButton:active{
+			background-color: #E6E6FA;
+		}
+	    /*登陆注册的头部*/
+		#login_head_box{
+			width: 350px;
+			height: 70px;
+			font-family: 黑体;
+			font-size:1.8em;
+			color: #5d6160;
+			margin:0 auto;
+			text-align: center;
+			line-height: 70px;
+			font-weight: bold;
+			border-bottom: solid 1px #C0C0C0;
+		}
+		/*登陆注册整块*/
+		#head_and_body{
+			width: 400px;
+			height: 500px;
+			float: left;
+			/*background-color: #00ff00;*/
+			margin-left: 150px;
+			margin-top: 70px;
+			background-image: url(../picResources/circle_angle.png);
+			background-size: 100% 100%;
+		}
+	    /*登录旁边的图片*/
+		#welcome_img{
+			width: 400px;
+			height: 400px;
+			float: left;
+			background-image: url(../picResources/welcome_img2.png);
+			background-size: 100% 100%;
+			margin-top: 65px;
+			margin-left: 100px;
+		}
+		/*底部图片*/
+		#footer{
+			width: 1200px;
+			height: 200px;
+			float: left;
+			margin-top: 50px;
+			background-image: url(../picResources/footer.png);
+			background-size: 100% 100%;
+		}
+		/*底部超链接*/
+		a{
+			text-decoration: none;
+			outline: none;
+			font-family: 黑体;
+			margin-left:120px;
+			margin-top: 20px;
+			color:#5d6160; 		
+		}
+	</style>
+</head>
+<body>
+<div id="main_body">
+	<div id="logo_body">
+		<div id="logo_img_box"></div>
+	</div>
+	<div id="login_body">
+		<div id="welcome_img"></div>
+		<div id="head_and_body">
+			<div id="login_head_box">
+				账号注册
+			</div>
+			<div id="login_box">
+				<input type="text" placeholder="手机/邮箱地址"></input>
+				<input type="password" placeholder="密码"></input>
+				<input type="password" placeholder="确认密码"></input>
+				<select placeholder="现在所在的年级">
+					<option>一年纪</option>
+					<option>二年纪</option>
+					<option>三年纪</option>
+					<option>四年纪</option>
+					<option>五年纪</option>
+					<option>六年纪</option>
+				</select>
+				<div>
+					<input type="button" value="注册" id="registButton"></input>
+					<a href="login.html">直接登录</a>	
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</div>
+</div>
+</body>
+</html>

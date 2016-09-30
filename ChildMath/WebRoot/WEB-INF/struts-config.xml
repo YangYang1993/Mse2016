@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+  <data-sources />
+	<form-beans>
+		<form-bean name="userForm" type="com.chinaMath.struts.forms.UserForm">
+		</form-bean>
+		<form-bean name="honourForm" type="com.chinaMath.struts.forms.HonourForm">
+		</form-bean>
+		<form-bean name="recordForm" type="com.chinaMath.struts.forms.RecordForm">
+		</form-bean>
+			<form-bean name="faultForm" type="com.chinaMath.struts.forms.FaultForm">
+		</form-bean>
+		
+	</form-beans>
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings>
+  <action path="/page/check" scope="request" parameter="method"
+          input="/page/regist.html" type="org.springframework.web.struts.DelegatingActionProxy">
+        </action>
+  <action path="/page/insertUser" parameter="method" name="userForm"
+			scope="request" 
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="insert" path="/page/login.html"></forward>
+		</action>
+  <action path="/page/getUser" parameter="method" name="userForm"
+			scope="request" 
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="Success" path="/page/list.do?method=viewInfo"></forward>
+			<forward name="Fail" path="/page/login.html"></forward>
+		</action>
+   <action path="/page/changeInfo" parameter="method" name="userForm"
+			scope="request" 
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="Success" path="/page/list.do?method=viewInfo"></forward>
+		</action>
+   <action path="/page/logout"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="logout" path="/page/login.html" />
+		</action>
+   <action path="/page/find" parameter="method" 
+			scope="request" 
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="changePassword1" path="/page/changePwd.jsp"></forward>
+			<forward name="Fail" path="/page/welcome.html"></forward>
+		</action>
+	<action path="/page/list" parameter="method" 
+			scope="request" 
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/page/main.jsp"></forward>
+			<forward name="Fail" path="/page/login.html"></forward>
+		</action>
+	<action path="/page/getFaultFile" parameter="method"
+			input="" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="getFault" path="/page/test.jsp" />
+		</action> 
+	<action path="/page/deleteAFault" parameter="method"
+			input="" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="successDeletedFault" path="/page/test.jsp"/>
+	</action>
+	<action path="/page/addFaults" scope="request" parameter="method"
+			input="/page/question.jsp" type="org.springframework.web.struts.DelegatingActionProxy">
+	</action>
+  </action-mappings>
+  <message-resources parameter="com.chinaMath.struts.ApplicationResources" />
+</struts-config>
+

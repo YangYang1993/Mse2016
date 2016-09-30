@@ -1,0 +1,149 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="ChildMath:Web exploded">
+    <output-path>/usr/local/apache-tomcat-7.0.72/webapps</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ChildMath/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ChildMath" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="org.springframework.core-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.context-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.beans-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.asm-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="com.springsource.org.apache.log4j-1.2.15.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="com.springsource.org.apache.commons.logging-1.1.1.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.expression-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.aop-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="com.springsource.org.aopalliance-1.0.0.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="com.springsource.net.sf.cglib-2.2.0.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.aspects-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.instrument-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.instrument.tomcat-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="persistence.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.jdbc-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.orm-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.transaction-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="com.springsource.com.mchange.v2.c3p0-0.9.1.2.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="commons-dbcp.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="com.springsource.org.apache.commons.pool-1.5.3.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="jotm.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="xapool.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="com.springsource.org.apache.commons.lang-2.4.0.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.web-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="com.springsource.org.apache.commons.fileupload-1.2.0.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="com.springsource.org.apache.commons.httpclient-3.1.0.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="com.springsource.org.codehaus.jackson.mapper-1.0.0.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.oxm-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.web.servlet-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.web.portlet-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="org.springframework.web.struts-3.0.5.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="hibernate-annotations.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="hibernate-commons-annotations.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="hibernate-entitymanager.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="hibernate-validator.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="ejb3-persistence.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="cglib-2.2.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="javassist-3.9.0.GA.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="antlr-2.7.6.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="commons-collections-3.1.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="hibernate3.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="jta-1.1.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="ehcache-1.2.3.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="slf4j-api-1.5.8.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="slf4j-log4j12-1.5.8.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="log4j-1.2.14.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="dom4j-1.6.1.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="commons-io-2.4.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="mysql-connector-java-5.0.8-bin.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="mysql-connector-java-5.1.18-bin.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="spring-context-support-3.2.1.RELEASE.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="spring-security-core-3.2.0.M2.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="spring-webmvc-struts.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="commons-beanutils-1.8.3.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="commons-collections-3.2.1.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="commons-lang-2.6.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="commons-logging-1.1.1.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="ezmorph-1.0.6.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="json-lib-2.4-jdk15.jar" module-name="ChildMath" />
+          <element id="library" level="module" name="struts.jar" module-name="ChildMath" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/jotm.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/struts.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/xapool.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/jta-1.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/cglib-2.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/hibernate3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/antlr-2.7.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/dom4j-1.6.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/persistence.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-dbcp.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/log4j-1.2.14.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/ehcache-1.2.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/ezmorph-1.0.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-io-2.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/slf4j-api-1.5.8.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-lang-2.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/ejb3-persistence.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/javassist-3.9.0.GA.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/json-lib-2.4-jdk15.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/hibernate-validator.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/slf4j-log4j12-1.5.8.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/spring-webmvc-struts.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-logging-1.1.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/hibernate-annotations.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-beanutils-1.8.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-collections-3.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/hibernate-entitymanager.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-collections-3.2.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/hibernate-commons-annotations.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/spring-security-core-3.2.0.M2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/mysql-connector-java-5.1.18-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/com.springsource.net.sf.cglib-2.2.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/spring-context-support-3.2.1.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.aop-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.asm-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.orm-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.oxm-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.web-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/com.springsource.org.aopalliance-1.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.core-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.jdbc-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.beans-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/com.springsource.org.apache.log4j-1.2.15.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.aspects-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.context-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/com.springsource.com.mchange.v2.c3p0-0.9.1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.expression-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.instrument-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.web.struts-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.transaction-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.web.portlet-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.web.servlet-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/com.springsource.org.apache.commons.lang-2.4.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/com.springsource.org.apache.commons.pool-1.5.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/com.springsource.org.apache.commons.logging-1.1.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/com.springsource.org.codehaus.jackson.mapper-1.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/org.springframework.instrument.tomcat-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/com.springsource.org.apache.commons.fileupload-1.2.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/com.springsource.org.apache.commons.httpclient-3.1.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/servlet-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/junit4_4.3.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/junit4_4.3.1 2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/javax.mail-1.4.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/javax.mail-1.4.5 2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/json-lib-2.3-jdk15.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/json-lib-2.3-jdk15 2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-digester3-3.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-digester3-3.2 2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/javax.mail-1.4.5-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/javax.mail-1.4.5-sources 2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-digester.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

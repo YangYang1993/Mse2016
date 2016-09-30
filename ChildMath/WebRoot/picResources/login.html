@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+	<title>数学1+1</title>
+	<style type="text/css">
+		/*最大块*/
+		#main_body{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width:100%;
+			height:900px;
+			background-image: url(../picResources/background.png);
+			background-size:100% 100%;
+		}
+		/*中间最大块*/
+		#login_body{
+			width:1200px;
+			height:700px;
+			margin:0 auto;
+			/*background-color:#eeeeee;*/
+			margin-top:20px;
+		}
+		/*上部的logo*/
+		#logo_body{
+			width:1200px;
+			height:80px;
+			/*background-color:#eeeeee;*/
+			margin:0 auto;
+		}
+		#logo_img_box{
+			height: 50px;
+			width: 180px;
+			background-image: url(../picResources/logo.png);
+			background-size: 100% 100%;
+			float: left;
+			margin-top: 20px;
+		}
+		/*包含表单的部分*/
+		#login_box{
+			width:350px;
+			height:280px;
+			/*background-color:#dddddd;
+			margin-top:150px;
+			margin-left:650px;*/
+			margin:0 auto;		
+		}
+		/*输入框*/
+		input.typein{
+			width:80%;
+			height:15%;
+			margin-left:15px;
+			margin-top:30px;
+			border-radius:20px;
+			outline:none;
+			padding-left:20px;
+			padding-right: 20px;
+			font-family: 黑体;
+			font-size:1.3em;
+			border: solid 1px #C0C0C0;
+		}
+		input.typein:hover{
+			background-color:#eeeeee;
+		}
+		input.typein:focus{
+			border-color:#808A87;
+		}
+		/*提交按钮*/
+		input[type=button]{
+			width:100px;
+			height:40px;
+			border-radius:20px;
+			margin-left:18px;
+			margin-top:30px;
+			outline:none;
+			font-family: 黑体;
+			font-size:1.3em;
+			font-weight: bold;
+			border: none;
+		}
+		#loginButton{
+			background-color:#3D9140;
+			border: solid 1px #3D9140;
+			color:#ffffff;
+		}
+		#registButton{
+			background-color:#F5F5F5;
+			border: solid 1px #C0C0C0;
+			color:#c0c0c0;
+		}
+		input[type=button]:hover{
+			cursor: pointer;
+		}
+		#loginButton:active{
+			background-color: #308014;
+		}
+		#registButton:active{
+			background-color: #E6E6FA;
+		}
+		/*忘记密码的链接*/
+		a{
+			width: 40%;
+			height: 30px;
+			text-decoration: none;
+			outline: none;
+			float: left;
+			margin-left: 18px;
+			margin-top: 30px;
+			color: #708069;
+			line-height: 30px;
+			font-weight: bold;
+		}
+	    /*登陆注册的头部*/
+		#login_head_box{
+			width: 350px;
+			height: 70px;
+			font-size:1.8em;
+			color: #5d6160;
+			margin:0 auto;
+			text-align: center;
+			line-height: 70px;
+			font-family: 黑体;
+			font-weight: bold;
+			border-bottom: solid 1px #C0C0C0;
+		}
+		/*登陆注册整块*/
+		#head_and_body{
+			width: 400px;
+			height: 390px;
+			float: left;
+			/*background-color: #00ff00;*/
+			margin-left: 150px;
+			margin-top: 70px;
+			background-image: url(../picResources/circle_angle.png);
+			background-size: 100% 100%;
+		}
+	    /*登录旁边的图片*/
+		#welcome_img{
+			width: 400px;
+			height: 400px;
+			float: left;
+			background-image: url(../picResources/welcome_img.png);
+			background-size: 100% 100%;
+			margin-top: 65px;
+			margin-left: 100px;
+		}
+		/*底部图片*/
+		#footer{
+			width: 1200px;
+			height: 200px;
+			float: left;
+			margin-top: 155px;
+			background-image: url(../picResources/footer.png);
+			background-size: 100% 100%;
+		}
+	</style>
+</head>
+<body>
+<div id="main_body">
+	<div id="logo_body">
+		<div id="logo_img_box"></div>
+	</div>
+	<div id="login_body">
+		<div id="welcome_img"></div>
+		<div id="head_and_body">
+			<div id="login_head_box">
+				账号登录
+			</div>
+			<div id="login_box">
+				<input type="text" class="typein" placeholder="手机/邮箱地址"></input>
+				<input type="password" class="typein" placeholder="密码"></input>
+				<div>
+					<input type="button" value="登录" id="loginButton"></input>
+					<input type="button" value="注册" id="registButton"></input>
+				</div>
+				<a href="#">忘记密码?</a>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</div>
+</div>
+</body>
+</html>

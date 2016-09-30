@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url" value="jdbc:mysql://localhost:3306/primary_math?useUnicode=true&amp;characterEncoding=utf-8"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="YY199525"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/chinaMath/hibernate/beans/User.hbm.xml</value>
+				<value>com/chinaMath/hibernate/beans/Record.hbm.xml</value>
+				<value>com/chinaMath/hibernate/beans/Honour.hbm.xml</value>
+				<value>com/chinaMath/hibernate/beans/Fault.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLInnoDBDialect
+				</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- 配置事务 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+
+	<!-- 定义DAO -->
+	<bean id="userDAO" class="com.chinaMath.hibernate.dao.UserDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="recordDAO" class="com.chinaMath.hibernate.dao.RecordDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="honourDAO" class="com.chinaMath.hibernate.dao.HonourDAO">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="faultDAO" class="com.chinaMath.hibernate.dao.FaultDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 定义DAO代理 -->
+	<bean id="UserDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="userDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<!-- <prop key="delete*">PROPAGATION_REQUIRED</prop> -->
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="RecordDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="recordDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<!-- <prop key="delete*">PROPAGATION_REQUIRED</prop> -->
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="HonourDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="honourDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<!-- <prop key="delete*">PROPAGATION_REQUIRED</prop> -->
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="FaultDAOProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="faultDAO" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+      
+	<!-- 定义Struts配置 -->
+	<bean name="/page/logout" class="com.chinaMath.struts.actions.LogoutAction">
+	</bean>
+	<bean name="/page/insertUser" class="com.chinaMath.struts.actions.UserAction">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean name="/page/getUser" class="com.chinaMath.struts.actions.UserAction">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean name="/page/check" class="com.chinaMath.struts.actions.UserAction">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean name="/page/changeInfo" class="com.chinaMath.struts.actions.UserAction">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean name="/page/find" class="com.chinaMath.struts.actions.UserAction">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean name="/page/getFaultFile" class="com.chinaMath.struts.actions.FaultAction" >
+		<property name="faultDAO">
+			<ref local="faultDAO"/>
+		</property>
+	</bean>
+	<bean name="/page/deleteAFault" class="com.chinaMath.struts.actions.FaultAction">
+		<property name="faultDAO">
+			<ref local="faultDAO"/>
+		</property>
+	</bean>
+	<bean name="/page/addFaults" class="com.chinaMath.struts.actions.FaultAction">
+		<property name="faultDAO">
+			<ref local="faultDAO"/>
+		</property>
+		<property name="recordDAO">
+			<ref local="recordDAO" />
+		</property>
+		<property name="honourDAO">
+			<ref local="honourDAO" />
+		</property>
+	</bean>
+	<bean name="/page/list" class="com.chinaMath.struts.actions.UserInfoAction">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+		<property name="recordDAO">
+			<ref local="recordDAO" />
+		</property>
+		<property name="honourDAO">
+			<ref local="honourDAO" />
+		</property>
+	</bean>
+	
+	</beans>
