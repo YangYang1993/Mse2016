@@ -166,7 +166,7 @@
 		.error{
 			width: 80%;
 			height: 20px;
-			margin-left: 12px;
+			margin-left: 15px;
 			color: #ff0000;
 			font-size: 0.8em;
 			font-family: 黑体;
@@ -275,15 +275,19 @@
 			</div>
 			<div id="login_box">
 			<form action="" enctype="multipart/form-data" method="post" name="form1">
+				
+				<input type="text" placeholder="邮箱地址" name="email"  id="email" />
+				</input>
 				<div id="email_error" class="error"></div>
-				<input type="text" placeholder="邮箱地址" name="email"  id="email" /></input>
-				<div id="userName_error" class="error"></div>
-				<input type="text" placeholder="用户名" name="userName"  id="userName" /></input>
-				<div id="pwd_error" class="error"></div>
-				<input type="password" placeholder="密码" name="password" id="pwd"></input>
-				<div id="pwd2_error" class="error"></div>
+				
+				<input type="text" placeholder="用户名" name="userName"  id="userName" />
+				</input>
+				<div id="userName_error" class="error"></div>				
+				<input type="password" placeholder="密码" name="password" id="pwd">
+				</input>
+				<div id="pwd_error" class="error"></div>				
 				<input type="password" placeholder="确认密码" id="pwd2"></input>
-				<div class="error"></div>
+				<div id="pwd2_error" class="error"></div>				
 				<select placeholder="现在所在的年级" name="grade" >
 					<option value="1">一年级</option>
 					<option value="2">二年级</option>
@@ -292,6 +296,7 @@
 					<option value="5">五年级</option>
 					<option value="6">六年级</option>
 				</select>
+				<div class="error"></div>
 				<div>
 					<input type="button" value="立即注册" id="registButton"></input>
 					<a href="login.html">直接登录</a>	
