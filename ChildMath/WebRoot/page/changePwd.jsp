@@ -3,7 +3,7 @@
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
-	<title>数学1+1 找回密码</title>
+	<title➕➖✖️➗我会算 找回密码</title>
 	<style type="text/css">
 	/*最大块*/
 		#main_body{
@@ -33,11 +33,12 @@
 		}
 		#logo_img_box{
 			height: 40px;
-			width: 140px;
+			width: 40px;
 			background-image: url(../picResources/logo.png);
 			background-size: 100% 100%;
-			float: left;
-			margin-top: 10px;
+			float: right;
+			margin-top: 55px;
+			margin-right: 280px;
 		}
 		/*包含表单的部分*/
 		#login_box{
