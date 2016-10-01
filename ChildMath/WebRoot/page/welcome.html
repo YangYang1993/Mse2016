@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>1+1数学 欢迎</title>
+    <title>➕➖✖️➗我会算 欢迎</title>
 	
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="this is my page">
@@ -32,7 +32,7 @@
       textArray[7] = "#xq4_img2"
       textArray[8] = "#xq5_img1"
       textArray[9] = "#xq5_img2"
-
+/*
       var imgArray = new Array(6); //六个小点
       imgArray[0] = "#label0";
       imgArray[1] = "#label1";
@@ -168,6 +168,7 @@
           }
         });
 
+/*
         //保证下一页按纽在下面
         $("#next_button_box").css("margin-top",($(window).height() - 65)+"px");
         //保证圆点靠右剧中
@@ -186,6 +187,7 @@
         })
 
       });
+* */
 
     </script>
     <style type="text/css">
@@ -286,7 +288,8 @@
         background-color: transparent;
         border-color: white;
       }
-      /*第一个介绍页*/
+      /*
+      //第一个介绍页
       #first{
         z-index: 4;
         background-image: url(../picResources/xiangqing-1-bg.png);
@@ -309,7 +312,7 @@
         margin-top: 25px;
         display: none;
       }
-      /*第二个介绍页*/
+      //第二个介绍页
       #second{
         z-index: 3;
         background-image: url(../picResources/xiangqing-2-bg.png);
@@ -332,7 +335,7 @@
         margin-top: 25px;
         display: none;
       }
-      /*第三个介绍页*/
+      //第三个介绍页
       #third{
         z-index: 2;
         background-image: url(../picResources/xiangqing-3-bg.png);
@@ -355,7 +358,7 @@
         margin-top: 25px;
         display: none;
       }
-      /*第四个页面的介绍*/
+      //第四个页面的介绍
       #fourth{
         z-index: 1;
         background-image: url(../picResources/xiangqing-4-bg.png);
@@ -378,7 +381,7 @@
         margin-top: 25px;
         display: none;
       }
-      /*第五个介绍页*/
+      //第五个介绍页
       #fifth{
         z-index: 0;
         background-image: url(../picResources/xiangqing-5-bg.png);
@@ -401,7 +404,8 @@
         margin-top: 25px;
         display: none;
       }
-      /*向下按纽*/
+      */
+      /*向下按纽
       #next_button_box{
         width: 100%;
         height: 65px;
@@ -417,6 +421,7 @@
         width: 40px;
         height: 25px;
       }
+      */
       /*抬头*/
       #header{
         width: 100%;
@@ -472,13 +477,14 @@
         background-color: transparent;
         color:#00bbee;
       }
-      /*小圆点*/
+      /*小圆点
       #label{
         position: fixed;
         width: 14px;
         height: 154px;
         z-index: 6;
       }
+      */
       .point{
         display: block;
         margin-top: 10px;
@@ -489,9 +495,11 @@
   </head>
   
   <body>
+    <!--
     <div id="next_button_box">
       <a><img id="next_button_img" src="../picResources/next_button.png"></a>
     </div>
+  -->
     <div id="header">
       <div id="header_body">
         <div id="logo"></div>
@@ -514,6 +522,7 @@
         <div id="children"></div>
       </div>
     </div>
+    <!--
     <div id="first" class="page">
       <div id="content1">
         <img id="xq1_img1" src="../picResources/xiangqing_1_text1.png">
@@ -544,6 +553,7 @@
         <img id="xq5_img2" src="../picResources/xiangqing_5_text1.png">
       </div>
     </div>
+    
     <div id="label">
       <img src="../picResources/label1.png" class="point" id="label0">
       <img src="../picResources/label2.png" class="point" id="label1">
@@ -552,5 +562,6 @@
       <img src="../picResources/label2.png" class="point" id="label4">
       <img src="../picResources/label2.png" class="point" id="label5">
     </div>
+    -->
   </body>
 </html>

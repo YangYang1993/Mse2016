@@ -4,10 +4,13 @@
 <style type="text/css">
 	/*最大块*/
 	#pi_body{
-		width:800px;
-		height:auto;
-		padding-top: 20px;
+		width:700px;
+		/*padding-top: 20px;*/
 		margin-top: 0px;
+		border: solid 2px #c0c0c0;
+		border-radius: 10px; 
+		height: 420px;
+		background-color: white;
 	}
 	/*头部的用户名*/
 	#pi_username_box{
@@ -21,11 +24,12 @@
 	}
 	/*保存设置按钮所在行*/
 	#pi_pi_head{
-		width: 90%;
+		/*width: 90%;*/
 		height: 40px;
 		margin: 0 auto;
 		border-bottom: solid 1px #c0c0c0;
 	}
+	/*
 	#pi_pi_head p{
 		height:40px;
 		margin: 0;
@@ -36,47 +40,54 @@
 		font-size: 1.2em;
 		color: #c0c0c0;
 	}
+	*/
 	#pi_save_pi_button{
 		height: 30px;
 		width: 80px;
 		float: right;
 		margin-top: 5px;
+		margin-right: 50px;
+		margin-bottom: 10px;
 		color: #ffffff;
 		font-family: 黑体;
 		font-size: 1em;
 		outline: none;
-		background-color: #3D9140;
-		border-radius: 15px;
-		border: solid 1px #3d9140;
+		background-color: #e84f51;
+		border-radius: 10px;
+		border: solid 1px #874e58;
+
 	}
 	#pi_save_pi_button:hover{
 		cursor: pointer;
 	}
-	/*修改个人资料和密码两块*/
+	/*修改个人资料和密码两块
 	.pi_info_and_pwd{
 		width: 90%;
 		height: 200px;
 		margin: 0 auto;
 	}
-	.pi_label{
-		width:20%;
-		height: 200px;
-		float: left;
-		color: #708069;
+	*/
+	.pi_label{					
+		color: #191B19;
 		font-family: 黑体;
-		font-size: 1em;
-		text-align: center;
+		font-size: 1em;		
+		float: left;
+		width: 30%;	
+		text-align: right;
+		margin-top: 10px;
+		
 	}
-	.pi_content{
-		width:80%;
-		height: 200px;
+	
+	.pi_content{		
+		width:70%;				
 		float: left;
 	}
+	
 	.pi_item{
 		width: 100%;
-		height: 40px;
+		height: 30px;
 		float: left;
-		margin-top: 20px;	
+		margin-bottom: 10px;
 	}
 	.pi_item p{
 		margin: 0;
@@ -104,7 +115,7 @@
 		margin-left: 10px;
 		margin-top: 5px;
 		line-height: 40px;
-		border-radius: 20px;
+		border-radius: 15px;
 	    border: solid 1px;
 	}
 	.pi_item div p{
@@ -122,7 +133,7 @@
 		width: 150px;
 		float: left;
 		height: 30px;
-		border-radius: 15px;
+		border-radius: 10px;
 		outline: none;
 		margin-top: 5px;
 		margin-left: 10px;
@@ -137,22 +148,21 @@
 	}
 	/*设置年级模块*/
 	#pi_set_level{
-		width: 90%;
+		/*width: 90%;*/
 		height: 50px;
 		margin: 0 auto;
 	}
 	#pi_level_label{
 		width: 20%;
-		height: 50px;
-		float: left;
-		color: #708069;
+		height: 40px;
+		float: left;		
 		font-family: 黑体;
 		font-size: 1em;
 		text-align: center;
 	}
 	#pi_level_content{
 		width: 80%;
-		height: 50px;
+		height: 40px;
 		float: left;
 	}
 	#pi_level_content p{
@@ -175,7 +185,7 @@
 		height: 30px;
 		margin-left: 10px;
 		margin-top: 5px;
-		border-radius: 15px;
+		border-radius: 10px;
 		background-size: 100% 100%;
 	}
 	input[name=grade]{
@@ -221,7 +231,7 @@
 		levelArray[i] = "#level" + (i+1);
 	}
 	
-	$.setLevel = function(){//设置年纪单选按钮的变化
+	$.setLevel = function(){//设置年级单选按钮的变化
 		var levelIndex = $("input[name=grade]:checked").val();
 		levelIndex = parseInt(levelIndex);
 		for(var i = 0; i<6; i++){
@@ -358,13 +368,17 @@
     user = (User)session.getAttribute("user");
     } %>
 <div id="pi_body">
-	<form>
+	<form class="container">  
+	<!--	
 	<div id="pi_username_box"><%= user.getUserName()%></div>
-	<div id="pi_pi_head">
-		<p>设置</p>
+	
+	<div id="pi_pi_head">		
+		<p>设置</p>		
 		<input type="button" value="保存设置" id="pi_save_pi_button"></input>
 	</div>
-	<div class="pi_info_and_pwd">
+	-->
+	
+	<div class="row">
 		<div class="pi_label">个人资料</div>
 		<div class="pi_content">
 			<div class="pi_item">
@@ -391,12 +405,22 @@
 				%>
 			</div>
 			<div class="pi_item">
-				<p>邮箱</p><input type="text" class="pi_input" disabled="disabled" name="email" value="<%= user.getEmail()%>"></input>
-			</div>	
+				<p>年龄</p>
+				<input type="text" class="pi_input" name="age" id="pi_age"></input>
+			</div>
+			<div class="pi_item">
+				<p>邮箱</p>
+				<input type="text" class="pi_input" disabled="disabled" name="email" value="<%= user.getEmail()%>"></input>
+			</div>
+			<div class="pi_item">
+				<p>学校</p>
+				<input type="text" class="pi_input" name="school" id="pi_school"></input>
+			</div>				
 		</div>
 	</div>
-	<div class="pi_info_and_pwd">
-		<div class="pi_label">修改密码</div>
+<p></p>
+	<div class="row">
+		<div class="pi_label">密码设置</div>
 		<div class="pi_content">
 			<div class="pi_item">
 				<p>当前密码</p>
@@ -409,16 +433,20 @@
 				<div class="pi_error" id="pi_pwd1_error"></div>
 			</div>
 			<div class="pi_item">
-				<p>再次输入新密码</p>
-				<input type="password" class="pi_input" id="pi_pwd2" placeholder="再次输入密码"></input>
+				<p>确认密码</p>
+				<input type="password" class="pi_input" id="pi_pwd2" placeholder="确认密码"></input>
 				<div class="pi_error" id="pi_pwd2_error"></div>
 			</div>	
 		</div>
 	</div>
-	<div id="pi_set_level">
-		<div id="pi_level_label">设置年级</div>
+	<div id="pi_set_level" class="row">
+		
+		<div id="pi_level_label"></div>
+		
 		<div id="pi_level_content">
+			<!--
 			<p>现在的年级</p>
+			-->
 			<% 
 				int grade = user.getGrade();
 				switch (grade){
@@ -485,6 +513,10 @@
 				}
 			%>
 		</div>
+	</div>
+	<br>
+	<div class="row">
+		<input type="button" value="保存修改" id="pi_save_pi_button"></input>
 	</div>
 	</form>
 </div>

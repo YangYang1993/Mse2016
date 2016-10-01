@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>1+1数学 主页</title>
+<title>➕➖✖️➗我会算 主页</title>
 <style type="text/css">
 	body{
 		margin-top: 0px;
@@ -14,7 +14,7 @@
 	/*最外层大块*/
 	#biggest_box{
 		/*position: absolute;*/
-		width:800px;
+		width:700px;
 		height:auto;
 		background-color:#efefef;
 		margin:0 auto;
@@ -23,7 +23,7 @@
 	/*头部*/
 	#head_box{
 		background-color: #34c4ff;
-		width: 800px;
+		width: 700px;
 		height: 20px;
 	}
 	#logo{
@@ -57,7 +57,7 @@
 	/*功能模块*/
 	#function_box{
 		height: 80px;
-		width: 800px;
+		width: 700px;
 		background-color: #01aaef;
 	}
 	#function_box a:hover{
@@ -107,7 +107,7 @@
 	}
 	/*功能被点击后的指示条*/
 	#mark_box{
-		width:800px;
+		width:700px;
 		height: 5px;
 	}
 	#practice_mark{
@@ -145,14 +145,14 @@
 	}
 	/*页末*/
 	#footer_box{
-		width: 800px;
+		width: 700px;
 		height: 120px;
 		background-color: #eeeeee;
 		margin-top: 20px;
 		border-top: solid 1px #C0C0C0;
 	}
 	#group_info{
-		width: 800px;
+		width: 700px;
 		height: 90px;
 	}
 	.group_info_item{
@@ -164,7 +164,7 @@
 		text-align: center;
 	}
 	#copyright{
-		width: 800px;
+		width: 700px;
 		height: 26px;
 		text-align: center;
 		line-height: 30px;
@@ -196,7 +196,7 @@
 	}
 	/**/
 	#content_box{
-		width: 800px;
+		width: 700px;
 		height: auto;
 	}
 	/*底部链接*/
@@ -327,21 +327,31 @@
 		<div id="group_info">
 			<table>
 				<tr>
-					<td>加入我们</td>
-					<td>关于我们</td>
-					<td>关注我们</td>
+					<td>教育资讯</td>
+					<td>友情链接</td>
+					<td>团队介绍</td>
+					<td>联系我们</td>
 					<td rowspan="2">
 						<img alt="二维码" src="../picResources/twoD.png">
 					</td>
 				</tr>
 				<tr>
-					<td><a href="#">立即注册</a></td>
-					<td><a href="#">团队介绍</a></td>
-					<td><a href="#">联系电话</a><br><br><a href="#">电子邮件</a></td>
+					<td><a href="http://www.chinaedu.edu.cn/">中国教育网</a></td>
+					<td><a href="http://xiaobao.shuren100.com/">小学生学习报</a><br>
+						<a href="http://web.52xuexi.net/Default.aspx">我爱学习网</a>
+					</td>
+					<td><a href="#">关于我们</a><br>
+						<a href="#">成员介绍</a>
+					</td>
+					<td><a href="#">联系电话</a><br>
+						<a href="#">电子邮件</a>
+					</td>
 				</tr>
 			</table>
 		</div>
+		<!--
 		<div id="copyright"><img src="../picResources/copyright.png"></div>
+		-->
 	</div>
 </div>
 </body>
