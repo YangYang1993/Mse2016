@@ -37,7 +37,7 @@
 			background-image: url(../picResources/logo.png);
 			background-size: 100% 100%;
 			float: right;
-			margin-top: 55px;
+			margin-top: 65px;
 			margin-right: 280px;
 		}
 		/*包含表单的部分*/
@@ -70,11 +70,11 @@
 		}
 		/*提交按钮*/
 		input[type=button]{
-			width:65px;
-			height:26px;
-			border-radius:15px;
-			margin-left:80px;
-			margin-top:20px;
+			width:80px;
+			height:30px;
+			border-radius:5px;
+			margin-left:75px;
+			margin-top:5px;
 			outline:none;
 			font-family: 黑体;
 			font-size:1em;
@@ -85,7 +85,6 @@
 			background-color:#71C875;
 			border: solid 1px #3D9140;
 			color:#ffffff;
-			border-radius: 5px;
 		}
 		input[type=button]:hover{
 			cursor: pointer;
@@ -137,7 +136,7 @@
 			float: left;
 			background-image: url(../picResources/findpwd.png);
 			background-size: 100% 100%;
-			margin-top: 40px;
+			margin-top: 80px;
 			margin-left: 65px;
 		}
 		/*底部图片*/
@@ -179,9 +178,13 @@
 			$.isEmail = function(){
 				var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
 				var email=document.getElementById('email').value;
-				if(!reg.test(email)){
+				if (email == '') {
 					$("#error").empty();
 					$("#error").append("邮箱不能为空");
+					return false;
+				}else if(!reg.test(email)){
+					$("#error").empty();
+					$("#error").append("邮箱格式不正确");
 					return false;
 				}else{
 					return true;

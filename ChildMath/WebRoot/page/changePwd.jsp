@@ -37,7 +37,7 @@
 			background-image: url(../picResources/logo.png);
 			background-size: 100% 100%;
 			float: right;
-			margin-top: 55px;
+			margin-top: 80px;
 			margin-right: 280px;
 		}
 		/*包含表单的部分*/
@@ -54,8 +54,8 @@
 			width:80%;
 			height:31px;
 			margin-left:10px;
-			margin-top:6px;
-			border-radius:15px;
+			margin-top:10px;
+			border-radius:5px;
 			outline:none;
 			padding-left:15px;
 			padding-right: 15px;
@@ -71,19 +71,20 @@
 		}
 		/*提交按钮*/
 		input[type=button]{
-			width:65px;
-			height:26px;
-			border-radius:15px;
-			margin-left:80px;
-			margin-top:30px;
+			width:80px;
+			height:30px;
+			border-radius:5px;
+			margin-left:75px;
+			margin-top:20px;
 			outline:none;
 			font-family: 黑体;
 			font-size:1em;
 			font-weight: bold;
 			border: none;
+			
 		}
 		#nextButton{
-			background-color:#3D9140;
+			background-color:#71C875;
 			border: solid 1px #3D9140;
 			color:#ffffff;
 		}
@@ -110,18 +111,18 @@
 			height: 15px;
 			color:#808A87;
 			margin-left: 12px;
-			margin-top: 0px;
+			margin-top: 10px;
 			font-family: 黑体;
 			font-size: 0.8em;
 		}
 		/*找回密码整块*/
 		#head_and_body{
 			width: 260px;
-			height: 200px;
+			height: 260px;
 			float: left;
 			/*background-color: #00ff00;*/
 			margin-left: 100px;
-			margin-top: 65px;
+			margin-top: 18px;
 			background-image: url(../picResources/circle_angle.png);
 			background-size: 100% 100%;
 		}
@@ -132,7 +133,7 @@
 			float: left;
 			background-image: url(../picResources/findpwd.png);
 			background-size: 100% 100%;
-			margin-top: 40px;
+			margin-top: 80px;
 			margin-left: 65px;
 		}
 		/*底部图片*/
@@ -145,15 +146,16 @@
 			background-size: 100% 100%;
 		}
 		/*错误信息*/
-		#error{
+		.error{
 			width: 80%;
-			height:20px;
+			height:8px;
 			margin-left: 12px;
-			margin-top: 6px;
+			margin-top: 5px;
 			color: #ff0000;
 			font-family: 黑体;
 			font-size: 0.8em;
 		}
+		
 	</style>
 	<script src="../js/jquery-1.11.3.js"></script>
 	<script type="text/javascript">
@@ -166,7 +168,15 @@
 				var password=document.getElementById('password').value;
 				if(password == ""){
 					$("#error").empty();
-					$("#error").append("请填写密码");
+					$("#error").append("密码不能为空");
+					return false;
+				}else if($("#newpwd").val() == ""){
+					$("#newpwd_error").empty();
+					$("#newpwd_error").append("请确认密码");
+					return false;
+				}else if($("#password").val() != $("#newpwd").val()){
+					$("#newpwd_error").empty();
+					$("#newpwd_error").append("两次密码不一致");
 					return false;
 				}else{
 					return true;
@@ -175,10 +185,13 @@
 
 			$("#nextButton").click(function(){
 				if($.isRight()){
-					var form = document.forms[0];
+					alert("密码设置成功！");
+					var nPassword = document.getElementById('password').value;
+					location.href="login.html";
+					/*var form = document.forms[0];
 					form.action = "getUser.do?method=changePassword2";
-					form.method = "post";
-					form.submit();
+					form.method = "post";					
+					form.submit();*/
 				}
 			});
 		});
@@ -193,13 +206,17 @@
 		<div id="welcome_img"></div>
 		<div id="head_and_body">
 			<div id="login_head_box">
-				新密码
+				 设置新密码
 			</div>
 			<div id="login_box">
-				<div id="error"></div>
+				
 				<div id="info">*请填写新密码：</div>
 				<form>
-				<input type="text" id="password" placeholder="密码" name="password"></input>
+				<input type="text" id="password" placeholder="密码" name="password">
+				</input>
+				<div id="error" class="error"></div>				
+				<input type="password" placeholder="确认密码" id="newpwd"></input>
+				<div id="newpwd_error" class="error"></div>	
 				</form>
 				<div>
 					<input type="button" value="提交" id="nextButton"></input>	

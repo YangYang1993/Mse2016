@@ -46,7 +46,8 @@
 		#login_box{
 			width:230px;
 			height:280px;
-			margin:0 auto;		
+			margin:0 auto;
+			margin-top: 10px;		
 		}
 		/*输入框*/
 		input[type=text],input[type=password]{
@@ -137,7 +138,7 @@
 			float: left;
 			background-image: url(../picResources/welcome_img2.png);
 			background-size: 100% 100%;
-			margin-top: 40px;
+			margin-top: 50px;
 			margin-left: 65px;
 		}
 		/*底部图片*/
@@ -226,8 +227,8 @@
 					return true;
 				}
 			};
-
-			$.isRight= function(){  //判断表单填写是否正确
+			//判断表单填写是否正确
+			$.isRight= function(){  
 				if(!$.isEmail()){
 					$("#email_error").empty();
 					$("#email_error").append("请正确填写邮箱");
@@ -274,12 +275,10 @@
 				账号注册
 			</div>
 			<div id="login_box">
-			<form action="" enctype="multipart/form-data" method="post" name="form1">
-				
+			<form action="" enctype="multipart/form-data" method="post" name="form1">	
 				<input type="text" placeholder="邮箱地址" name="email"  id="email" />
 				</input>
-				<div id="email_error" class="error"></div>
-				
+				<div id="email_error" class="error"></div>				
 				<input type="text" placeholder="用户名" name="userName"  id="userName" />
 				</input>
 				<div id="userName_error" class="error"></div>				
@@ -299,9 +298,9 @@
 				<div class="error"></div>
 				<div>
 					<input type="button" value="立即注册" id="registButton"></input>
-					<a href="login.html">直接登录</a>	
 				</div>
 				</form>
+				<a href="login.html">直接登录</a>
 			</div>
 		</div>
 		<div id="footer"></div>
