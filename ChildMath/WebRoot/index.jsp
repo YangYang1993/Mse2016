@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>1+1数学 欢迎</title>
+    <title>➕➖✖️➗我会算 首页</title>
 	
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="this is my page">
@@ -14,6 +14,7 @@
     <script src="js/jquery.mousewheel.js"></script>
     
     <script type="text/javascript">
+    /*
       var nowIndex = 0;//当前页
       var pageArray = new Array(6); //存储六个页面的数组
       pageArray[0] = "#welcome";
@@ -50,9 +51,13 @@
       
 
       var mousewheel = document.all?"mousewheel":"DOMMouseScroll";
-
+    */
       $(document).ready(function(){
-        //alert($(".page").css("height"));
+        $("#welcome").click(function(){
+          location.href="page/welcome.html";
+        });
+      
+        /*
         $("#login_button").click(function(){
           location.href="page/login.html";
         });
@@ -65,8 +70,8 @@
         $("#little_regist").click(function(){
           location.href = "page/regist.html";
         });
-
-
+        */
+        /*
         //展示第二行文字
         $.showText = function(index){
           $(textArray[index*2+1]).delay(1000).fadeIn(3000);
@@ -156,7 +161,7 @@
           $.initImag();
           $(imgArray[nowIndex]).attr("src","picResources/label1.png");
         }
-
+        */
         var totalDelta = 0;
         //鼠标滚动事件
         $("body").bind('mousewheel',function(event, delta) { 
@@ -169,7 +174,7 @@
             totalDelta = 0;
           }
         });
-
+        /*
         //保证下一页按纽在下面
         $("#next_button_box").css("margin-top",($(window).height() - 65)+"px");
         //保证圆点靠右剧中
@@ -186,12 +191,12 @@
           top = $(window).height()-100;
           $("#label").css("top", top/2);
         })
-
+      */
       });
-
+      
     </script>
     <style type="text/css">
-      /*所有页面*/
+      /*所有页面
       .page{
         position: absolute;
         left: 0;
@@ -203,12 +208,25 @@
         z-index: 0;
         margin:0;
       }
+      */
       /*首页*/
       #welcome{
+        width: 40px;
+        height: 25px;
+        border-radius: 5px;
+        background-color: #00bbee;
+        border-color: #00bbee;
+        float: right;
+        margin-right: 200px;
+        margin-top: 15px;
+        cursor: pointer;
+        /*
         z-index: 5;
         background-color: #eeeeee;
         background-image: url(picResources/first_page_back.png);
+        */
       }
+      /*
       #content0, #content1,#content2, #content3, #content4, #content5{
         height: 560px;
         width: 1200px;
@@ -262,6 +280,7 @@
         margin-left: 175px;
         margin-top: 28px;
       }
+      */
       .anniu{
         width: 135px;
         height: 25px;
@@ -275,6 +294,17 @@
       .anniu:hover{
         cursor: pointer;
       }
+      #page{
+        background-image:url(picResources/first_page0.jpg); 
+        z-index: 1;
+        width: 800px;
+        height: 900px;
+        background-size: 100% 100%;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 55px;
+      }
+      /*
       #login_button{
         border-radius: 5px;
         background-color: #00bbee;
@@ -285,7 +315,8 @@
         background-color: transparent;
         border-color: white;
       }
-      /*第一个介绍页*/
+
+      //第一个介绍页
       #first{
         z-index: 4;
         background-image: url(picResources/xiangqing-1-bg.png);
@@ -308,7 +339,7 @@
         margin-top: 25px;
         display: none;
       }
-      /*第二个介绍页*/
+      //第二个介绍页
       #second{
         z-index: 3;
         background-image: url(picResources/xiangqing-2-bg.png);
@@ -331,7 +362,7 @@
         margin-top: 25px;
         display: none;
       }
-      /*第三个介绍页*/
+      //第三个介绍页
       #third{
         z-index: 2;
         background-image: url(picResources/xiangqing-3-bg.png);
@@ -354,7 +385,7 @@
         margin-top: 25px;
         display: none;
       }
-      /*第四个页面的介绍*/
+      //第四个页面的介绍
       #fourth{
         z-index: 1;
         background-image: url(picResources/xiangqing-4-bg.png);
@@ -377,7 +408,7 @@
         margin-top: 25px;
         display: none;
       }
-      /*第五个介绍页*/
+      //第五个介绍页
       #fifth{
         z-index: 0;
         background-image: url(picResources/xiangqing-5-bg.png);
@@ -400,7 +431,7 @@
         margin-top: 25px;
         display: none;
       }
-      /*向下按纽*/
+      //向下按纽
       #next_button_box{
         width: 100%;
         height: 65px;
@@ -416,30 +447,35 @@
         width: 40px;
         height: 25px;
       }
-      /*抬头*/
+      */
+      /*头部*/
       #header{
         width: 100%;
-        height: 50px;
+        height: 55px;
         position: fixed;
-        z-index: 6;
+        z-index: 1;
         top: 0;
         left: 0;
         text-align: center;
         background-color: #eeeeee;
       }
+      /*
       #header_body{
         width: 1200px;
         height: 50px;
         margin:0 auto;
       }
+      */
       #logo{
-        width: 130px;
+        width: 40px;
         height: 40px;
         float: left;
         background-image: url(picResources/logo.png);
         background-size: 100% 100%;
-        margin-top: 6px;
+        margin-top: 10px;
+        margin-left: 200px;
       }
+      /*
       #little_button{
         width: 200px;
         height: 40px;
@@ -460,6 +496,7 @@
       .xiao:hover{
         cursor: pointer;
       }
+      
       #little_login{
         border: solid 1px #00bbee;
         background-color: #00bbee;
@@ -470,7 +507,8 @@
         background-color: transparent;
         color:#00bbee;
       }
-      /*小圆点*/
+      */
+      /*小圆点
       #label{
         position: fixed;
         width: 14px;
@@ -483,22 +521,34 @@
         width: 14px;
         height: 14px;
       }
+      */
     </style>
   </head>
   
   <body>
+    <!--
     <div id="next_button_box">
       <a><img id="next_button_img" src="picResources/next_button.png"></a>
     </div>
+    -->
     <div id="header">
+      <!--
       <div id="header_body">
+      -->
         <div id="logo"></div>
+        <div id="welcome">进入</div>
+        <!--
         <div id="little_button">
           <input type="button" class="xiao" id="little_login" value="登录"></input>
           <input type="button" class="xiao" id="little_regist" value="立即注册"></input>
         </div>
+        
       </div>
+      -->
     </div>
+    <div id="page">
+    </div>
+    <!--
     <div id="welcome" class="page">
       <div id="content0">
         <div id="blackBoard">
@@ -550,6 +600,7 @@
       <img src="picResources/label2.png" class="point" id="label4">
       <img src="picResources/label2.png" class="point" id="label5">
     </div>
+    -->
   </body>
 </html>
 

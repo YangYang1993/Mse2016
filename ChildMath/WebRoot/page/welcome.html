@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>➕➖✖️➗我会算 欢迎</title>
+    <title>➕➖✖️➗我会算 欢迎您 </title>
 	
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="this is my page">
@@ -9,48 +9,10 @@
     
     <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
     <script src="../js/jquery-1.11.3.js"></script>
-    <script src="../js/jquery.mousewheel.js"></script>
-    
+    <script src="../js/jquery.mousewheel.js"></script>   
     <script type="text/javascript">
-      var nowIndex = 0;//当前页
-      var pageArray = new Array(6); //存储六个页面的数组
-      pageArray[0] = "#welcome";
-      pageArray[1] = "#first";
-      pageArray[2] = "#second";
-      pageArray[3] = "#third";
-      pageArray[4] = "#fourth";
-      pageArray[5] = "#fifth";
-
-      var textArray = new Array(10); //五个介绍页的文字
-      textArray[0] = "#xq1_img1"
-      textArray[1] = "#xq1_img2"
-      textArray[2] = "#xq2_img1"
-      textArray[3] = "#xq2_img2"
-      textArray[4] = "#xq3_img1"
-      textArray[5] = "#xq3_img2"
-      textArray[6] = "#xq4_img1"
-      textArray[7] = "#xq4_img2"
-      textArray[8] = "#xq5_img1"
-      textArray[9] = "#xq5_img2"
-/*
-      var imgArray = new Array(6); //六个小点
-      imgArray[0] = "#label0";
-      imgArray[1] = "#label1";
-      imgArray[2] = "#label2";
-      imgArray[3] = "#label3";
-      imgArray[4] = "#label4";
-      imgArray[5] = "#label5";
-      $.initImag = function(){
-        for(var i=0;i<6;i++){
-          $(imgArray[i]).attr("src","../picResources/label2.png");
-        }
-      }
       
-
-      var mousewheel = document.all?"mousewheel":"DOMMouseScroll";
-*/
       $(document).ready(function(){
-        //alert($(".page").css("height"));
         $("#login_button").click(function(){
           location.href="login.html";
         });
@@ -63,131 +25,8 @@
         $("#little_regist").click(function(){
           location.href = "regist.html";
         });
-
-/*
-        //展示第二行文字
-        $.showText = function(index){
-          $(textArray[index*2+1]).delay(1000).fadeIn(3000);
-        };
-        //展示第一行文字
-        $.showAllText = function(index){
-          $(textArray[index*2]).fadeIn(3000);
-          //$.delay(3000);
-          $.showText(index);
-        };
-        //隐藏第二行文字
-        $.hideText = function(index){
-          $(textArray[(index-1)*2+1]).delay(1000).fadeOut(1000);
-        };
-        //隐藏第一行文字
-        $.hideAllText = function(index){
-          $(textArray[(index-1)*2]).fadeOut(1000);
-          $.hideText(index);
-        };
-
-        //向下按纽的点击事件
-        $("a").click(function(){
-          $(pageArray[nowIndex]).animate({top: "-" + $(".page").css("height")},"slow",$.showAllText(nowIndex));
-          if(nowIndex !=0){
-            $.hideAllText(nowIndex);
-          }
-          nowIndex++;
-          if(nowIndex == 5){
-            $("#next_button_box").css("visibility","hidden");
-          }
-
-          if(nowIndex != 0){//其他页显示小按纽
-            $("#little_button").css("visibility","visible");
-          }
-
-          //更改圆点
-          $.initImag();
-          $(imgArray[nowIndex]).attr("src","../picResources/label1.png");
-        });
-
-        //下一页
-        $.nextPage = function(){
-          if(nowIndex == 5){
-            return;
-          }
-          $(pageArray[nowIndex]).animate({top:"-" + $(".page").css("height")},"slow",$.showAllText(nowIndex));
-          if(nowIndex !=0){
-            $.hideAllText(nowIndex);
-          }
-          nowIndex++;
-
-          if(nowIndex == 5){
-            $("#next_button_box").css("visibility","hidden");
-          }
-
-          if(nowIndex != 0){//其他页显示小按纽
-            $("#little_button").css("visibility","visible");
-          }
-
-          //更改圆点
-          $.initImag();
-          $(imgArray[nowIndex]).attr("src","../picResources/label1.png");
-        }
-
-        //上一页
-        $.lastPage = function(){
-          if(nowIndex == 5){
-            $("#next_button_box").css("visibility","visible");
-          }
-          if(nowIndex == 0){
-            //
-          }else if(nowIndex == 1){
-            $(pageArray[nowIndex-1]).animate({top:'0%'},"slow");
-            $.hideAllText(nowIndex);
-            nowIndex --;
-          }else{
-            $(pageArray[nowIndex-1]).animate({top:'0%'},"slow",$.showAllText(nowIndex-2));
-            $.hideAllText(nowIndex);
-            nowIndex --;
-          }
-
-          if(nowIndex == 0){ //滑到最顶，隐藏小按纽
-            $("#little_button").css("visibility","hidden");
-          }
-
-          //更改圆点
-          $.initImag();
-          $(imgArray[nowIndex]).attr("src","../picResources/label1.png");
-        }
-
-        var totalDelta = 0;
-        //鼠标滚动事件
-        $("body").bind('mousewheel',function(event, delta) { 
-          totalDelta = totalDelta + delta;   
-          if(totalDelta > 5){
-            $.lastPage();
-            totalDelta = 0;
-          }else if(totalDelta < -5){
-            $.nextPage();
-            totalDelta = 0;
-          }
-        });
-
-/*
-        //保证下一页按纽在下面
-        $("#next_button_box").css("margin-top",($(window).height() - 65)+"px");
-        //保证圆点靠右剧中
-        $("#label").css("left", $(window).width()-35);
-        var top = $(window).height()-100;
-        $("#label").css("top", top/2);
-
-        $(window).resize(function () {          //当浏览器大小变化时
-          //保证下一页按纽在下面
-          $("#next_button_box").css("margin-top",($(window).height() - 65)+"px");
-
-          //保证圆点靠右剧中
-          $("#label").css("left", $(window).width()-35);
-          top = $(window).height()-100;
-          $("#label").css("top", top/2);
-        })
-
       });
-* */
+
 
     </script>
     <style type="text/css">
@@ -282,147 +121,15 @@
         border-radius: 5px;
         background-color: #00bbee;
         border-color: #00bbee;
+        cursor: pointer;
       }
       #regist_button{
         border-radius: 5px;
         background-color: transparent;
         border-color: white;
+        cursor: pointer;
       }
-      /*
-      //第一个介绍页
-      #first{
-        z-index: 4;
-        background-image: url(../picResources/xiangqing-1-bg.png);
-        background-size: 100% 100%;
-      }
-      #content1{
-        
-        background-image: url(../picResources/xiangqing_1.png);
-        background-size: 100% 100%;
-      }
-      #xq1_img1{
-        width: 600px;
-        margin-left: 10%;
-        margin-top: 160px;
-        display: none;
-      }
-      #xq1_img2{
-        width: 600px;
-        margin-left: 10%;
-        margin-top: 25px;
-        display: none;
-      }
-      //第二个介绍页
-      #second{
-        z-index: 3;
-        background-image: url(../picResources/xiangqing-2-bg.png);
-        background-size: 100% 100%;
-      }
-      #content2{
-        
-        background-image: url(../picResources/xiangqing_2.png);
-        background-size: 100% 100%;
-      }
-      #xq2_img1{
-        width: 600px;
-        margin-left: 10%;
-        margin-top: 160px;
-        display: none;
-      }
-      #xq2_img2{
-        width: 700px;
-        margin-left: 10%;
-        margin-top: 25px;
-        display: none;
-      }
-      //第三个介绍页
-      #third{
-        z-index: 2;
-        background-image: url(../picResources/xiangqing-3-bg.png);
-        background-size: 100% 100%;
-      }
-      #content3{
-        
-        background-image: url(../picResources/xiangqing_3.png);
-        background-size: 100% 100%;
-      }
-      #xq3_img1{
-        width: 600px;
-        margin-left: 10%;
-        margin-top: 160px;
-        display: none;
-      }
-      #xq3_img2{
-        width:650px;
-        margin-left: 10%;
-        margin-top: 25px;
-        display: none;
-      }
-      //第四个页面的介绍
-      #fourth{
-        z-index: 1;
-        background-image: url(../picResources/xiangqing-4-bg.png);
-        background-size: 100% 100%;
-      }
-      #content4{
-        
-        background-image: url(../picResources/xiangqing_4.png);
-        background-size: 100% 100%;
-      }
-      #xq4_img1{
-        width: 600px;
-        margin-left: 10%;
-        margin-top: 160px;
-        display: none;
-      }
-      #xq4_img2{
-        width: 650px;
-        margin-left: 10%;
-        margin-top: 25px;
-        display: none;
-      }
-      //第五个介绍页
-      #fifth{
-        z-index: 0;
-        background-image: url(../picResources/xiangqing-5-bg.png);
-        background-size: 100% 100%;
-      }
-      #content5{
-        
-        background-image: url(../picResources/xiangqing_5.png);
-        background-size: 100% 100%;
-      }
-      #xq5_img1{
-        width: 600px;
-        margin-left: 10%;
-        margin-top: 160px;
-        display: none;
-      }
-      #xq5_img2{
-        width: 650px;
-        margin-left: 10%;
-        margin-top: 25px;
-        display: none;
-      }
-      */
-      /*向下按纽
-      #next_button_box{
-        width: 100%;
-        height: 65px;
-        position: fixed;
-        margin:0 auto;
-        margin-top: 50%;
-        z-index: 6;
-        text-align: center;
-        line-height: 65px;
-      }
-      #next_button_img{
-        border: none;
-        width: 40px;
-        height: 25px;
-      }
-      */
-      /*抬头*/
+      /*头部*/
       #header{
         width: 100%;
         height: 0px;
@@ -433,11 +140,6 @@
         text-align: center;
         background-color: #eeeeee;
       }
-      #header_body{
-        width: 1200px;
-        height: 50px;
-        margin:0 auto;
-      }
       #logo{
         width: 40px;
         height: 40px;
@@ -447,46 +149,6 @@
         margin-top: 52px;
         margin-left: 355px;
       }
-      
-      #little_button{
-        width: 200px;
-        height: 40px;
-        margin-top: 6px;
-        float: right;
-        text-align: center;
-        visibility: hidden;
-      }
-
-      .xiao{
-        width: 80px;
-        height: 20px;
-        margin-top: 10px;
-        outline: none;
-        border-radius: 5px;
-        font-family: 黑体;
-        font-size: 1em;
-      }
-      .xiao:hover{
-        cursor: pointer;
-      }
-      #little_login{
-        border: solid 1px #00bbee;
-        background-color: #00bbee;
-        color:white;
-      }
-      #little_regist{
-        border: solid 1px transparent;
-        background-color: transparent;
-        color:#00bbee;
-      }
-      /*小圆点
-      #label{
-        position: fixed;
-        width: 14px;
-        height: 154px;
-        z-index: 6;
-      }
-      */
       .point{
         display: block;
         margin-top: 10px;
@@ -497,18 +159,9 @@
   </head>
   
   <body>
-    <!--
-    <div id="next_button_box">
-      <a><img id="next_button_img" src="../picResources/next_button.png"></a>
-    </div>
-  -->
     <div id="header">
       <div id="header_body">
         <div id="logo"></div>
-        <div id="little_button">
-          <input type="button" class="xiao" id="little_login" value="登录"></input>
-          <input type="button" class="xiao" id="little_regist" value="立即注册"></input>
-        </div>
       </div>
     </div>
     <div id="welcome" class="page">
@@ -517,53 +170,12 @@
           <div id="chalk"></div>
           <div id="chalk2"></div>
           <div id="blackboard_button">
-            <input type="button" id="login_button" class="anniu" value="登录"></input>
-            <input type="button" id="regist_button" class="anniu" value="立即注册"></input>
+            <input type="button" id="login_button" class="anniu" value="点击登录"></input>
+            <input type="button" id="regist_button" class="anniu" value="点击注册"></input>
           </div>
         </div>
         <div id="children"></div>
       </div>
     </div>
-    <!--
-    <div id="first" class="page">
-      <div id="content1">
-        <img id="xq1_img1" src="../picResources/xiangqing_1_text1.png">
-        <img id="xq1_img2" src="../picResources/xiangqing_1_text2.png">
-      </div>
-    </div>
-    <div id="second" class="page">
-      <div id="content2">
-        <img id="xq2_img1" src="../picResources/xiangqing_2_text1.png">
-        <img id="xq2_img2" src="../picResources/xiangqing_2_text2.png">
-      </div>
-    </div>
-    <div id="third" class="page">
-      <div id="content3">
-        <img id="xq3_img1" src="../picResources/xiangqing_3_text1.png">
-        <img id="xq3_img2" src="../picResources/xiangqing_3_text2.png">
-      </div>
-    </div>
-    <div id="fourth" class="page">
-      <div id="content4">
-        <img id="xq4_img1" src="../picResources/xiangqing_4_text1.png">
-        <img id="xq4_img2" src="../picResources/xiangqing_4_text2.png">
-      </div>
-    </div>
-    <div id="fifth" class="page">
-      <div id="content5">
-        <img id="xq5_img1" src="../picResources/xiangqing_5_text2.png">
-        <img id="xq5_img2" src="../picResources/xiangqing_5_text1.png">
-      </div>
-    </div>
-    
-    <div id="label">
-      <img src="../picResources/label1.png" class="point" id="label0">
-      <img src="../picResources/label2.png" class="point" id="label1">
-      <img src="../picResources/label2.png" class="point" id="label2">
-      <img src="../picResources/label2.png" class="point" id="label3">
-      <img src="../picResources/label2.png" class="point" id="label4">
-      <img src="../picResources/label2.png" class="point" id="label5">
-    </div>
-    -->
   </body>
 </html>
