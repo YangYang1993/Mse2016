@@ -4,7 +4,7 @@
 <style type="text/css">
 	/*最大块*/
 	#pi_body{
-		width:700px;
+		width:800px;
 		/*padding-top: 20px;*/
 		margin-top: 0px;
 		border: solid 2px #c0c0c0;

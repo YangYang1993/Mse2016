@@ -14,7 +14,7 @@
 	/*最外层大块*/
 	#biggest_box{
 		/*position: absolute;*/
-		width:700px;
+		width:800px;
 		height:auto;
 		background-color:#efefef;
 		margin:0 auto;
@@ -23,7 +23,7 @@
 	/*头部*/
 	#head_box{
 		background-color: #34c4ff;
-		width: 700px;
+		width: 800px;
 		height: 20px;
 	}
 	#logo{
@@ -57,7 +57,7 @@
 	/*功能模块*/
 	#function_box{
 		height: 80px;
-		width: 700px;
+		width: 800px;
 		background-color: #01aaef;
 	}
 	#function_box a:hover{
@@ -107,7 +107,7 @@
 	}
 	/*功能被点击后的指示条*/
 	#mark_box{
-		width:700px;
+		width:800px;
 		height: 5px;
 	}
 	#practice_mark{
@@ -145,14 +145,15 @@
 	}
 	/*页末*/
 	#footer_box{
-		width: 700px;
+		/*
+		width: 800px;
 		height: 120px;
 		background-color: #eeeeee;
 		margin-top: 20px;
-		border-top: solid 1px #C0C0C0;
+		border-top: solid 1px #C0C0C0;*/
 	}
 	#group_info{
-		width: 700px;
+		width: 800px;
 		height: 90px;
 	}
 	.group_info_item{
@@ -164,7 +165,7 @@
 		text-align: center;
 	}
 	#copyright{
-		width: 700px;
+		width: 800px;
 		height: 26px;
 		text-align: center;
 		line-height: 30px;
@@ -183,7 +184,7 @@
 		z-index: -1;
 		width: 100%;
 		height: 90px;
-		border-top: solid 1px #c0c0c0;
+		/*border-top: solid 1px #c0c0c0;*/
 	}
 	#back_footer2_box{
 		position: absolute;
@@ -192,12 +193,22 @@
 		z-index: -1;
 		width: 100%;
 		height: 26px;
-		border-top: solid 1px #c0c0c0;
+		/*border-top: solid 1px #c0c0c0;*/
 	}
 	/**/
 	#content_box{
-		width: 700px;
+		width: 800px;
 		height: auto;
+	}
+	.footer_line{
+		width:800px;
+		height:1px;
+		margin:0px auto;
+		padding:0px;
+		background-color:#D5D5D5;
+		overflow:hidden;
+		float: left;
+		margin-top: 15px;
 	}
 	/*底部链接*/
 	table{
@@ -303,9 +314,11 @@
 <div id="back_footer2_box"></div>
 <div id="biggest_box">
 	<div id="head_box">
-		<div id="logo"></div>
+		<div id="logo">➕➖✖️➗我会算</div>
 		<div id="user_box">
-			<a onclick="$.loadPage(3)">您好：<%= user.getUserName()%>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<a onclick="$.loadPage(3)">你好,&nbsp
+				<%= user.getUserName()%>&nbsp;&nbsp;&nbsp;&nbsp;小朋友
+			</a>
 			<a href="logout.do?user=<%=user.getUserName() %>" >退出</a>
 		</div>
 	</div>
@@ -324,6 +337,7 @@
 		
 	</div>
 	<div id="footer_box">
+		<div class="footer_line" ></div>
 		<div id="group_info">
 			<table>
 				<tr>

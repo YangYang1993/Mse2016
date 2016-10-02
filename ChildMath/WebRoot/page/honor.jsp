@@ -1,4 +1,4 @@
-
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%@ page import= "java.util.List"%>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
@@ -18,13 +18,19 @@ List<Integer> listObjc = (List<Integer>)session.getAttribute("min");
 		clear: both;
 		overflow: auto;
 		width: 800px;
-		height: 90px;
+		height: 80px;
 		text-align:center;
-		padding-top: 20px;
+		padding-top: 6px;
 	}
+  .show_table{
+    width: 500px; 
+    height: 300px; 
+    float: left;
+    margin-left: 150px;
+  }
+
 </style>
     
-
    <script>
 	$(function () {
     $('#container').highcharts({
@@ -108,7 +114,7 @@ List<Integer> listObjc = (List<Integer>)session.getAttribute("min");
             }
         },
         series: [{
-            name: 'Tokyo',
+            name: 'Time',
             data: <%=listObjc %>
         }]
     });
@@ -142,8 +148,8 @@ List<Integer> listObjc = (List<Integer>)session.getAttribute("min");
           </logic:present>
 </div>
  <div>      
-<div id="container" style="width: 500px; height: 300px; margin: 0 auto"></div>
-<div id="container1" style="width: 500px; height: 300px; margin: 0 auto"></div>
+<div id="container" class="show_table"></div>
+<div id="container1" class="show_table"></div>
 </div>
 </div>
 </body>

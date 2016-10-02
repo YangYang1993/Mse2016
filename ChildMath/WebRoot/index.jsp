@@ -58,20 +58,6 @@
         });
       
         /*
-        $("#login_button").click(function(){
-          location.href="page/login.html";
-        });
-        $("#regist_button").click(function(){
-          location.href = "page/regist.html";
-        });
-        $("#little_login").click(function(){
-          location.href="page/login.html";
-        });
-        $("#little_regist").click(function(){
-          location.href = "page/regist.html";
-        });
-        */
-        /*
         //展示第二行文字
         $.showText = function(index){
           $(textArray[index*2+1]).delay(1000).fadeIn(3000);
@@ -305,17 +291,6 @@
         margin-top: 55px;
       }
       /*
-      #login_button{
-        border-radius: 5px;
-        background-color: #00bbee;
-        border-color: #00bbee;
-      }
-      #regist_button{
-        border-radius: 5px;
-        background-color: transparent;
-        border-color: white;
-      }
-
       //第一个介绍页
       #first{
         z-index: 4;
@@ -459,13 +434,6 @@
         text-align: center;
         background-color: #eeeeee;
       }
-      /*
-      #header_body{
-        width: 1200px;
-        height: 50px;
-        margin:0 auto;
-      }
-      */
       #logo{
         width: 40px;
         height: 40px;
@@ -476,14 +444,6 @@
         margin-left: 200px;
       }
       /*
-      #little_button{
-        width: 200px;
-        height: 40px;
-        margin-top: 6px;
-        float: right;
-        text-align: center;
-        visibility: hidden;
-      }
       .xiao{
         width: 80px;
         height: 20px;
@@ -496,19 +456,7 @@
       .xiao:hover{
         cursor: pointer;
       }
-      
-      #little_login{
-        border: solid 1px #00bbee;
-        background-color: #00bbee;
-        color:white;
-      }
-      #little_regist{
-        border: solid 1px transparent;
-        background-color: transparent;
-        color:#00bbee;
-      }
-      */
-      /*小圆点
+      //小圆点
       #label{
         position: fixed;
         width: 14px;
@@ -526,25 +474,9 @@
   </head>
   
   <body>
-    <!--
-    <div id="next_button_box">
-      <a><img id="next_button_img" src="picResources/next_button.png"></a>
-    </div>
-    -->
     <div id="header">
-      <!--
-      <div id="header_body">
-      -->
         <div id="logo"></div>
         <div id="welcome">进入</div>
-        <!--
-        <div id="little_button">
-          <input type="button" class="xiao" id="little_login" value="登录"></input>
-          <input type="button" class="xiao" id="little_regist" value="立即注册"></input>
-        </div>
-        
-      </div>
-      -->
     </div>
     <div id="page">
     </div>
@@ -591,14 +523,6 @@
         <img id="xq5_img1" src="picResources/xiangqing_5_text2.png">
         <img id="xq5_img2" src="picResources/xiangqing_5_text1.png">
       </div>
-    </div>
-    <div id="label">
-      <img src="picResources/label1.png" class="point" id="label0">
-      <img src="picResources/label2.png" class="point" id="label1">
-      <img src="picResources/label2.png" class="point" id="label2">
-      <img src="picResources/label2.png" class="point" id="label3">
-      <img src="picResources/label2.png" class="point" id="label4">
-      <img src="picResources/label2.png" class="point" id="label5">
     </div>
     -->
   </body>
