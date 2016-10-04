@@ -82,8 +82,7 @@
 	}
 </style>
 <script type="text/javascript">
-	$(document).ready(function(){		
-		
+	$(document).ready(function(){				
 		
 		//三个按钮的点击事件
 		$("#prac_function_daily").click(function(){
@@ -91,7 +90,7 @@
 			//alert("h");
 		});
 		$("#prac_function_wrong").click(function(){
-		
+			$.loadPage(6);
 		});
 		$("#prac_function_challenge").click(function(){
 			$.loadPage(5);

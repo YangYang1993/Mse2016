@@ -53,42 +53,42 @@ int grade = user.getGrade();
 		<div class="learn_video" >
 			<img src="../picResources/temp1.png" width="180px" height="180px">
 			<div class="learn_level">
-				<a href="video1.jsp">一年级</a>
+				<a href="video1.jsp">加法运算</a>
 			</div>
 		</div>
 		
 		<div class="learn_video">
 			<img src="../picResources/temp2.png" width="180px" height="180px">
 			<div class="learn_level">
-				<a href="video2.jsp">二年级</a>
+				<a href="video2.jsp">减法运算</a>
 			</div>
 		</div>
 			
 		<div class="learn_video">
 			<img src="../picResources/temp3.png" width="180px" height="180px">
 			<div class="learn_level">
-				<a href="video3.jsp">三年级</a>
+				<a href="video3.jsp">乘法运算</a>
 			</div>
 		</div>
 			
 		<div class="learn_video">
 			<img src="../picResources/temp4.png" width="180px" height="180px">
 			<div class="learn_level">
-				<a href="video4.jsp">四年级</a>
+				<a href="video4.jsp">除法运算</a>
 			</div>
 		</div>
 			
 		<div class="learn_video">
 			<img src="../picResources/temp5.png" width="180px" height="180px">
 			<div class="learn_level">
-				<a href="video5.jsp">五年级</a>
+				<a href="video5.jsp">分数运算</a>
 			</div>
 		</div>
 			
 		<div class="learn_video">
 			<img src="../picResources/temp6.png" width="180px" height="180px">
 			<div class="learn_level">
-				<a href="video6.jsp">六年级</a>
+				<a href="video6.jsp">混合运算</a>
 			</div>
 		</div>		
 	

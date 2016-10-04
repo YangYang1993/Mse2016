@@ -277,9 +277,11 @@
 			case 4:  //加载练习页
 				$("#content_box").load("question.jsp");
 			break;
-			case 5:  //加载练习页
+			case 5:  //加载挑战页
 				$("#content_box").load("challenge.jsp");
 			break;
+			case 6:
+				$("#content_box").load("fault.jsp");
 			/*
 			case -1:  //加载视频页
 				$("#content_box").load("video.jsp");

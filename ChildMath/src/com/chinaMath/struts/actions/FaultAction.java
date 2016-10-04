@@ -208,14 +208,14 @@ public class FaultAction extends DispatchAction{
 			}
 		}
 		//如果文件夹不存在，新建文件夹
-		File folder = new File("C:\\FaultFile");
+		File folder = new File("Mse2016/ChildMath/WebRoot/faultFile");
 		if (!(folder.exists() && folder.isDirectory())){
 			folder.mkdirs();
 		}
 		File file = null;
 		//如果用户没有错题文件，新建错题文件
 		if(faultDAO.getFaultByUserID(userID) == null){
-			String fileAddr = "C:\\FaultFile\\fault-" + userIDStr + ".txt";
+			String fileAddr = "CMse2016/ChildMath/WebRoot/faultFile/fault-" + userIDStr + ".txt";
 			file = new File(fileAddr);
 			createFile(file);
 			Fault fault = new Fault();

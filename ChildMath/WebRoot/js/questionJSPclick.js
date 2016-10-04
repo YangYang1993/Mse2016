@@ -1,5 +1,5 @@
 $.setQstTypeCss = function(qst){
-	//$(".qst_qst_type").css({"border-color":"#c0c0c0","background-color":"transparent","color":"#708069"});
+	$(".qst_qst_type").css({"border-color":"#c0c0c0","background-color":"transparent","color":"#708069"});
 	$(qst).css({"border-color":"#01aaef","background-color":"#01aaef","color":"white"});
 };
 $.removeQstTypeCss = function(qst){
@@ -14,6 +14,12 @@ $(document).ready(function(){
 	var totalMin = 0;
 	var nowSec = 0;
 	var timer;
+	var wrongQuestion = new Array();
+	var wrongAnswer = new Array();
+	var rightAnswer = new Array();
+	var wrongInfo = new Array();
+	var totalFaultNum = 0;
+
 	$.startTime = function(){
 		timer = $.timer(1000, function() {
 			totalSec++;
@@ -38,7 +44,7 @@ $(document).ready(function(){
 		$("#qst_submit").css("visibility","hidden");
 		$("#qst_wrong").css("visibility","visible");
 		$("#qst_again").css("visibility","visible");
-		var wrongArray = new Array();
+		//var wrongArray = new Array();
 		for(var i=0;i<answer.length;i++){
 			if($("#qst_ans" + i).val() != "" && $("#qst_ans" + i).val() == answer[i]){
 				$("#qst_mark" + i).css("background-image", 
@@ -46,16 +52,52 @@ $(document).ready(function(){
 			}else{
 				$("#qst_mark" + i).css("background-image", 
 				"url(../picResources/p_0000_6.png)");
-				var wrongQuestion = {qst:question[i]+""+answer[i]};
-				wrongArray.push(wrongQuestion);
+				var wrongArray = {qst:question[i]+""+$("#qst_ans" + i).val()+""+answer[i]};
+				var wrongQ = {qst:question[i]};
+				var wrongA = {wans:$("#qst_ans" + i).val()};
+				var rightA = {rans:answer[i]};
+				wrongQuestion.push(wrongQ);
+				wrongAnswer.push(wrongA);
+				rightAnswer.push(rightA);
+				wrongInfo.push(wrongArray);
 			}
 		}
-		var wrongInfo = JSON.stringify(wrongArray);
-		
+
+		var wrongArray = JSON.stringify(wrongInfo);
+		var w = JSON.stringify(wrongQuestion);
+		var r = JSON.stringify(wrongAnswer);
+		var a = JSON.stringify(rightAnswer);
+		//输出错题内容
+		console.log("wrongQuestion",w);
+		console.log("wrongAnswer",r);
+		console.log("rightAnswer",a);
+		console.log("wrongArray",wrongArray);
+
 		$.post("/ChildMath/page/addFaults.do?method=addFaults",
-				{wrong: wrongInfo,time: needTime, 
+				{wrong: wrongArray,time: needTime, 
 			userId: parseInt($("#qst_userId").html())});
 	});
+	
+	//添加错题
+	$.addFaults = function(){
+		totalFaultNum = wrongQuestion.length;
+		console.log("totalFaultNum",totalFaultNum);
+		var thisFaultNum = 0;
+		
+		while(thisFaultNum < totalFaultNum){
+			var factor = wrongQuestion[thisFaultNum];
+			var result = wrongAnswer[thisFaultNum];
+			var answer = rightAnswer[thisFaultNum];
+			$("#fault_qst_body").append(
+			"<div class='fault_qst'><div class='fault_qst_qst'>"+ factor + 
+			"</div><div><input type='text' id='fault_ans" + thisFaultNum 
+			+"' class='fault_ans'> "+result+" </input></div><div><input type='button' value='查看答案' id='check_ans" + thisFaultNum +
+			"' class='check_ans' ></input></div><div><input type='button' value='删除错题' id='remove_qst"+ thisFaultNum +"' class='remove_qst'></input></div></div>");
+						
+			thisFaultNum ++;
+		};
+		
+	};
 	//点击再来一套按钮后
 	$("#qst_again").click(function(){
 		$("#qst_start_button").css("visibility","visible");
@@ -65,8 +107,13 @@ $(document).ready(function(){
 	});
 	//点击查看错题按钮后
 	$("#qst_wrong").click(function(){
-
-	});	
+		$.loadPage(6);
+		$.addFaults();
+		
+	});
+	//点击删除错题按钮
+	//点击查看答案按钮
+	//点击保存错题按钮	
 /***************一年级******************/
 	$("#qst_1_0").click(function(){
 		//$("#qst_start_button").css("visibility","visible");
