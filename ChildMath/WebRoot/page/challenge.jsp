@@ -9,11 +9,10 @@
 	padding-top: 20px;
 }
 #chall_info{
-	width: 600px;
+	width: 800px;
 	height: auto;
 	visibility: hidden;
 	float: left;
-	margin-left: 100px;
 }
 /*盛放年级的地方*/
 #chall_grade{
@@ -21,7 +20,6 @@
 	overflow: auto;
 	width: 600px;
 	padding-bottom: 5px;
-	border-bottom: solid 1px #c0c0c0;
 	float: left;
 	margin-left: 100px;
 }
@@ -29,13 +27,13 @@
 	margin: 0px;
 	padding: 0px;
 	outline: none;
-	border: solid 1px #708069;
-	width:120px;
-	height: 20px;
+	border: solid 1px #c0c0c0;
+	width:115px;
+	height: 25px;
 	float: left;
 	margin-right: 20px;
 	margin-bottom: 10px;
-	border-radius: 10px;
+	border-radius: 5px;
 	background-color: transparent;
 	color: #708069;
 	font-family: 黑体;
@@ -49,17 +47,14 @@
 	overflow: auto;
 	padding-top: 10px;
 	padding-bottom: 5px;
-	border-bottom: solid 1px #c0c0c0;
 	float: left;
-	margin-left: 100px;
 }
 /*盛放题目的块*/
 #qst_qst_body{
 	clear: both;
 	overflow: auto;
-	width: 600px;
+	width: 800px;
 	float: left;
-	margin-left: 100px;
 	padding-bottom: 10px;
 }
 #qst_hint{
@@ -123,18 +118,35 @@
 	margin-left: 100px;
 }
 #qst_submit{
-	width: 60px;
-	height: 20px;
-	float: right;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 25px;
 	border: none;
 	outline: none;
 	border-radius: 10px;
 	background-color: #ff0000;
 	color: white;
 	font-family: 黑体;
+	position: absolute;
+	right: 300px;
 	cursor: pointer;
 	visibility: hidden;
 }
+#qst_start_button{
+	width: 60px;
+	height:25px;
+	float: left;
+	margin-left: 370px;
+	border: none;
+	outline: none;
+	background-color: #48b937;
+	color: white;
+	font-family: 黑体;
+	font-size: 0.9em;
+	border-radius: 5px;
+	/*visibility: hidden;*/
+
+	}
 </style>
 <script src="../js/createMathMethods.js"></script>
 <script src="../js/challenge.js"></script>
@@ -168,13 +180,19 @@ if(!session.isNew()){
 }
 int grade = user.getGrade();
 %>
-<div id="chall_grade"></div>
-<div id="chall_qst"></div>
+<div id="chall_grade">
+
+</div>
+<div id="chall_qst">
+	<div id="qst_confirm_type">
+		<input type="button" id="qst_start_button" value="开始"></input>
+	</div>
+</div>
 <div id="qst_qst_body">
 	<div id="qst_hint"></div>
 </div>
 <div id="qst_foot">
-	<input type="button" value="提交" id="qst_submit"></input>
+	<input type="button" value="提交答案" id="qst_submit"></input>
 </div>
 <div id="chall_info"><%=grade %></div>
 </div>

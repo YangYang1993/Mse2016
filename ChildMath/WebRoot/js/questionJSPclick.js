@@ -1,11 +1,10 @@
 $.setQstTypeCss = function(qst){
-	$(".qst_qst_type").css({"border-color":"#708069","background-color":"transparent","color":"#708069"});
+	//$(".qst_qst_type").css({"border-color":"#c0c0c0","background-color":"transparent","color":"#708069"});
 	$(qst).css({"border-color":"#01aaef","background-color":"#01aaef","color":"white"});
 };
-$removeQstTypeCss = function(qst){
-	$(qst).css({"border-color":"#708069","background-color":"transparent","color":"#708069"});
-	$(".qst_qst_type").css({"border-color":"#01aaef","background-color":"#01aaef","color":"white"});
-}
+$.removeQstTypeCss = function(qst){
+	$(qst).css({"border-color":"#c0c0c0","background-color":"transparent","color":"#708069"});
+};
 $(document).ready(function(){
 
 	$.setTop();
@@ -60,8 +59,14 @@ $(document).ready(function(){
 	//点击再来一套按钮后
 	$("#qst_again").click(function(){
 		$("#qst_start_button").css("visibility","visible");
+		$("#qst_wrong").css("visibility","hidden");
+		$("#qst_again").css("visibility","hidden");
+
 	});
-	//点击查看错题按钮后	
+	//点击查看错题按钮后
+	$("#qst_wrong").click(function(){
+
+	});	
 /***************一年级******************/
 	$("#qst_1_0").click(function(){
 		//$("#qst_start_button").css("visibility","visible");
@@ -98,6 +103,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_1_1");
 		});
 	});
 	$("#qst_1_2").click(function(){
@@ -115,6 +121,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_submit").css("visibility","visible");
+			$.removeQstTypeCss("#qst_1_2");
 		});
 	});
 	$("#qst_1_3").click(function(){
@@ -133,6 +140,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_1_3");
 		});
 	});
 	$("#qst_1_4").click(function(){
@@ -152,6 +160,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_1_4");
 		});
 	});
 	$("#qst_1_5").click(function(){
@@ -171,6 +180,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_1_5");
 		});
 	});
 	$("#qst_1_6").click(function(){
@@ -190,6 +200,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_1_6");
 		});
 	});
 //********grade 2***************
@@ -228,6 +239,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_2_1");
 		});
 	});
 	$("#qst_2_2").click(function(){
@@ -246,6 +258,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_2_2");
 		});
 	});
 	$("#qst_2_3").click(function(){
@@ -264,6 +277,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_2_3");
 		});
 	});
 	$("#qst_2_4").click(function(){
@@ -289,6 +303,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_2_4");
 		});
 	});
 	$("#qst_2_5").click(function(){
@@ -316,6 +331,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_2_5");
 		});
 	});
 /****************三年级********************/	
@@ -336,6 +352,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_3_0");
 		});
 	});
 	$("#qst_3_1").click(function(){
@@ -355,6 +372,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_3_1");
 		});
 	});
 	/*****************四年级****************/
@@ -376,6 +394,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_4_0");
 		});
 	});
 	$("#qst_4_1").click(function(){
@@ -394,6 +413,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_4_1");
 		});
 	});
 	/****************五年级**************/
@@ -413,6 +433,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_5_0");
 		});
 	});
 	$("#qst_5_1").click(function(){
@@ -431,6 +452,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_5_1");
 		});
 	});
 	/**************六年级**************/
@@ -450,6 +472,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_6_0");
 		});
 	});
 	$("#qst_6_1").click(function(){
@@ -468,6 +491,7 @@ $(document).ready(function(){
 			$("#qst_again").css("visibility","hidden");
 			$("#qst_wrong").css("visibility","hidden");
 			$("#qst_start_button").css("visibility","hidden");
+			$.removeQstTypeCss("#qst_6_1");
 		});
 	});
 });

@@ -40,7 +40,7 @@
 		margin: 0px;
 		padding: 0px;
 		outline: none;
-		border: solid 1px #708069;
+		border: solid 1px #c0c0c0;
 		width:115px;
 		height: 25px;
 		float: left;

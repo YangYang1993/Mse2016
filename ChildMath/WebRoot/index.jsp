@@ -280,15 +280,22 @@
       .anniu:hover{
         cursor: pointer;
       }
-      #page{
-        background-image:url(picResources/first_page0.jpg); 
-        z-index: 1;
+      #page{ 
+        
         width: 800px;
         height: 900px;
         background-size: 100% 100%;
         position: relative;
         margin: 0 auto;
         margin-top: 55px;
+      }
+      .index_page{
+        z-index: 1;
+        background-image:url(picResources/first_page0.jpg); 
+        width: 800px;
+        height: 900px;
+        background-size: 100% 100%;
+        margin: 0 auto;
       }
       /*
       //第一个介绍页
@@ -479,6 +486,8 @@
         <div id="welcome">进入</div>
     </div>
     <div id="page">
+      <div class="index_page">
+      </div>
     </div>
     <!--
     <div id="welcome" class="page">
