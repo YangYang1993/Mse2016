@@ -1,38 +1,38 @@
 
 var gradeArray = new Array();
-gradeArray[0] = "Ò»";
-gradeArray[1] = "¶ş";
-gradeArray[2] = "Èı";
-gradeArray[3] = "ËÄ";
-gradeArray[4] = "Îå";
-gradeArray[5] = "Áù";
+gradeArray[0] = "ä¸€";
+gradeArray[1] = "äºŒ";
+gradeArray[2] = "ä¸‰";
+gradeArray[3] = "å››";
+gradeArray[4] = "äº”";
+gradeArray[5] = "å…­";
 
-//¸ù¾İµ±Ç°Äê¼¶Ìí¼Ó¿ÉÌôÕ½Äê¼¶
+//æ ¹æ®å½“å‰å¹´çº§æ·»åŠ å¯æŒ‘æˆ˜å¹´çº§
 $.addChooseGrade = function(grade){
 	$("#chall_grade").empty();
 	if(grade<6){
 		for(var i=(grade+1);i<7;i++){
 			$("#chall_grade").append("<input id='chall_grade_"+i+
-					"' type='button' value='ÌôÕ½"+gradeArray[i-1]+
-					"Äê¼¶' class='chall_grade_choose'></input>");
+					"' type='button' value='æŒ‘æˆ˜"+gradeArray[i-1]+
+					"å¹´çº§' class='chall_grade_choose'></input>");
 		}
 	}else{
-		$("#chall_grade").append("ÄãÌ«Å£±ÆÁË£¬ÒÑ¾­ÁùÄê¼¶ÁË");
+		$("#chall_grade").append("ä½ å¤ªç‰›é€¼äº†ï¼Œå·²ç»å…­å¹´çº§äº†");
 	}
 	$.setTop();
 };
 
-//ÉèÖÃÑ¡ÔñÄê¼¶°´Å¥±»µãºóµÄcss
+//è®¾ç½®é€‰æ‹©å¹´çº§æŒ‰é’®è¢«ç‚¹åçš„css
 $.setChallGradeCss = function(qst){
 	$(".chall_grade_choose").css({"border-color":"#708069","background-color":"transparent","color":"#708069"});
 	$(qst).css({"border-color":"#01aaef","background-color":"#01aaef","color":"white"});
 };
-//ÌâĞÍ°´Å¥±»µã»÷ºócss
+//é¢˜å‹æŒ‰é’®è¢«ç‚¹å‡»åcss
 $.setQstTypeCss = function(qst){
 	$(".qst_qst_type").css({"border-color":"#708069","background-color":"transparent","color":"#708069"});
 	$(qst).css({"border-color":"#01aaef","background-color":"#01aaef","color":"white"});
 };
-//Ìá½»´ğ°¸ºó
+//æäº¤ç­”æ¡ˆå
 $.showAnswer = function(){
 	var wrongArray = new Array();
 	for(var i=0;i<answer.length;i++){
@@ -47,7 +47,7 @@ $.showAnswer = function(){
 	}
 };
 
-//Ìí¼ÓÌâÄ¿
+//æ·»åŠ é¢˜ç›®
 $.addChallQst = function(qst){
 	$("#chall_qst").empty();
 	var id = $(qst).attr("id");
@@ -56,36 +56,36 @@ $.addChallQst = function(qst){
 	switch(id){
 	case 2:
 		$("#chall_qst").append(
-				"<input class='qst_qst_type' type='button' value='Á½Î»Êı¼Ó·¨' id='qst_2_0'></input>"+
-				"<input class='qst_qst_type' type='button' value='Á½Î»Êı¼õ·¨' id='qst_2_1'></input>"+
-				"<input class='qst_qst_type' type='button' value='±íÄÚ³Ë·¨' id='qst_2_2'></input>"+
-				"<input class='qst_qst_type' type='button' value='±íÄÚ³ı·¨' id='qst_2_3'></input>"+
-				"<input class='qst_qst_type' type='button' value='¼Ó¼õ³Ë³ı»ìºÏ' id='qst_2_4'></input>"+
-				"<input class='qst_qst_type' type='button' value='´øÀ¨ºÅ' id='qst_2_5'></input>"
+				"<input class='qst_qst_type' type='button' value='ä¸¤ä½æ•°åŠ æ³•' id='qst_2_0'></input>"+
+				"<input class='qst_qst_type' type='button' value='ä¸¤ä½æ•°å‡æ³•' id='qst_2_1'></input>"+
+				"<input class='qst_qst_type' type='button' value='è¡¨å†…ä¹˜æ³•' id='qst_2_2'></input>"+
+				"<input class='qst_qst_type' type='button' value='è¡¨å†…é™¤æ³•' id='qst_2_3'></input>"+
+				"<input class='qst_qst_type' type='button' value='åŠ å‡ä¹˜é™¤æ··åˆ' id='qst_2_4'></input>"+
+				"<input class='qst_qst_type' type='button' value='å¸¦æ‹¬å·' id='qst_2_5'></input>"
 		);
 	break;
 	case 3:
 		$("#chall_qst").append(
-				"<input class='qst_qst_type' type='button' value='Ò»Î»Êı³Ë³ı·¨' id='qst_3_0'></input>"+
-				"<input class='qst_qst_type' type='button' value='Á½Î»Êı³Ë³ı·¨' id='qst_3_1'></input>"
+				"<input class='qst_qst_type' type='button' value='ä¸€ä½æ•°ä¹˜é™¤æ³•' id='qst_3_0'></input>"+
+				"<input class='qst_qst_type' type='button' value='ä¸¤ä½æ•°ä¹˜é™¤æ³•' id='qst_3_1'></input>"
 		);
 	break;
 	case 4:
 		$("#chall_qst").append(
-				"<input class='qst_qst_type' type='button' value='½Ó½üÕûÊ®Õû°Ù¼Ó¼õ' id='qst_4_0'></input>"+				
-				"<input class='qst_qst_type' type='button' value='½Ó½üÕûÊ®Õû°Ù³Ë·¨' id='qst_4_1'></input>"
+				"<input class='qst_qst_type' type='button' value='æ¥è¿‘æ•´åæ•´ç™¾åŠ å‡' id='qst_4_0'></input>"+				
+				"<input class='qst_qst_type' type='button' value='æ¥è¿‘æ•´åæ•´ç™¾ä¹˜æ³•' id='qst_4_1'></input>"
 		);
 	break;
 	case 5:
 		$("#chall_qst").append(
-				"<input class='qst_qst_type' type='button' value='Ğ¡Êı³Ë·¨' id='qst_5_0'></input>"+
-				"<input class='qst_qst_type' type='button' value='Ğ¡Êı³ı·¨' id='qst_5_1'></input>"
+				"<input class='qst_qst_type' type='button' value='å°æ•°ä¹˜æ³•' id='qst_5_0'></input>"+
+				"<input class='qst_qst_type' type='button' value='å°æ•°é™¤æ³•' id='qst_5_1'></input>"
 		);
 	break;
 	case 6:
 		$("#chall_qst").append(
-				"<input class='qst_qst_type' type='button' value='×î´ó¹«Ô¼Êı' id='qst_6_0'></input>"+
-				"<input class='qst_qst_type' type='button' value='×îĞ¡¹«±¶Êı' id='qst_6_1'></input>"
+				"<input class='qst_qst_type' type='button' value='æœ€å¤§å…¬çº¦æ•°' id='qst_6_0'></input>"+
+				"<input class='qst_qst_type' type='button' value='æœ€å°å…¬å€æ•°' id='qst_6_1'></input>"
 		);
 	break;
 	}
@@ -152,7 +152,7 @@ $.addChallQst = function(qst){
 			$.bracketSecond(2, 9);
 			$.setTop();
 	});
-	/****************ÈıÄê¼¶********************/	
+	/****************ä¸‰å¹´çº§********************/	
 	$("#qst_3_0").click(function(){
 		$("#qst_submit").css("visibility","visible");
 			$("#qst_qst_body").empty();
@@ -169,7 +169,7 @@ $.addChallQst = function(qst){
 			$.twoMultiDiviThird(10, 1);
 			$.setTop();
 	});
-	/*****************ËÄÄê¼¶****************/
+	/*****************å››å¹´çº§****************/
 	$("#qst_4_0").click(function(){
 		$("#qst_submit").css("visibility","visible");
 			$("#qst_qst_body").empty();
@@ -186,7 +186,7 @@ $.addChallQst = function(qst){
 			$.simpleMultiFourth(20);
 			$.setTop();
 	});
-	/****************ÎåÄê¼¶**************/
+	/****************äº”å¹´çº§**************/
 	$("#qst_5_0").click(function(){
 		$("#qst_submit").css("visibility","visible");
 			$("#qst_qst_body").empty();
@@ -201,7 +201,7 @@ $.addChallQst = function(qst){
 			$.diviFifth(20);
 			$.setTop();
 	});
-	/**************ÁùÄê¼¶**************/
+	/**************å…­å¹´çº§**************/
 	$("#qst_6_0").click(function(){
 		$("#qst_submit").css("visibility","visible");
 			$("#qst_qst_body").empty();

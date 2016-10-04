@@ -77,7 +77,7 @@
 	margin-top: 5px;
 	padding-left: 0;
 	padding-right: 0;
-	//border-bottom: solid 1px #c0c0c0;
+	border-bottom: solid 1px #c0c0c0;
 	text-align: right;
 }
 .qst_qst p{

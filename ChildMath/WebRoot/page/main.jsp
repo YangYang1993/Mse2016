@@ -249,13 +249,13 @@
 	
 	$.loadPage = function(index){
 		switch (index){
-			case 0: //加载荣誉页
+			case 0: //加载练习历史数据页
 				$("#practice_mark").css("background-color","transparent");
 				$("#self_mark").css("background-color","transparent");
 				$("#head_pic_box").css("background-image","url(../picResources/login_0038_head_bottom2.png)");
 				$("#content_box").load("honor.jsp");
 			break;
-			case 1: //加载自我学习页
+			case 1: //加载视频学习页
 				$("#practice_mark").css("background-color","transparent");
 				$("#head_pic_box").css("background-image","url(../picResources/login_0038_head-bottom.png)");
 				$("#self_mark").css("background-color","#007fb2");
@@ -273,15 +273,18 @@
 				$("#practice_mark").css("background-color","transparent");
 				$("#content_box").load("personal_info.jsp");
 			break;
-			case -1:  //加载视频页
-				$("#content_box").load("video.jsp");
-			break;
+			
 			case 4:  //加载练习页
 				$("#content_box").load("question.jsp");
 			break;
 			case 5:  //加载练习页
 				$("#content_box").load("challenge.jsp");
 			break;
+			/*
+			case -1:  //加载视频页
+				$("#content_box").load("video.jsp");
+			break;
+			*/
 		}
 	};
 

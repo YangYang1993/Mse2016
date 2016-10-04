@@ -13,37 +13,40 @@
 		clear: both;
 		overflow: auto;
 		width: 500px;
-		float: left;
-		margin-left: 100px;
+		position: relative;
+		margin-left: 0 auto;
+		padding-left: 200px;
 	}
 	#qst_confirm_type{
-		width: 100px;
-		float: left;
+		/*width: 100px;
+		float: left;*/
 	}
 	#qst_start_button{
 		width: 60px;
-		height:20px;
-		float: right;
+		height:25px;
+		float: left;
+		margin-left: 370px;
 		border: none;
 		outline: none;
-		background-color: #3d9140;
+		background-color: #48b937;
 		color: white;
 		font-family: 黑体;
-		font-size: 0.8em;
-		border-radius: 10px;
-		visibility: hidden;
+		font-size: 0.9em;
+		border-radius: 5px;
+		/*visibility: hidden;*/
+
 	}
 	.qst_qst_type{
 		margin: 0px;
 		padding: 0px;
 		outline: none;
 		border: solid 1px #708069;
-		width:120px;
-		height: 20px;
+		width:115px;
+		height: 25px;
 		float: left;
 		margin-right: 20px;
 		margin-bottom: 10px;
-		border-radius: 10px;
+		border-radius: 5px;
 		background-color: transparent;
 		color: #708069;
 		font-family: 黑体;
@@ -53,64 +56,72 @@
 	#qst_qst_body{
 		clear: both;
 		overflow: auto;
-		width: 600px;
+		width: 800px;
 		float: left;
-		margin-left: 100px;
+		padding-left: 100px;
 		padding-bottom: 10px;
-		border-top: solid 1px #c0c0c0;
+		/*border-top: solid 1px #c0c0c0;*/
+		margin-top: 15px;
 	}
 	#qst_hint{
 		background-image: url(../picResources/tishi.png);
 		background-size: 100% 100%;
 		width: 400px;
 		height: 300px;
-		margin: 0 auto;
+		float: left;
+		margin-left: 100px;
+		/*margin: 0 auto;*/
 	}
-	/*一题一行*/
+	/*题行*/
 	.qst_qst{
-		width: auto;
-		height: 40px;
+		width: 350px;
+		height: 35px;
 		margin: 0 auto;
 		margin-top: 5px;
-		padding-left: 0;
+		padding-left: 50px;
 		padding-right: 0;
-		//border-bottom: solid 1px #c0c0c0;
-		text-align: right;
+		border-bottom: solid 1px #c0c0c0;
+		text-align: left;
+		float: left;
+
 	}
-	.qst_qst p{
+	.qst_qst div{
+		display: inline-block;
+	}
+	.qst_qst_qst{
 		margin: 0;
 		padding: 0;
-		width: 350px;
-		height: 40px;
+		height: 35px;
 		line-height: 40px;
 		float: left;
-		text-align: right;
+		text-align: left;
 		font-family: 黑体;
 		font-size: 1.2em;
+		
 	}
 	.qst_ans{
-		width: 80px;
-		height: 30px;
-		margin: 0;
-		padding: 0;
+		width: 60px;
+		height: 35px;
+		/*margin: 0;		
+		margin-top: -35px;*/
+		margin-left: 8px;
+		padding: 0 10px;
 		float: left;
-		margin-top: 5px;
-		margin-left: 10px;
-		padding-left: 10px;
-		padding-right: 10px;
 		outline: none;
 		border: solid 1px #c0c0c0;
 		border-radius: 15px;
 		font-family: 黑体;
 		font-size: 1.2em;
+		
 	}
 	.qst_mark{
-		width: 30px;
-		height: 30px;
-		float: left;
-		margin-top: 5px;
+		width: 35px;
+		height: 35px;
+		/*float: left;
+		margin-top: -35px;*/
 		margin-left: 5px;
 		background-size: 100% 100%;
+		
 	}
 	/*提交按钮*/
 	#qst_foot{
@@ -120,15 +131,47 @@
 		margin-left: 100px;
 	}
 	#qst_submit{
-		width: 60px;
-		height: 20px;
-		float: right;
+		padding-left: 10px;
+		padding-right: 10px;
+		height: 25px;
 		border: none;
 		outline: none;
 		border-radius: 10px;
 		background-color: #ff0000;
 		color: white;
 		font-family: 黑体;
+		position: absolute;
+		right: 300px;
+		cursor: pointer;
+		visibility: hidden;
+	}
+	#qst_wrong{
+		padding-left: 10px;
+		padding-right: 10px;
+		height: 25px;
+		border: none;
+		outline: none;
+		border-radius: 10px;
+		background-color: #ff0000;
+		color: white;
+		font-family: 黑体;
+		position: absolute;
+		right: 380px;
+		cursor: pointer;
+		visibility: hidden;
+	}
+	#qst_again{
+		padding-left: 10px;
+		padding-right: 10px;
+		height: 25px;
+		border: none;
+		outline: none;
+		border-radius: 10px;
+		background-color: #48b937;
+		color: white;
+		font-family: 黑体;
+		position: absolute;
+		right: 300px;
 		cursor: pointer;
 		visibility: hidden;
 	}
@@ -138,31 +181,35 @@
 	}
 	/*计时器*/
 	#qst_time{
-		position: fixed;
-		margin-left: 10px;
-		margin-top: 100px;
+		position: relative;
+		left: 55px;
+		top: -85px;
 		z-index: 6;
-		width: 120px;
-		height: 120px;
+		width: 100px;
+		height: 100px;
 		background-image: url(../picResources/clock2.png);
 		background-size: 100% 100%;
+		visibility: hidden;
 	}
 	.qst_m_s{
 		float: left;
+		color: red;
+		position: absolute;		
+		left: 40px;
+		font-family: 黑体;
+		font-size: 1.3em;
+		/*top: 36px;
 		width: 120px;
 		height:30px;
-		font-family: 黑体;
-		font-size: 1.5em;
+		line-height: 30px;		
 		line-height: 30px;
-		color: red;
-		line-height: 30px;
-		text-align: center;
+		text-align: center;*/
 	}
 	#qst_min{
-		margin-top: 30px;
+		margin-top: 28px;
 	}
 	#qst_sec{
-		margin-top: 0px;
+		margin-top: 52px;
 	}
 </style>
 <script src="../js/jquery.timer.js"></script>
@@ -236,10 +283,12 @@ switch (grade){
 	</div>
 	<div id="qst_foot">
 		<div id="qst_userId"><%=userId %></div>
-		<input type="button" value="提交" id="qst_submit"></input>
+		<input type="button" value="提交答案" id="qst_submit"></input>
+		<input type="button" value="查看错题" id="qst_wrong"></input>
+		<input type="button" value="再来一套" id="qst_again"></input>
 	</div>
 	<div id="qst_time">
-		<div class="qst_m_s" id="qst_min">0</div>
-		<div class="qst_m_s" id="qst_sec">0</div>
+		<span class="qst_m_s" id="qst_min">0</span>
+		<span class="qst_m_s" id="qst_sec">0</span>
 	</div>
 </div>

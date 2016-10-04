@@ -1,3 +1,4 @@
+
 var question = new Array();
 var answer = new Array();
 var totalFormulaNum = 0;
@@ -6,9 +7,9 @@ $.addFormula = function(formula, result){
 	question[question.length] = formula;
 	answer[answer.length] = result;
 	$("#qst_qst_body").append(
-		"<div class='qst_qst'><p>"+ formula + 
-		"</p><input type='text' id='qst_ans" + totalFormulaNum 
-		+"' class='qst_ans'></input><div class='qst_mark' id='qst_mark"+
+		"<div class='qst_qst'><div class='qst_qst_qst'>"+ formula + 
+		"</div><div><input type='text' id='qst_ans" + totalFormulaNum 
+		+"' class='qst_ans'></input></div><div class='qst_mark' id='qst_mark"+
 		totalFormulaNum + "'></div></div>");
 };
 
