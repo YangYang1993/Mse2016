@@ -1,3 +1,4 @@
+
 $.setQstTypeCss = function(qst){
 	$(".qst_qst_type").css({"border-color":"#c0c0c0","background-color":"transparent","color":"#708069"});
 	$(qst).css({"border-color":"#01aaef","background-color":"#01aaef","color":"white"});
@@ -9,7 +10,7 @@ $(document).ready(function(){
 
 	$.setTop();
 	
-	//¼ÆÊ±ÓÃµÄ
+	//è®¡æ—¶ç”¨çš„
 	var totalSec = 0;
 	var totalMin = 0;
 	var nowSec = 0;
@@ -31,7 +32,7 @@ $(document).ready(function(){
 		//$("#qst_start_button").css("visibility","hidden");
 	};
 	
-	//µã»÷Ìá½»°´Å¥ºó
+	//ç‚¹å‡»æäº¤æŒ‰é’®å
 	$("#qst_submit").click(function(){
 		var needTime = totalSec;
 		timer.stop();
@@ -63,62 +64,77 @@ $(document).ready(function(){
 			}
 		}
 
+		/*
 		var wrongArray = JSON.stringify(wrongInfo);
-		var w = JSON.stringify(wrongQuestion);
-		var r = JSON.stringify(wrongAnswer);
-		var a = JSON.stringify(rightAnswer);
-		//Êä³ö´íÌâÄÚÈİ
-		console.log("wrongQuestion",w);
-		console.log("wrongAnswer",r);
-		console.log("rightAnswer",a);
-		console.log("wrongArray",wrongArray);
+		//var w = JSON.stringify(wrongQuestion);
+		//var r = JSON.stringify(wrongAnswer);
+		//var a = JSON.stringify(rightAnswer);
+		//è¾“å‡ºé”™é¢˜å†…å®¹
+		//console.log("wrongQuestion",w);
+		//console.log("wrongAnswer",r);
+		//console.log("rightAnswer",a);
+		//console.log("wrongArray",wrongArray);
 
 		$.post("/ChildMath/page/addFaults.do?method=addFaults",
 				{wrong: wrongArray,time: needTime, 
 			userId: parseInt($("#qst_userId").html())});
+		*/
 	});
 	
-	//Ìí¼Ó´íÌâ
-	$.addFaults = function(){
+	//æ·»åŠ é”™é¢˜
+	$.addFault = function(){
 		totalFaultNum = wrongQuestion.length;
-		console.log("totalFaultNum",totalFaultNum);
 		var thisFaultNum = 0;
 		
 		while(thisFaultNum < totalFaultNum){
-			var factor = wrongQuestion[thisFaultNum];
-			var result = wrongAnswer[thisFaultNum];
-			var answer = rightAnswer[thisFaultNum];
-			$("#fault_qst_body").append(
-			"<div class='fault_qst'><div class='fault_qst_qst'>"+ factor + 
-			"</div><div><input type='text' id='fault_ans" + thisFaultNum 
-			+"' class='fault_ans'> "+result+" </input></div><div><input type='button' value='²é¿´´ğ°¸' id='check_ans" + thisFaultNum +
-			"' class='check_ans' ></input></div><div><input type='button' value='É¾³ı´íÌâ' id='remove_qst"+ thisFaultNum +"' class='remove_qst'></input></div></div>");
-						
+			var factor = wrongQuestion[thisFaultNum].qst;
+			var result = wrongAnswer[thisFaultNum].wans;
+			var answer = rightAnswer[thisFaultNum].rans;
+
+			$("#qst_qst_body").append(
+			"<div class='fault_qst'><div class='qst_qst_qst'>"+ factor + 
+			"</div><div><input type='text' id='qst_ans" + thisFaultNum 
+			+"' class='qst_ans' value="+result+"></input></div><div><input type='button' value='æŸ¥çœ‹ç­”æ¡ˆ' id='check_ans" + thisFaultNum +
+			"' class='check_ans' ></input></div><div><input type='button' value='åˆ é™¤é”™é¢˜' id='remove_qst"+ thisFaultNum +"' class='remove_qst'></input></div></div>");
+					
 			thisFaultNum ++;
+
 		};
 		
 	};
-	//µã»÷ÔÙÀ´Ò»Ì×°´Å¥ºó
+	//ç‚¹å‡»å†æ¥ä¸€å¥—æŒ‰é’®å
 	$("#qst_again").click(function(){
 		$("#qst_start_button").css("visibility","visible");
 		$("#qst_wrong").css("visibility","hidden");
 		$("#qst_again").css("visibility","hidden");
 
 	});
-	//µã»÷²é¿´´íÌâ°´Å¥ºó
+	//ç‚¹å‡»æŸ¥çœ‹é”™é¢˜æŒ‰é’®å
 	$("#qst_wrong").click(function(){
-		$.loadPage(6);
-		$.addFaults();
+		//$.loadPage(6);
+		$("#qst_qst_body").empty();
+		$("#qst_wrong").css("visibility","hidden");
+		$("#qst_again").css("visibility","hidden");
+		$("#qst_time").css("visibility","hidden");
+		$("#add_fault").css("visibility","visible");
+		$.addFault();
 		
 	});
-	//µã»÷É¾³ı´íÌâ°´Å¥
-	//µã»÷²é¿´´ğ°¸°´Å¥
-	//µã»÷±£´æ´íÌâ°´Å¥	
-/***************Ò»Äê¼¶******************/
+
+	//ç‚¹å‡»åˆ é™¤é”™é¢˜æŒ‰é’®
+	//ç‚¹å‡»æŸ¥çœ‹ç­”æ¡ˆæŒ‰é’®
+	//ç‚¹å‡»ä¿å­˜é”™é¢˜æŒ‰é’®	
+	$("#add_fault").click(function(){
+		$.post("/ChildMath/page/addFaults.do?method=addFaults",
+				{wrong: wrongInfo, 
+			userId: parseInt($("#qst_userId").html())});
+		alert("æœ¬æ¬¡é”™é¢˜å·²ä¿å­˜è‡³é”™é¢˜æœ¬ï½");
+	});
+/***************ä¸€å¹´çº§******************/
 	$("#qst_1_0").click(function(){
 		//$("#qst_start_button").css("visibility","visible");
 		$.setQstTypeCss("#qst_1_0");
-		$('#qst_start_button').unbind("click"); //ÒÆ³ıclick
+		$('#qst_start_button').unbind("click"); //ç§»é™¤click
 		$("#qst_start_button").click(function(){
 			$("#qst_time").css("visibility","visible");
 			$("#qst_qst_body").empty();
@@ -381,7 +397,7 @@ $(document).ready(function(){
 			$.removeQstTypeCss("#qst_2_5");
 		});
 	});
-/****************ÈıÄê¼¶********************/	
+/****************ä¸‰å¹´çº§********************/	
 	$("#qst_3_0").click(function(){
 		//$("#qst_start_button").css("visibility","visible");
 		$.setQstTypeCss("#qst_3_0");
@@ -422,7 +438,7 @@ $(document).ready(function(){
 			$.removeQstTypeCss("#qst_3_1");
 		});
 	});
-	/*****************ËÄÄê¼¶****************/
+	/*****************å››å¹´çº§****************/
 	$("#qst_4_0").click(function(){
 		//$("#qst_start_button").css("visibility","visible");
 		$.setQstTypeCss("#qst_4_0");
@@ -463,7 +479,7 @@ $(document).ready(function(){
 			$.removeQstTypeCss("#qst_4_1");
 		});
 	});
-	/****************ÎåÄê¼¶**************/
+	/****************äº”å¹´çº§**************/
 	$("#qst_5_0").click(function(){
 		//$("#qst_start_button").css("visibility","visible");
 		$.setQstTypeCss("#qst_5_0");
@@ -502,7 +518,7 @@ $(document).ready(function(){
 			$.removeQstTypeCss("#qst_5_1");
 		});
 	});
-	/**************ÁùÄê¼¶**************/
+	/**************å…­å¹´çº§**************/
 	$("#qst_6_0").click(function(){
 		//$("#qst_start_button").css("visibility","visible");
 		$.setQstTypeCss("#qst_6_0");

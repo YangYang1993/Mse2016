@@ -54,28 +54,32 @@
 		color: white;
 		cursor: pointer;
 	}
+
 	/*功能模块*/
 	#function_box{
 		height: 80px;
 		width: 800px;
 		background-color: #01aaef;
+		margin-bottom: 15px;
 	}
 	#function_box a:hover{
 		cursor: pointer;
 	}
 	.learn_box{ /*两边的功能*/
-		width: 160px;
+		width: 60px;
 		height:60px;
 		float: left;
 		background-size: 100% 100%;
-		margin-top: 10px;
+		margin-left: 36px;
+		margin-right: 36px;
 		text-decoration: none;
 		outline: none;
 	}
 	.learn_box img{
-		width: 160px;
-		height: 60px;
+		width: 60px;
+		height: 55px;
 		border: 0;
+		margin-right: 50px;
 	}
 	#practice_box{
 		margin-left: 100px;
@@ -184,7 +188,6 @@
 		z-index: -1;
 		width: 100%;
 		height: 90px;
-		/*border-top: solid 1px #c0c0c0;*/
 	}
 	#back_footer2_box{
 		position: absolute;
@@ -193,9 +196,7 @@
 		z-index: -1;
 		width: 100%;
 		height: 26px;
-		/*border-top: solid 1px #c0c0c0;*/
 	}
-	/**/
 	#content_box{
 		width: 800px;
 		height: auto;
@@ -249,39 +250,47 @@
 	
 	$.loadPage = function(index){
 		switch (index){
-			case 0: //加载练习历史数据页
+			case 0: //加载我的徽章页
+				/*
 				$("#practice_mark").css("background-color","transparent");
 				$("#self_mark").css("background-color","transparent");
 				$("#head_pic_box").css("background-image","url(../picResources/login_0038_head_bottom2.png)");
+				*/
 				$("#content_box").load("honor.jsp");
 			break;
-			case 1: //加载视频学习页
+			case 1: //加载快乐自学页
+				/*
 				$("#practice_mark").css("background-color","transparent");
 				$("#head_pic_box").css("background-image","url(../picResources/login_0038_head-bottom.png)");
 				$("#self_mark").css("background-color","#007fb2");
+				*/
 				$("#content_box").load("self_learn.jsp");
 			break;
-			case 2: //加载练习页
+			case 2: //加载我的练习页
+				/*
 				$("#head_pic_box").css("background-image","url(../picResources/login_0038_head-bottom.png)");
 				$("#self_mark").css("background-color","transparent");
 				$("#practice_mark").css("background-color","#007fb2");
+				*/
 				$("#content_box").load("self_practice.jsp");
 			break;
 			case 3: //加载个人信息页
+				/*
 				$("#head_pic_box").css("background-image","url(../picResources/login_0038_head-bottom.png)");
 				$("#self_mark").css("background-color","transparent");
 				$("#practice_mark").css("background-color","transparent");
+				*/
 				$("#content_box").load("personal_info.jsp");
 			break;
 			
-			case 4:  //加载练习页
+			case 4:  //加载每日练习页
 				$("#content_box").load("question.jsp");
 			break;
-			case 5:  //加载挑战页
+			case 5:  //加载自我挑战页
 				$("#content_box").load("challenge.jsp");
 			break;
-			case 6:
-				$("#content_box").load("fault.jsp");
+			case 6:  //加载错题本页
+				$("#content_box").load("fault_book.jsp");
 			/*
 			case -1:  //加载视频页
 				$("#content_box").load("video.jsp");
@@ -291,8 +300,8 @@
 	};
 
 	$(document).ready(function(){
-		$.loadPage(0);
-		
+		$.loadPage(4);
+		/*
 		$("#personal_info").click(function(){
 			$.loadPage(0);
 		});
@@ -303,7 +312,8 @@
 
 		$("#practice_box").click(function(){
 			$.loadPage(2);
-		});		
+		});	
+		*/
 	});
 </script>
 </head>
@@ -312,11 +322,16 @@
  User user = null;
  //if(!session.isNew()){
     user = (User)session.getAttribute("user");
-    //} %>
+    //} 
+%>
+
 <div id="back_head_box"></div>
 <div id="back_function_box"></div>
+
 <div id="back_footer1_box"></div>
 <div id="back_footer2_box"></div>
+
+
 <div id="biggest_box">
 	<div id="head_box">
 		<div id="logo">➕➖✖️➗我会算</div>
@@ -328,16 +343,38 @@
 		</div>
 	</div>
 	<div id="function_box">
-		<a class="learn_box" id="practice_box"><img src="../picResources/my_practice.png"></a>
-		<div id="head_pic_box">
-			<a id="personal_info"><img src="../picResources/login_0038_head.png"></a>
-		</div>
-		<a class="learn_box" id="self_box"><img src="../picResources/self_taught.png"></a>
+		<a class="learn_box" id="my_practice" onclick="$.loadPage(4)">
+			<img src="../picResources/my_practice.png">每日练习
+		</a>
+		<a class="learn_box" id="fault_book" onclick="$.loadPage(6)">
+			<img src="../picResources/my_practice.png">错题本
+		</a>
+		<a class="learn_box" id="my_honor" onclick="$.loadPage(0)">
+			<img src="../picResources/my_practice.png">我的徽章
+		</a>
+		<a class="learn_box" id="challenge_self" onclick="$.loadPage(5)">
+			<img src="../picResources/my_practice.png">挑战自我
+		</a>
+		<a class="learn_box" id="self_learn" onclick="$.loadPage(1)">
+			<img src="../picResources/my_practice.png">快乐自学
+		</a>
+		<a class="learn_box" id="self_info" onclick="$.loadPage(3)">
+			<img src="../picResources/my_practice.png">个人信息
+		</a>
+			<!--
+			<a class="learn_box" id="practice_box"><img src="../picResources/my_practice.png"></a>
+			<div id="head_pic_box">
+				<a id="personal_info"><img src="../picResources/login_0038_head.png"></a>
+			</div>
+			<a class="learn_box" id="self_box"><img src="../picResources/self_taught.png"></a>
+			-->
 	</div>
+	<!--
 	<div id="mark_box">
 		<div id="practice_mark"></div>
 		<div id="self_mark"></div>
 	</div>
+	-->
 	<div id="content_box">
 		
 	</div>

@@ -211,6 +211,70 @@
 	#qst_sec{
 		margin-top: 52px;
 	}
+	.fault_qst{
+		width: 500px;
+		height: 35px;
+		margin: 0 auto;
+		margin-top: 5px;
+		padding-left: 150px;
+		padding-right: 0;
+		border-bottom: solid 1px #c0c0c0;
+		text-align: left;
+		float: left;
+
+	}
+	.fault_qst div{
+		display: inline-block;
+	}
+	#add_fault{
+		padding-left: 10px;
+		padding-right: 10px;
+		height: 25px;
+		border: none;
+		outline: none;
+		border-radius: 10px;
+		background-color: #ff0000;
+		color: white;
+		font-family: 黑体;
+		position: absolute;
+		right: 300px;
+		cursor: pointer;
+		visibility: hidden;
+		
+	}
+	.remove_qst{
+		padding-left: 10px;
+		padding-right: 10px;
+		height: 25px;
+		border: none;
+		outline: none;
+		border-radius: 10px;
+		background-color: #ff0000;
+		color: white;
+		font-family: 黑体;
+		position: absolute;
+		/*right: 380px;*/
+		cursor: pointer;
+		position: relative;
+		left: 35px;
+	}	
+	.check_ans{
+		padding-left: 10px;
+		padding-right: 10px;
+		height: 25px;
+		border: none;
+		outline: none;
+		border-radius: 10px;
+		background-color: #48b937;
+		color: white;
+		font-family: 黑体;
+		position: absolute;
+		/*right: 300px;*/
+		cursor: pointer;
+		position: relative;
+		left: 15px;
+			
+	}
 </style>
 <script src="../js/jquery.timer.js"></script>
 <script src="../js/createMathMethods.js"></script>
@@ -286,7 +350,9 @@ switch (grade){
 		<input type="button" value="提交答案" id="qst_submit"></input>
 		<input type="button" value="查看错题" id="qst_wrong"></input>
 		<input type="button" value="再来一套" id="qst_again"></input>
+		<input type="button" value="保存错题" id="add_fault"></input>
 	</div>
+
 	<div id="qst_time">
 		<span class="qst_m_s" id="qst_min">0</span>
 		<span class="qst_m_s" id="qst_sec">0</span>
