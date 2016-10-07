@@ -212,7 +212,7 @@
 		margin-top: 52px;
 	}
 	.fault_qst{
-		width: 500px;
+		width: 400px;
 		height: 35px;
 		margin: 0 auto;
 		margin-top: 5px;
@@ -242,6 +242,7 @@
 		visibility: hidden;
 		
 	}
+	/*
 	.remove_qst{
 		padding-left: 10px;
 		padding-right: 10px;
@@ -253,10 +254,11 @@
 		color: white;
 		font-family: 黑体;
 		position: absolute;
-		/*right: 380px;*/
+		
 		cursor: pointer;
 		position: relative;
-		left: 35px;
+		left: 55px;
+		bottom: 15px;
 	}	
 	.check_ans{
 		padding-left: 10px;
@@ -269,11 +271,18 @@
 		color: white;
 		font-family: 黑体;
 		position: absolute;
-		/*right: 300px;*/
+		
 		cursor: pointer;
 		position: relative;
-		left: 15px;
-			
+		left: 60px;
+		bottom: 15px;	
+	}
+	*/
+	.show_ans{
+		position: relative;
+		bottom: 10px;
+		left: 20px;
+		font-size: 1.2em;
 	}
 </style>
 <script src="../js/jquery.timer.js"></script>
@@ -342,6 +351,7 @@ switch (grade){
 	<div id="qst_confirm_type">
 		<input type="button" id="qst_start_button" value="开始"></input>
 	</div>
+	<form>
 	<div id="qst_qst_body">
 		<div id="qst_hint"></div>
 	</div>
@@ -352,7 +362,7 @@ switch (grade){
 		<input type="button" value="再来一套" id="qst_again"></input>
 		<input type="button" value="保存错题" id="add_fault"></input>
 	</div>
-
+	</form>
 	<div id="qst_time">
 		<span class="qst_m_s" id="qst_min">0</span>
 		<span class="qst_m_s" id="qst_sec">0</span>

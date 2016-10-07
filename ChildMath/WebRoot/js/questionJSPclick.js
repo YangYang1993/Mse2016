@@ -94,14 +94,21 @@ $(document).ready(function(){
 			$("#qst_qst_body").append(
 			"<div class='fault_qst'><div class='qst_qst_qst'>"+ factor + 
 			"</div><div><input type='text' id='qst_ans" + thisFaultNum 
-			+"' class='qst_ans' value="+result+"></input></div><div><input type='button' value='查看答案' id='check_ans" + thisFaultNum +
-			"' class='check_ans' ></input></div><div><input type='button' value='删除错题' id='remove_qst"+ thisFaultNum +"' class='remove_qst'></input></div></div>");
-					
+			+"' class='qst_ans' value="+result+"></input></div><div class='show_ans'><span id='right_ans"
+			+ thisFaultNum + "'>正确答案: "+ answer + "</span></div></div>");
+			/*<div><input type='button' value='查看答案' id='check_ans" 
+			+ thisFaultNum + "' class='check_ans' ></input></div>
+			<div><input type='button' value='删除错题' id='remove_qst"
+			+ thisFaultNum + "' class='remove_qst'></input></div>*/	
 			thisFaultNum ++;
 
 		};
 		
 	};
+	/*
+	$(document).click(function (e) {
+		var v_id = $(e.target).attr('id');
+	};*/
 	//点击再来一套按钮后
 	$("#qst_again").click(function(){
 		$("#qst_start_button").css("visibility","visible");
@@ -121,13 +128,12 @@ $(document).ready(function(){
 		
 	});
 
-	//点击删除错题按钮
-	//点击查看答案按钮
 	//点击保存错题按钮	
 	$("#add_fault").click(function(){
 		$.post("/ChildMath/page/addFaults.do?method=addFaults",
-				{wrong: wrongInfo, 
+				{wrongInfo: wrongInfo, 
 			userId: parseInt($("#qst_userId").html())});
+		console.log("wrong",wrongInfo);
 		alert("本次错题已保存至错题本～");
 	});
 /***************一年级******************/

@@ -11,7 +11,7 @@
 		</form-bean>
 		<form-bean name="recordForm" type="com.chinaMath.struts.forms.RecordForm">
 		</form-bean>
-			<form-bean name="faultForm" type="com.chinaMath.struts.forms.FaultForm">
+		<form-bean name="faultForm" type="com.chinaMath.struts.forms.FaultForm">
 		</form-bean>
 		
 	</form-beans>
@@ -53,6 +53,13 @@
 			<forward name="success" path="/page/main.jsp"></forward>
 			<forward name="Fail" path="/page/login.html"></forward>
 		</action>
+	<!--
+	<action path="/page/addFaults" parameter="method"
+			scope="request"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="addFaults" path="/page/addFaults.do?method=addFaults"></forward>
+		</action>
+	-->
 	<action path="/page/getFaultFile" parameter="method"
 			input="" type="org.springframework.web.struts.DelegatingActionProxy">
 			<forward name="getFault" path="/page/test.jsp" />
@@ -64,6 +71,7 @@
 	<action path="/page/addFaults" scope="request" parameter="method"
 			input="/page/question.jsp" type="org.springframework.web.struts.DelegatingActionProxy">
 	</action>
+
   </action-mappings>
   <message-resources parameter="com.chinaMath.struts.ApplicationResources" />
 </struts-config>

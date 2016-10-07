@@ -129,9 +129,11 @@ public class FaultAction extends DispatchAction{
 	public ActionForward addFaults(ActionMapping mapping,ActionForm form,HttpServletRequest request,HttpServletResponse response)throws Exception{
 		HttpSession session = request.getSession();
 		ActionForward forward = null;
+
 		//错题，从前台获得
 		//String[] faults = {"33+33=66","99+1=100"};
-		String info = request.getParameter("wrong");
+		String info = request.getParameter("wrongInfo");
+		System.out.println(info);
 		//info = new String(info.getBytes("ISO-8859-1"),"utf-8");
 		JSONArray jsonArray = JSONArray.fromObject(info);
 		String[] stringArray = new String[jsonArray.size()];
@@ -141,6 +143,7 @@ public class FaultAction extends DispatchAction{
             //System.out.println(stringArray[i]);
         }
         String userIDStr = request.getParameter("userId");
+        //System.out.println(userIDStr);
 		int userID = Integer.parseInt(userIDStr);
 		int numOfFaults = jsonArray.size();
 		int numOfCorrects = 20-numOfFaults;
@@ -208,14 +211,14 @@ public class FaultAction extends DispatchAction{
 			}
 		}
 		//如果文件夹不存在，新建文件夹
-		File folder = new File("Mse2016/ChildMath/WebRoot/faultFile");
+		File folder = new File("/Mse2016/ChildMath/WebRoot/faultFile");
 		if (!(folder.exists() && folder.isDirectory())){
 			folder.mkdirs();
 		}
 		File file = null;
 		//如果用户没有错题文件，新建错题文件
 		if(faultDAO.getFaultByUserID(userID) == null){
-			String fileAddr = "CMse2016/ChildMath/WebRoot/faultFile/fault-" + userIDStr + ".txt";
+			String fileAddr = "/Mse2016/ChildMath/WebRoot/faultFile/fault-" + userIDStr + ".txt";
 			file = new File(fileAddr);
 			createFile(file);
 			Fault fault = new Fault();
