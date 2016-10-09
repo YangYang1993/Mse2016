@@ -282,8 +282,8 @@
       }
       #page{ 
         
-        width: 800px;
-        height: 900px;
+        width: 100%;
+        height: 1400px;
         background-size: 100% 100%;
         position: relative;
         margin: 0 auto;
@@ -292,8 +292,8 @@
       .index_page{
         z-index: 1;
         background-image:url(picResources/first_page0.jpg); 
-        width: 800px;
-        height: 900px;
+        width: 100%;
+        height: 1400px;
         background-size: 100% 100%;
         margin: 0 auto;
       }

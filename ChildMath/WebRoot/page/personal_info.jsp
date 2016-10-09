@@ -5,11 +5,10 @@
 	/*最大块*/
 	#pi_body{
 		width:800px;
-		/*padding-top: 20px;*/
 		margin-top: 0px;
-		border: solid 2px #c0c0c0;
+		border: solid 2px #ea4d4d;
 		border-radius: 10px; 
-		height: 420px;
+		height: 825px;
 		background-color: white;
 	}
 	/*头部的用户名*/
@@ -52,7 +51,7 @@
 		font-family: 黑体;
 		font-size: 1em;
 		outline: none;
-		background-color: #e84f51;
+		background-color: #ea4d4d;
 		border-radius: 10px;
 		border: solid 1px #874e58;
 
@@ -179,13 +178,10 @@
 	.pi_level_radio_box{
 		margin: 0;
 		padding: 0;
-		border: solid 1px #c0c0c0;
-		width: 60px;
+		width: 80px;
 		float: left;
-		height: 30px;
+		height: 40px;
 		margin-left: 10px;
-		margin-top: 5px;
-		border-radius: 10px;
 		background-size: 100% 100%;
 	}
 	input[name=grade]{
@@ -204,6 +200,12 @@
 		font-family: 黑体;
 		font-size: 1em;
 		line-height: 30px;
+	}
+	.info_header{
+		background-image: url(../picResources/info_header.png);
+        width:100%;
+        height:400px;
+        background-size: 100% 100%;
 	}
 </style>
 <script type="text/javascript">
@@ -368,7 +370,8 @@
     user = (User)session.getAttribute("user");
     } %>
 <div id="pi_body">
-	<form class="container">  
+	<div class="info_header"></div>
+	<form>  
 	<!--	
 	<div id="pi_username_box"><%= user.getUserName()%></div>
 	
@@ -377,7 +380,6 @@
 		<input type="button" value="保存设置" id="pi_save_pi_button"></input>
 	</div>
 	-->
-	
 	<div class="row">
 		<div class="pi_label">个人资料</div>
 		<div class="pi_content">

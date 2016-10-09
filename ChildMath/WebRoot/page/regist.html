@@ -132,11 +132,11 @@
 			background-size: 100% 100%;
 		}
 	    /*登录旁边的图片*/
-		#welcome_img{
+		#regist_img{
 			width: 260px;
 			height: 260px;
 			float: left;
-			background-image: url(../picResources/welcome_img2.png);
+			background-image: url(../picResources/regist.png);
 			background-size: 100% 100%;
 			margin-top: 50px;
 			margin-left: 65px;
@@ -173,6 +173,9 @@
 			font-family: 黑体;
 			line-height: 25px;
 			text-align: left;
+		}
+		#login_btn{
+			cursor: pointer;
 		}
 	</style>
 	<script src="../js/jquery-1.11.3.js"></script>
@@ -260,6 +263,10 @@
 					$.validateusername();
 				}
 			});
+			//点击直接登录按钮
+			$("#login_btn").click(function(){
+          		location.href="login.html";
+        	});
 		});
 	</script>
 </head>
@@ -269,7 +276,7 @@
 		<div id="logo_img_box"></div>
 	</div>
 	<div id="login_body">
-		<div id="welcome_img"></div>
+		<div id="regist_img"></div>
 		<div id="head_and_body">
 			<div id="login_head_box">
 				账号注册
@@ -300,7 +307,7 @@
 					<input type="button" value="立即注册" id="registButton"></input>
 				</div>
 				</form>
-				<a href="login.html">直接登录</a>
+				<a id="login_btn">直接登录</a>
 			</div>
 		</div>
 		<div id="footer"></div>
