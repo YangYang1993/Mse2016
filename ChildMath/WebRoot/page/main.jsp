@@ -22,18 +22,19 @@
 	}
 	/*头部*/
 	#head_box{
-		background-color: #34c4ff;
+		background-color: #f07575;
 		width: 800px;
 		height: 20px;
 	}
 	#logo{
-		width: 50px;
-		height: 18px;
-		background-image: url(../picResources/login_0034_logol.png);
+		background-image:url(../picResources/.png); 
 		background-size: 100% 100%;
+		width: 120px;
+		height: 18px;
 		float: left;
 		margin-top: 2px;
 		margin-left: 6px;
+
 	}
 	#user_box{
 		height: 20px;
@@ -59,7 +60,7 @@
 	#function_box{
 		height: 80px;
 		width: 800px;
-		background-color: #01aaef;
+		background-color: #d44;
 		margin-bottom: 15px;
 	}
 	#function_box a:hover{
@@ -70,8 +71,8 @@
 		height:60px;
 		float: left;
 		background-size: 100% 100%;
-		margin-left: 36px;
-		margin-right: 36px;
+		margin-left: 34px;
+		margin-right: 34px;
 		text-decoration: none;
 		outline: none;
 	}
@@ -133,7 +134,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		background-color: #34c4ff;
+		background-color: #f07575;
 		width: 100%;
 		height: 20px; 
 		z-index: -1;
@@ -144,7 +145,7 @@
 		left: 0;
 		height: 80px;
 		width: 100%;
-		background-color: #01aaef;
+		background-color: #d44;
 		z-index: -1;
 	}
 	/*页末*/
@@ -167,18 +168,6 @@
 		color: #c0c0c0;
 		font-family: 黑体;
 		text-align: center;
-	}
-	#copyright{
-		width: 800px;
-		height: 26px;
-		text-align: center;
-		line-height: 30px;
-		border-top: solid 1px #c0c0c0;
-	}
-	#copyright img{
-		width: 304px;
-		height: 10px;
-		margin-top: 8px;
 	}
 	/*页脚的背景大长条*/
 	#back_footer1_box{
@@ -234,6 +223,53 @@
 		width: 60px;
 		height: 60px;
 		border: none;
+	}
+	#my_practice{
+		background-image:url(../picResources/self_practice_logo.png); 
+        width: 65px;
+        height: 62px;
+        background-size: 100% 100%;
+        cursor: pointer;
+	}
+	#fault_book{
+		background-image:url(../picResources/fault_book_logo.png); 
+        width: 65px;
+        height: 62px;
+        background-size: 100% 100%;
+        cursor: pointer;
+	}
+	#my_honor{
+		background-image:url(../picResources/honor_logo.png); 
+        width: 65px;
+        height: 62px;
+        background-size: 100% 100%;
+        cursor: pointer;
+	}
+	#challenge_self{
+		background-image:url(../picResources/challenge_logo.png); 
+        width: 65px;
+        height: 62px;
+        background-size: 100% 100%;
+        cursor: pointer;
+	}
+	#self_learn{
+		background-image:url(../picResources/self_learn_logo.png); 
+        width: 65px;
+        height: 62px;
+        background-size: 100% 100%;
+        cursor: pointer;
+	}
+	#self_info{
+		background-image:url(../picResources/personal_info_logo.png); 
+        width: 65px;
+        height: 62px;
+        background-size: 100% 100%;
+        cursor: pointer;
+	}
+	.function_font{
+		color: white;
+		position: relative;
+		top: 60px;
 	}
 </style>
 
@@ -343,24 +379,24 @@
 		</div>
 	</div>
 	<div id="function_box">
-		<a class="learn_box" id="my_practice" onclick="$.loadPage(4)">
-			<img src="../picResources/my_practice.png">每日练习
-		</a>
-		<a class="learn_box" id="fault_book" onclick="$.loadPage(6)">
-			<img src="../picResources/my_practice.png">错题本
-		</a>
-		<a class="learn_box" id="my_honor" onclick="$.loadPage(0)">
-			<img src="../picResources/my_practice.png">我的徽章
-		</a>
-		<a class="learn_box" id="challenge_self" onclick="$.loadPage(5)">
-			<img src="../picResources/my_practice.png">挑战自我
-		</a>
-		<a class="learn_box" id="self_learn" onclick="$.loadPage(1)">
-			<img src="../picResources/my_practice.png">快乐自学
-		</a>
-		<a class="learn_box" id="self_info" onclick="$.loadPage(3)">
-			<img src="../picResources/my_practice.png">个人信息
-		</a>
+		<div class="learn_box" id="my_practice" onclick="$.loadPage(4)">
+			<div class="function_font">每日练习</div>
+		</div>
+		<div class="learn_box" id="fault_book" onclick="$.loadPage(6)">
+			<div class="function_font">错题本</div>
+		</div>
+		<div class="learn_box" id="my_honor" onclick="$.loadPage(0)">
+			<div class="function_font">我的徽章</div>
+		</div>
+		<div class="learn_box" id="challenge_self" onclick="$.loadPage(5)">
+			<div class="function_font">挑战自我</div>
+		</div>
+		<div class="learn_box" id="self_learn" onclick="$.loadPage(1)">
+			<div class="function_font">快乐自学</div>
+		</div>
+		<div class="learn_box" id="self_info" onclick="$.loadPage(3)">
+			<div class="function_font">个人信息</div>
+		</div>
 			<!--
 			<a class="learn_box" id="practice_box"><img src="../picResources/my_practice.png"></a>
 			<div id="head_pic_box">
@@ -405,9 +441,7 @@
 				</tr>
 			</table>
 		</div>
-		<!--
-		<div id="copyright"><img src="../picResources/copyright.png"></div>
-		-->
+
 	</div>
 </div>
 </body>

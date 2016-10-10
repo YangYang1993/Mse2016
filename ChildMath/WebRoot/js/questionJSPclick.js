@@ -1,7 +1,7 @@
 
 $.setQstTypeCss = function(qst){
 	$(".qst_qst_type").css({"border-color":"#c0c0c0","background-color":"transparent","color":"#708069"});
-	$(qst).css({"border-color":"#01aaef","background-color":"#01aaef","color":"white"});
+	$(qst).css({"border-color":"#DB5A5A","background-color":"#DB5A5A","color":"white"});
 };
 $.removeQstTypeCss = function(qst){
 	$(qst).css({"border-color":"#c0c0c0","background-color":"transparent","color":"#708069"});

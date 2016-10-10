@@ -22,16 +22,16 @@
 		float: left;*/
 	}
 	#qst_start_button{
-		width: 60px;
-		height:25px;
+		width: 65px;
+		height:30px;
 		float: left;
-		margin-left: 370px;
+		margin-left: 380px;
 		border: none;
 		outline: none;
 		background-color: #48b937;
 		color: white;
 		font-family: 黑体;
-		font-size: 0.9em;
+		font-size: 1.0em;
 		border-radius: 5px;
 		/*visibility: hidden;*/
 
@@ -41,8 +41,8 @@
 		padding: 0px;
 		outline: none;
 		border: solid 1px #c0c0c0;
-		width:115px;
-		height: 25px;
+		width:130px;
+		height: 30px;
 		float: left;
 		margin-right: 20px;
 		margin-bottom: 10px;
@@ -50,7 +50,7 @@
 		background-color: transparent;
 		color: #708069;
 		font-family: 黑体;
-		font-size: 0.8em;
+		font-size: 0.9em;
 	}
 	/*盛放题目的块*/
 	#qst_qst_body{

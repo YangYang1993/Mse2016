@@ -115,7 +115,6 @@
 		margin-top: 5px;
 		line-height: 40px;
 		border-radius: 15px;
-	    border: solid 1px;
 	}
 	.pi_item div p{
 		margin: 0;
@@ -212,18 +211,14 @@
 	$.setGender = function(){ //设置性别单选按钮的变化
 		if($(".pi_input.radio:checked").val() == "1"){
 			$("#pi_male_box").css({"background-image" : "url(../picResources/n1.png)", 
-								"background-size":"100% 100%",
-								"border-color":"#00a0e9"});
+								"background-size":"100% 100%"});
 			$("#pi_female_box").css({"background-image" : "url(../picResources/n3.png)",
-								"background-size":"100% 100%",
-								"border-color":"#c0c0c0"});
+								"background-size":"100% 100%"});
 		}else{
 			$("#pi_female_box").css({"background-image" : "url(../picResources/n4.png)",
-								"background-size":"100% 100%",
-								"border-color":"#00a0e9"});
+								"background-size":"100% 100%"});
 			$("#pi_male_box").css({"background-image" : "url(../picResources/n2.png)", 
-								"background-size":"100% 100%",
-								"border-color":"#c0c0c0"});
+								"background-size":"100% 100%"});
 		}
 	};
 	

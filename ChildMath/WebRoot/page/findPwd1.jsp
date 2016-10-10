@@ -31,6 +31,9 @@
 			/*background-color:#eeeeee;*/
 			margin:0 auto;
 		}
+		#logo_body div{
+			display: inline-block;
+		}
 		#logo_img_box{
 			height: 40px;
 			width: 40px;
@@ -39,6 +42,15 @@
 			float: right;
 			margin-top: 65px;
 			margin-right: 280px;
+		}
+		.logo_font{
+			height: 40px;
+			width: 110px;
+			background-image: url(../picResources/logo_font.png);
+			background-size: 100% 100%;
+			float: right;
+			margin-top: 75px;
+			margin-right: -170px;
 		}
 		/*包含表单的部分*/
 		#login_box{
@@ -163,8 +175,8 @@
 		}
 		.user_logo{
 			position: relative;
-			left: 110px;
-			top: 20px;
+			left: 100px;
+			top: 25px;
 
 		}
 	</style>
@@ -204,11 +216,12 @@
 <div id="main_body">
 	<div id="logo_body">
 		<div id="logo_img_box"></div>
+		<div class="logo_font"></div>
 	</div>
 	<div id="login_body">
 		<div id="welcome_img"></div>
 		<div id="head_and_body">
-			<div class="user_logo"><img src="../picResources/logo.png" width="40px" height="40px"></div>
+			<div class="user_logo"><img src="../picResources/02.png" width="60px" height="60px"></div>
 			<div id="login_head_box">
 				找回密码
 			</div>

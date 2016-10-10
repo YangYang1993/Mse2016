@@ -197,14 +197,13 @@
       */
       /*首页*/
       #welcome{
-        width: 40px;
-        height: 25px;
-        border-radius: 5px;
-        background-color: #00bbee;
-        border-color: #00bbee;
+        width: 90px;
+        height: 50px;
+        background-image: url(picResources/come_in.png);
+        background-size: 100% 100%;
         float: right;
-        margin-right: 200px;
-        margin-top: 15px;
+        margin-right: 240px;
+        margin-top: 4px;
         cursor: pointer;
         /*
         z-index: 5;
@@ -483,7 +482,7 @@
   <body>
     <div id="header">
         <div id="logo"></div>
-        <div id="welcome">进入</div>
+        <div id="welcome"></div>
     </div>
     <div id="page">
       <div class="index_page">
