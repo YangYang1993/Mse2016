@@ -383,7 +383,7 @@
 			<div class="function_font">每日练习</div>
 		</div>
 		<div class="learn_box" id="fault_book" onclick="$.loadPage(6)">
-			<div class="function_font">错题本</div>
+			<div class="function_font">&nbsp;&nbsp;错题本</div>
 		</div>
 		<div class="learn_box" id="my_honor" onclick="$.loadPage(0)">
 			<div class="function_font">我的徽章</div>
