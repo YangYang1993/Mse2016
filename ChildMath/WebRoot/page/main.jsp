@@ -27,13 +27,13 @@
 		height: 20px;
 	}
 	#logo{
-		background-image:url(../picResources/.png); 
+		background-image:url(../picResources/main_logo.png); 
 		background-size: 100% 100%;
-		width: 120px;
-		height: 18px;
+		width: 115px;
+		height: 16px;
 		float: left;
 		margin-top: 2px;
-		margin-left: 6px;
+		margin-left: 15px;
 
 	}
 	#user_box{
@@ -370,7 +370,7 @@
 
 <div id="biggest_box">
 	<div id="head_box">
-		<div id="logo">➕➖✖️➗我会算</div>
+		<div id="logo"></div>
 		<div id="user_box">
 			<a onclick="$.loadPage(3)">你好,&nbsp
 				<%= user.getUserName()%>&nbsp;&nbsp;&nbsp;&nbsp;小朋友
@@ -383,7 +383,7 @@
 			<div class="function_font">每日练习</div>
 		</div>
 		<div class="learn_box" id="fault_book" onclick="$.loadPage(6)">
-			<div class="function_font">错题本</div>
+			<div class="function_font">&nbsp;&nbsp;错题本</div>
 		</div>
 		<div class="learn_box" id="my_honor" onclick="$.loadPage(0)">
 			<div class="function_font">我的徽章</div>

@@ -21,16 +21,27 @@
 	color: black;
 	font-family: 黑体;
 	font-size: 1.2em;
-	float: left;
 	border: none;
 	outline: none;
 	margin-left: 55px;
 	cursor: pointer;
 	margin-top: 10px;
 }
-.chall_qst a{
-	text-decoration:none;
-	color: black;
+.chall_qst div{
+	display: inline-block;
+}
+.download_btn{
+	width: 50px;
+	height: 25px;
+	float: right;
+	margin-right: 40px;
+	color: #ffffff;
+	font-family: 黑体;
+	font-size: 1em;
+	outline: none;
+	background-color: #48b937;
+	border-radius: 10px;
+	border: solid 1px #416c4e;
 }
 </style>
 <script src="../js/createMathMethods.js"></script>
@@ -50,31 +61,52 @@ int grade = user.getGrade();
 <div id="qst_qst_body">
 	
 	<div class="chall_qst">
-		<a href="../challengeFile/一年级奥数.txt">一年级奥数习题</a>
+		<div >一年级奥数习题</div>
+		
+			<a href="../challengeFile/一年级奥数.txt"><button class="download_btn">下载</button></a>
+		
 	</div>
 	<div class="chall_qst">
-		<a href="../challengeFile/二年级奥数.txt">二年级奥数习题</a>
+		<div>二年级奥数习题</div>
+		
+			<a href="../challengeFile/二年级奥数.txt"><button class="download_btn">下载</button></a>
+		
 	</div>
 	<div class="chall_qst">
-		<a href="../challengeFile/三年级奥数.txt">三年级奥数习题</a>
+		<div>三年级奥数习题</div>
+		
+			<a href="../challengeFile/三年级奥数.txt"><button class="download_btn">下载</button></a>
+		
 	</div>
 	<div class="chall_qst">
-		<a href="../challengeFile/四年级奥数.txt">四年级奥数习题</a>
+		<div>四年级奥数习题</div>
+		
+			<a href="../challengeFile/四年级奥数.txt"><button class="download_btn">下载</button></a>
+		
 	</div>
 	<div class="chall_qst">
-		<a href="../challengeFile/五年级奥数.txt">五年级奥数习题</a>
+		<div>五年级奥数习题</div>
+		
+			<a href="../challengeFile/五年级奥数.txt"><button class="download_btn">下载</button></a>
+	
 	</div>
 	<div class="chall_qst">
-		<a href="../challengeFile/六年级奥数.txt">六年级奥数习题</a>
+		<div>六年级奥数习题</div>
+		
+			<a href="../challengeFile/六年级奥数.txt"><button class="download_btn">下载</button></a>
+		
 	</div>
 	<div class="chall_qst">
-		<a href="../challengeFile/小学奥数专题.txt">小学奥数专题</a>
+		<div>小学奥数专题</div>
+		<a href="../challengeFile/小学奥数专题.txt"><button class="download_btn">下载</button></a>
 	</div>
 	<div class="chall_qst">
-		<a href="../challengeFile/小升初奥数知识点.txt">小升初奥数知识点</a>
+		<div>小升初奥数知识点</div>
+		<a href="../challengeFile/小升初奥数知识点.txt"><button class="download_btn">下载</button></a>
 	</div>
 	<div class="chall_qst">
-		<a href="../challengeFile/小升初数学模拟试卷及答案.txt">小升初数习模拟练习</a>
+		<div>小升初数习模拟练习</div>
+		<a href="../challengeFile/小升初数学模拟试卷及答案.txt"><button class="download_btn">下载</button></a>
 	</div>
 </div>
 

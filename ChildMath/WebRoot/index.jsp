@@ -202,8 +202,8 @@
         background-image: url(picResources/come_in.png);
         background-size: 100% 100%;
         float: right;
-        margin-right: 240px;
-        margin-top: 4px;
+        margin-right: 90px;
+        margin-top: 75px;
         cursor: pointer;
         /*
         z-index: 5;
@@ -279,18 +279,15 @@
       .anniu:hover{
         cursor: pointer;
       }
-      #page{ 
-        
+      #page{         
         width: 100%;
         height: 1400px;
         background-size: 100% 100%;
-        position: relative;
         margin: 0 auto;
-        margin-top: 55px;
       }
       .index_page{
         z-index: 1;
-        background-image:url(picResources/first_page0.jpg); 
+        background-image:url(picResources/first_page0.png); 
         width: 100%;
         height: 1400px;
         background-size: 100% 100%;
@@ -429,7 +426,7 @@
         height: 25px;
       }
       */
-      /*头部*/
+      /*头部
       #header{
         width: 100%;
         height: 55px;
@@ -439,7 +436,7 @@
         left: 0;
         text-align: center;
         background-color: #eeeeee;
-      }
+      }*/
       #logo{
         width: 40px;
         height: 40px;
@@ -448,6 +445,64 @@
         background-size: 100% 100%;
         margin-top: 10px;
         margin-left: 200px;
+      }
+      .logo_font{
+        width: 120px;
+        height: 40px;
+        float: left;
+        background-image: url(picResources/logo_font.png);
+        background-size: 100% 100%;
+        margin-top: 20px;
+        margin-left: 10px;
+      }
+      /*加号*/
+      #plus{
+        width: 40px;
+        height: 40px;
+        float: left;
+        background-image: url(picResources/plus.png);
+        background-size: 100% 100%;
+        margin-top: 220px;
+        margin-left: 5px;
+      }
+      /*减号*/
+      #subtract{
+        width: 40px;
+        height: 10px;
+        float: left;
+        background-image: url(picResources/subtract.png);
+        background-size: 100% 100%;
+        margin-top: 240px;
+        margin-left: 30px;
+      }
+      /*乘号*/
+      #multiply{
+        width: 40px;
+        height: 40px;
+        float: left;
+        background-image: url(picResources/multiply.png);
+        background-size: 100% 100%;
+        margin-top: 220px;
+        margin-left: 25px;
+      }
+      /*除号*/
+      #divide{
+        width: 40px;
+        height: 40px;
+        float: left;
+        background-image: url(picResources/divide.png);
+        background-size: 100% 100%;
+        margin-top: 220px;
+        margin-left: 25px;
+      }
+      #main_logo_font{
+        width: 130px;
+        height: 45px;
+        float: left;
+        background-image: url(picResources/main_logo_font.png);
+        background-size: 100% 100%;
+        margin-top: 225px;
+        margin-left: 40px;
       }
       /*
       .xiao{
@@ -480,12 +535,18 @@
   </head>
   
   <body>
-    <div id="header">
+    <div>
         <div id="logo"></div>
+        <div class="logo_font"></div>
         <div id="welcome"></div>
     </div>
     <div id="page">
       <div class="index_page">
+        <div id="plus"></div>
+        <div id="subtract"></div>
+        <div id="multiply"></div>
+        <div id="divide"></div>
+        <div id="main_logo_font"></div>
       </div>
     </div>
     <!--
