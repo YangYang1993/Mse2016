@@ -37,7 +37,6 @@
 	margin-right: 40px;
 	color: #ffffff;
 	font-family: 黑体;
-	font-size: 1em;
 	outline: none;
 	background-color: #48b937;
 	border-radius: 10px;

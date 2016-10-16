@@ -113,9 +113,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -188,6 +185,9 @@
       </pane>
       <pane id="Scope" />
       <pane id="Scratches">
+        <subPane />
+      </pane>
+      <pane id="PackagesPane">
         <subPane />
       </pane>
     </panes>
@@ -937,7 +937,8 @@
       <workItem from="1475993457343" duration="3109000" />
       <workItem from="1476084607951" duration="2596000" />
       <workItem from="1476272938115" duration="1369000" />
-      <workItem from="1476518638104" duration="1169000" />
+      <workItem from="1476518638104" duration="1304000" />
+      <workItem from="1476605463397" duration="298000" />
     </task>
     <servers />
   </component>
@@ -953,7 +954,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67307000" />
+    <option name="totallyTimeSpent" value="67740000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="151" y="29" width="1099" height="670" extended-state="0" />
@@ -1010,6 +1011,22 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/chinaMath/struts/actions/FaultAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1935">
