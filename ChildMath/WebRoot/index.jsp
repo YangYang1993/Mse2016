@@ -203,69 +203,9 @@
         background-size: 100% 100%;
         float: right;
         margin-right: 90px;
-        margin-top: 75px;
+        margin-top: 60px;
         cursor: pointer;
-        /*
-        z-index: 5;
-        background-color: #eeeeee;
-        background-image: url(picResources/first_page_back.png);
-        */
       }
-      /*
-      #content0, #content1,#content2, #content3, #content4, #content5{
-        height: 560px;
-        width: 1200px;
-        margin: 0 auto;
-        margin-top: 30px;
-      }
-      #content0{
-        background-image: url(picResources/welcome_back.jpg);
-        background-size: 100% 100%;
-      }
-      #blackBoard{
-        width: 650px;
-        height: 250px;
-        background-image: url(picResources/blackboard.png);
-        background-size: 100% 100%;
-        float: left;
-        margin-left: 275px;
-        margin-top: 65px;
-      }
-      #chalk{
-        width: 250px;
-        height:65px;
-        background-image: url(picResources/chalk1.png);
-        background-size: 100% 100%;
-        float: left;
-        margin-left: 200px;
-        margin-top: 65px;
-      }
-      #chalk2{
-        width: 200px;
-        height:25px;
-        background-image: url(picResources/chalk2.png);
-        background-size: 100% 100%;
-        float: left;
-        margin-left: 225px;
-        margin-top: 6px;
-      }
-      #children{
-        width: 800px;
-        height: 250px;
-        background-image: url(picResources/children.png);
-        background-size: 100% 100%;
-        float: left;
-        margin-left: 200px;
-        margin-top: -30px;
-      }
-      #blackboard_button{
-        width: 300px;
-        height: 30px;
-        float: left;
-        margin-left: 175px;
-        margin-top: 28px;
-      }
-      */
       .anniu{
         width: 135px;
         height: 25px;
@@ -281,7 +221,7 @@
       }
       #page{         
         width: 100%;
-        height: 1400px;
+        height: 2000px;
         background-size: 100% 100%;
         margin: 0 auto;
       }
@@ -289,161 +229,17 @@
         z-index: 1;
         background-image:url(picResources/first_page0.png); 
         width: 100%;
-        height: 1550px;
+        height: 2000px;
         background-size: 100% 100%;
         margin: 0 auto;
       }
-      /*
-      //第一个介绍页
-      #first{
-        z-index: 4;
-        background-image: url(picResources/xiangqing-1-bg.png);
-        background-size: 100% 100%;
-      }
-      #content1{
-        
-        background-image: url(picResources/xiangqing_1.png);
-        background-size: 100% 100%;
-      }
-      #xq1_img1{
-        width: 600px;
-        margin-left: 10%;
-        margin-top: 160px;
-        display: none;
-      }
-      #xq1_img2{
-        width: 600px;
-        margin-left: 10%;
-        margin-top: 25px;
-        display: none;
-      }
-      //第二个介绍页
-      #second{
-        z-index: 3;
-        background-image: url(picResources/xiangqing-2-bg.png);
-        background-size: 100% 100%;
-      }
-      #content2{
-        
-        background-image: url(picResources/xiangqing_2.png);
-        background-size: 100% 100%;
-      }
-      #xq2_img1{
-        width: 600px;
-        margin-left: 10%;
-        margin-top: 160px;
-        display: none;
-      }
-      #xq2_img2{
-        width: 700px;
-        margin-left: 10%;
-        margin-top: 25px;
-        display: none;
-      }
-      //第三个介绍页
-      #third{
-        z-index: 2;
-        background-image: url(picResources/xiangqing-3-bg.png);
-        background-size: 100% 100%;
-      }
-      #content3{
-        
-        background-image: url(picResources/xiangqing_3.png);
-        background-size: 100% 100%;
-      }
-      #xq3_img1{
-        width: 600px;
-        margin-left: 10%;
-        margin-top: 160px;
-        display: none;
-      }
-      #xq3_img2{
-        width:650px;
-        margin-left: 10%;
-        margin-top: 25px;
-        display: none;
-      }
-      //第四个页面的介绍
-      #fourth{
-        z-index: 1;
-        background-image: url(picResources/xiangqing-4-bg.png);
-        background-size: 100% 100%;
-      }
-      #content4{
-        
-        background-image: url(picResources/xiangqing_4.png);
-        background-size: 100% 100%;
-      }
-      #xq4_img1{
-        width: 600px;
-        margin-left: 10%;
-        margin-top: 160px;
-        display: none;
-      }
-      #xq4_img2{
-        width: 650px;
-        margin-left: 10%;
-        margin-top: 25px;
-        display: none;
-      }
-      //第五个介绍页
-      #fifth{
-        z-index: 0;
-        background-image: url(picResources/xiangqing-5-bg.png);
-        background-size: 100% 100%;
-      }
-      #content5{
-        
-        background-image: url(picResources/xiangqing_5.png);
-        background-size: 100% 100%;
-      }
-      #xq5_img1{
-        width: 600px;
-        margin-left: 10%;
-        margin-top: 160px;
-        display: none;
-      }
-      #xq5_img2{
-        width: 650px;
-        margin-left: 10%;
-        margin-top: 25px;
-        display: none;
-      }
-      //向下按纽
-      #next_button_box{
-        width: 100%;
-        height: 65px;
-        position: fixed;
-        margin:0 auto;
-        margin-top: 50%;
-        z-index: 6;
-        text-align: center;
-        line-height: 65px;
-      }
-      #next_button_img{
-        border: none;
-        width: 40px;
-        height: 25px;
-      }
-      */
-      /*头部
-      #header{
-        width: 100%;
-        height: 55px;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        text-align: center;
-        background-color: #eeeeee;
-      }*/
       #logo{
         width: 40px;
         height: 40px;
         float: left;
         background-image: url(picResources/logo.png);
         background-size: 100% 100%;
-        margin-top: 10px;
+        margin-top: 30px;
         margin-left: 200px;
       }
       .logo_font{
@@ -452,7 +248,7 @@
         float: left;
         background-image: url(picResources/logo_font.png);
         background-size: 100% 100%;
-        margin-top: 20px;
+        margin-top: 40px;
         margin-left: 10px;
       }
       /*加号*/
@@ -462,7 +258,7 @@
         float: left;
         background-image: url(picResources/plus.png);
         background-size: 100% 100%;
-        margin-top: 235px;
+        margin-top: 315px;
         margin-left: 5px;
       }
       /*减号*/
@@ -472,7 +268,7 @@
         float: left;
         background-image: url(picResources/subtract.png);
         background-size: 100% 100%;
-        margin-top: 250px;
+        margin-top: 330px;
         margin-left: 30px;
       }
       /*乘号*/
@@ -482,7 +278,7 @@
         float: left;
         background-image: url(picResources/multiply.png);
         background-size: 100% 100%;
-        margin-top: 235px;
+        margin-top: 315px;
         margin-left: 25px;
       }
       /*除号*/
@@ -492,7 +288,7 @@
         float: left;
         background-image: url(picResources/divide.png);
         background-size: 100% 100%;
-        margin-top: 235px;
+        margin-top: 315px;
         margin-left: 25px;
       }
       #main_logo_font{
@@ -501,7 +297,7 @@
         float: left;
         background-image: url(picResources/main_logo_font.png);
         background-size: 100% 100%;
-        margin-top: 235px;
+        margin-top: 315px;
         margin-left: 40px;
       }
       /*

@@ -49,9 +49,7 @@
 </style>
 <script src="../js/createMathMethods.js"></script>
 <script src="../js/challenge.js"></script>
-<script type="text/javascript">
-
-</script>
+<script type="text/javascript"></script>
 <div id="chall_body">
 <% 
 User user = null;

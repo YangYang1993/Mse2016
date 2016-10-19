@@ -49,10 +49,10 @@ $(document).ready(function(){
 		for(var i=0;i<answer.length;i++){
 			if($("#qst_ans" + i).val() != "" && $("#qst_ans" + i).val() == answer[i]){
 				$("#qst_mark" + i).css("background-image", 
-				"url(../picResources/p_0001_5.png)");
+				"url(../picResources/right.png)");
 			}else{
 				$("#qst_mark" + i).css("background-image", 
-				"url(../picResources/p_0000_6.png)");
+				"url(../picResources/wrong.png)");
 				var wrongArray = {qst:question[i]+""+$("#qst_ans" + i).val()+""+answer[i]};
 				var wrongQ = {qst:question[i]};
 				var wrongA = {wans:$("#qst_ans" + i).val()};
