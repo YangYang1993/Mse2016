@@ -20,7 +20,7 @@
 .chall_qst{
 	color: black;
 	font-family: 黑体;
-	font-size: 1.2em;
+	font-size: 1.0em;
 	border: none;
 	outline: none;
 	margin-left: 55px;
@@ -42,6 +42,10 @@
 	border-radius: 10px;
 	border: solid 1px #416c4e;
 }
+.txt_span{
+	font-size: 0.7em;
+	margin-left: 10px;
+}
 </style>
 <script src="../js/createMathMethods.js"></script>
 <script src="../js/challenge.js"></script>
@@ -61,50 +65,53 @@ int grade = user.getGrade();
 	
 	<div class="chall_qst">
 		<div >一年级奥数习题</div>
-		
-			<a href="../challengeFile/一年级奥数.txt"><button class="download_btn">下载</button></a>
+		<span class="txt_span">———对于100以内的加减法的巧算与速算的基本知识、也包括基本图形的学习、简单的枚举法等知识。</span>
+		<a href="../challengeFile/一年级奥数.txt"><button class="download_btn">下载</button></a>
 		
 	</div>
 	<div class="chall_qst">
 		<div>二年级奥数习题</div>
-		
-			<a href="../challengeFile/二年级奥数.txt"><button class="download_btn">下载</button></a>
+		<span class="txt_span">———两位数的四则混合运算，枚举法的运用和简单的应用题。</span>
+		<a href="../challengeFile/二年级奥数.txt"><button class="download_btn">下载</button></a>
 		
 	</div>
 	<div class="chall_qst">
 		<div>三年级奥数习题</div>
-		
-			<a href="../challengeFile/三年级奥数.txt"><button class="download_btn">下载</button></a>
+		<span class="txt_span">———运用运算定律及性质速算和巧算，带有平均数的应用题。</span>
+		<a href="../challengeFile/三年级奥数.txt"><button class="download_btn">下载</button></a>
 		
 	</div>
 	<div class="chall_qst">
 		<div>四年级奥数习题</div>
-		
-			<a href="../challengeFile/四年级奥数.txt"><button class="download_btn">下载</button></a>
+		<span class="txt_span">———多位数的计算，通过各种简便运算的技巧，提高准确度和速度,简单的排列组合的问题。</span>
+		<a href="../challengeFile/四年级奥数.txt"><button class="download_btn">下载</button></a>
 		
 	</div>
 	<div class="chall_qst">
 		<div>五年级奥数习题</div>
-		
-			<a href="../challengeFile/五年级奥数.txt"><button class="download_btn">下载</button></a>
+		<span class="txt_span">———递推方法的运用，数论问题，图形面积的计算。</span>
+		<a href="../challengeFile/五年级奥数.txt"><button class="download_btn">下载</button></a>
 	
 	</div>
 	<div class="chall_qst">
 		<div>六年级奥数习题</div>
-		
-			<a href="../challengeFile/六年级奥数.txt"><button class="download_btn">下载</button></a>
+		<span class="txt_span">———分小数互化及运算，繁分数运算，利用乘法分配率进行速算与巧算，计算公式应用等。</span>
+		<a href="../challengeFile/六年级奥数.txt"><button class="download_btn">下载</button></a>
 		
 	</div>
 	<div class="chall_qst">
 		<div>小学奥数专题</div>
+		<span class="txt_span">———针对小升初的重点知识对奥数进行专项总结，细致讲解各个主要的知识点。</span>
 		<a href="../challengeFile/小学奥数专题.txt"><button class="download_btn">下载</button></a>
 	</div>
 	<div class="chall_qst">
 		<div>小升初奥数知识点</div>
+		<span class="txt_span">———针对小升初的重点知识对奥数进行专项总结，细致讲解各个主要的知识点。</span>
 		<a href="../challengeFile/小升初奥数知识点.txt"><button class="download_btn">下载</button></a>
 	</div>
 	<div class="chall_qst">
-		<div>小升初数习模拟练习</div>
+		<div>小升初数学模拟练习</div>
+		<span class="txt_span">———包含近几天不同地区学校的小升初数学考试真题及模拟试题。</span>
 		<a href="../challengeFile/小升初数学模拟试卷及答案.txt"><button class="download_btn">下载</button></a>
 	</div>
 </div>

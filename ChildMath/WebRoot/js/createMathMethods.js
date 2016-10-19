@@ -13,7 +13,7 @@ $.addFormula = function(formula, result){
 		totalFormulaNum + "'></div></div>");
 };
 
-//求最大公约数的算法，num1>=num2
+//脟贸脳卯麓贸鹿芦脭录脢媒碌脛脣茫路篓拢卢num1>=num2
 $.biggest = function(num1, num2){
 	var p = num2;
 	while(num1-Math.floor(num1/num2)*num2 != 0){
@@ -24,7 +24,7 @@ $.biggest = function(num1, num2){
 	return p;
 };
 
-//求最小公倍数
+//脟贸脳卯脨隆鹿芦卤露脢媒
 $.smallest = function(num1, num2){
 	var q;
 	if(num1>=num2){
@@ -41,7 +41,7 @@ $.initFormula = function(){
 	totalFormulaNum = 0;
 };
 
-//两数相加
+//脕陆脢媒脧脿录脫
 $.plus = function(formulaNum, min, max){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
@@ -58,7 +58,7 @@ $.plus = function(formulaNum, min, max){
 	}		
 };
 
-//两数相减
+//脕陆脢媒脧脿录玫
 $.minus = function(formulaNum, min, max){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){		
@@ -74,7 +74,7 @@ $.minus = function(formulaNum, min, max){
 	}		
 };
 
-//连加
+//脕卢录脫
 $.intAddAdd = function(formulaNum, range){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
@@ -94,7 +94,7 @@ $.intAddAdd = function(formulaNum, range){
 	}
 };
 
-//连减
+//脕卢录玫
 $.intMinusMinus = function(formulaNum, range){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
@@ -111,7 +111,7 @@ $.intMinusMinus = function(formulaNum, range){
 	}
 };
 
-//加减
+//录脫录玫
 $.intAddMinus = function(formulaNum, range){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
@@ -127,7 +127,7 @@ $.intAddMinus = function(formulaNum, range){
 		}
 	}
 };
-//减加
+//录玫录脫
 $.intMinusAdd = function(formulaNum, range){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
@@ -143,7 +143,7 @@ $.intMinusAdd = function(formulaNum, range){
 		}
 	}
 };
-//100以内加整十
+//100脪脭脛脷录脫脮没脢庐
 $.intAddTen = function(formulaNum, range){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
@@ -158,7 +158,7 @@ $.intAddTen = function(formulaNum, range){
 		}
 	}
 };
-//100以内减正式
+//100脪脭脛脷录玫脮媒脢陆
 $.intMinusTen = function(formulaNum, range){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
@@ -173,7 +173,7 @@ $.intMinusTen = function(formulaNum, range){
 		}
 	}
 };
-//两位数加一位数
+//脕陆脦禄脢媒录脫脪禄脦禄脢媒
 $.intAddOne = function(formulaNum, range){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
@@ -188,7 +188,7 @@ $.intAddOne = function(formulaNum, range){
 		}
 	}
 };
-//两位数减一位数
+//脕陆脦禄脢媒录玫脪禄脦禄脢媒
 $.intMinusOne = function(formulaNum, range){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
@@ -203,7 +203,7 @@ $.intMinusOne = function(formulaNum, range){
 		}
 	}
 };
-/************小学二年级************/
+/************脨隆脩搂露镁脛锚录露************/
 //ab+cd
 $.intTwoAdd = function(formulaNum){
 	var thisFormulaNum = 0;
@@ -396,7 +396,7 @@ $.multiAddSecond = function(formulaNum){
 		}
 	}
 };
-//a b c 带括号
+//a b c 麓酶脌篓潞脜
 $.bracketSecond = function(formulaNum, type){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
@@ -489,8 +489,8 @@ $.bracketSecond = function(formulaNum, type){
 		}
 	}
 };
-/************小学三年级************/
-//一位数乘除
+/************脨隆脩搂脠媒脛锚录露************/
+//脪禄脦禄脢媒鲁脣鲁媒
 $.multiDiviThird = function(formulaNum, type){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
@@ -516,7 +516,7 @@ $.multiDiviThird = function(formulaNum, type){
 		}
 	}
 };
-//两位数乘除
+//脕陆脦禄脢媒鲁脣鲁媒
 $.twoMultiDiviThird = function(formulaNum, type){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
@@ -542,8 +542,8 @@ $.twoMultiDiviThird = function(formulaNum, type){
 		}
 	}
 };
-/************四年级***********/
-//a+-b简便运算 
+/************脣脛脛锚录露***********/
+//a+-b录貌卤茫脭脣脣茫 
 $.simpleAddFourth = function(formulaNum,type){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
@@ -621,7 +621,7 @@ $.simpleMultiFourth = function(formulaNum){
 		}
 	}
 };
-/*******************五年级******************/
+/*******************脦氓脛锚录露******************/
 //a.b*c.d 
 $.multiFifth = function(formulaNum){
 	var thisFormulaNum = 0;
@@ -687,8 +687,8 @@ $.diviFifth = function(formulaNum){
 		}
 	}
 };
-/**********六年级************/
-//最大公约数
+/**********脕霉脛锚录露************/
+//脳卯麓贸鹿芦脭录脢媒
 $.biggestSixth = function(formulaNum){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
@@ -701,7 +701,7 @@ $.biggestSixth = function(formulaNum){
 		}else{
 			result = $.biggest(b,a);
 		}
-		var formula = a+" , "+b+" 最大公约数 ";
+		var formula = a+" , "+b+" 脳卯麓贸鹿芦脭录脢媒 ";
 		if($.inArray(formula, question) == -1){
 			$.addFormula(formula, result);
 			thisFormulaNum ++;
@@ -709,14 +709,14 @@ $.biggestSixth = function(formulaNum){
 		}
 	}
 };
-//最小公倍数
+//脳卯脨隆鹿芦卤露脢媒
 $.smallestSixth = function(formulaNum){
 	var thisFormulaNum = 0;
 	while(thisFormulaNum < formulaNum){
 		var a = (Math.floor(Math.random()*100)+1);
 		var b = (Math.floor(Math.random()*100)+1);
 		var result = $.smallest(a , b);
-		var formula = a+" , "+b+" 最小公倍数 ";
+		var formula = a+" , "+b+" 脳卯脨隆鹿芦卤露脢媒 ";
 		if($.inArray(formula, question) == -1){
 			$.addFormula(formula, result);
 			thisFormulaNum ++;

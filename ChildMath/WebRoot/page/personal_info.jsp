@@ -203,8 +203,17 @@
 	.info_header{
 		background-image: url(../picResources/info_header.png);
         width:100%;
-        height:400px;
+        height:405px;
         background-size: 100% 100%;
+	}
+	.header_photo{
+		background-image: url(../picResources/05.png);
+		background-size: 100% 100%;
+		width: 145px;
+		height: 145px;
+		margin: 0 auto;
+		position: relative;
+		top: 275px;
 	}
 </style>
 <script type="text/javascript">
@@ -365,7 +374,9 @@
     user = (User)session.getAttribute("user");
     } %>
 <div id="pi_body">
-	<div class="info_header"></div>
+	<div class="info_header">
+		<div class="header_photo"></div>
+	</div>
 	<form>  
 	<!--	
 	<div id="pi_username_box"><%= user.getUserName()%></div>

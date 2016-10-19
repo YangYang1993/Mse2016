@@ -289,7 +289,7 @@
         z-index: 1;
         background-image:url(picResources/first_page0.png); 
         width: 100%;
-        height: 1400px;
+        height: 1550px;
         background-size: 100% 100%;
         margin: 0 auto;
       }
@@ -462,7 +462,7 @@
         float: left;
         background-image: url(picResources/plus.png);
         background-size: 100% 100%;
-        margin-top: 220px;
+        margin-top: 235px;
         margin-left: 5px;
       }
       /*减号*/
@@ -472,17 +472,17 @@
         float: left;
         background-image: url(picResources/subtract.png);
         background-size: 100% 100%;
-        margin-top: 240px;
+        margin-top: 250px;
         margin-left: 30px;
       }
       /*乘号*/
       #multiply{
-        width: 40px;
-        height: 40px;
+        width: 38px;
+        height: 38px;
         float: left;
         background-image: url(picResources/multiply.png);
         background-size: 100% 100%;
-        margin-top: 220px;
+        margin-top: 235px;
         margin-left: 25px;
       }
       /*除号*/
@@ -492,7 +492,7 @@
         float: left;
         background-image: url(picResources/divide.png);
         background-size: 100% 100%;
-        margin-top: 220px;
+        margin-top: 235px;
         margin-left: 25px;
       }
       #main_logo_font{
@@ -501,7 +501,7 @@
         float: left;
         background-image: url(picResources/main_logo_font.png);
         background-size: 100% 100%;
-        margin-top: 225px;
+        margin-top: 235px;
         margin-left: 40px;
       }
       /*

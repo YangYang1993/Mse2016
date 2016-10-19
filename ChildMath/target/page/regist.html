@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+	<title>➕➖✖️➗我会算 注册</title>
+	<style type="text/css">
+	    /*最大块*/
+		#main_body{
+			position: absolute;
+			left: 0;
+			top: 0;
+			min-width: 1200px;
+			width:100%;
+			height:100%;
+			background-image: url(../picResources/background.png);
+			background-size:100% 100%;
+			display: block;
+			margin: 0;
+			padding: 0;
+		}
+		/*中间最大块*/
+		#login_body{
+			width:800px;
+			height:460px;
+			margin:0 auto;
+			/*background-color:#eeeeee;*/
+			margin-top:15px;
+		}
+		/*上部的logo*/
+		#logo_body{
+			width:800px;
+			height:50px;
+			/*background-color:#eeeeee;*/
+			margin:0 auto;
+		}
+		#logo_body div{
+			display: inline-block;
+		}
+		#logo_img_box{
+			height: 40px;
+			width: 40px;
+			background-image: url(../picResources/logo.png);
+			background-size: 100% 100%;
+			float: right;
+			margin-top: 45px;
+			margin-right: 275px;
+		}
+		.logo_font{
+			height: 40px;
+			width: 110px;
+			background-image: url(../picResources/logo_font.png);
+			background-size: 100% 100%;
+			float: right;
+			margin-top: 55px;
+			margin-right: -170px;
+		}
+		/*包含表单的部分*/
+		#login_box{
+			width:230px;
+			height:280px;
+			margin:0 auto;
+			margin-top: 10px;		
+		}
+		/*输入框*/
+		input[type=text],input[type=password]{
+			width:80%;
+			height:27px;
+			margin-left:8px;
+			margin-top:0px;
+			border-radius:5px;
+			outline:none;
+			padding-left:15px;
+			padding-right: 15px;
+			font-family: 黑体;
+			font-size:1em;
+			border: solid 1px #C0C0C0;
+		}
+		input[type=text]:hover,input[type=password]:hover{
+			background-color:#eeeeee;
+		}
+		input[type=text]:focus,input[type=password]:focus{
+			border-color:#808A87;
+		}
+		/*下拉菜单*/
+		select{
+			width:216px;
+			height:31px;
+			margin-left:10px;
+			margin-top:0px;
+			border-radius:5px;
+			outline:none;
+			padding-left:15px;
+			padding-right: 15px;
+			font-size:1em;
+			border: solid 1px #C0C0C0;
+			font-family: 黑体;
+		}
+		/*提交按钮*/
+		input[type=button]{
+			width: 90%;
+			height: 28px;
+			border-radius: 5px;
+			margin-left: 12px;
+			margin-top: 15px;
+			outline: none;
+			font-family: 黑体;
+			font-size: 1em;
+			font-weight: bold;
+			border: none;
+		}
+		#registButton{
+			background-color:#71C875;;
+			border: solid 1px #3D9140;
+			color:#ffffff;
+		}
+		input[type=button]:hover{
+			cursor: pointer;
+		}
+		#registButton:active{
+			background-color: #308014;
+		}
+	    /*登陆注册的头部*/
+		#login_head_box{
+			width: 230px;
+			height: 45px;
+			font-family: 黑体;
+			font-size:1.2em;
+			color: #5d6160;
+			margin:0 auto;
+			text-align: center;
+			line-height: 46px;
+			font-weight: bold;
+			border-bottom: solid 1px #C0C0C0;
+		}
+		/*登陆注册整块*/
+		#head_and_body{
+			width: 260px;
+			height: 390px;
+			float: left;
+			/*background-color: #00ff00;*/
+			margin-left: 100px;
+			margin-top: 12px;
+			background-image: url(../picResources/circle_angle.png);
+			background-size: 100% 100%;
+		}
+	    /*登录旁边的图片*/
+		#regist_img{
+			width: 260px;
+			height: 260px;
+			float: left;
+			background-image: url(../picResources/regist.png);
+			background-size: 100% 100%;
+			margin-top: 50px;
+			margin-left: 65px;
+		}
+		/*底部图片*/
+		#footer{
+			width: 800px;
+			height: 130px;
+			position: fixed;
+			bottom: 0px;
+			/*float: left;
+			margin-top: -10px;*/
+			background-image: url(../picResources/footer.png);
+			background-size: 100% 100%;
+		}
+		/*底部超链接*/
+		a{
+			text-decoration: none;
+			outline: none;
+			font-family: 黑体;
+			font-size: 0.8em;
+			color: #5d6160;
+			float: right;
+			margin-right: 13px;
+			margin-top: 3px; 		
+		}
+		/*错误信息*/
+		.error{
+			width: 80%;
+			height: 20px;
+			margin-left: 15px;
+			color: #ff0000;
+			font-size: 0.8em;
+			font-family: 黑体;
+			line-height: 25px;
+			text-align: left;
+		}
+		#login_btn{
+			cursor: pointer;
+		}
+	</style>
+	<script src="../js/jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+		//判断邮箱、用户名是否重复			
+		$.validateusername = function(){
+		  	var info = $("#email").val();
+	    	info = encodeURI(info);
+	    	$.post("/ChildMath/page/check.do?method=checkEmail&email=" + info, function(data){
+	    		if(data == "1"){
+	    			$("#email_error").empty();
+					$("#email_error").append("邮箱已被注册");
+	    		}else if(data == "0"){
+	    			var info2 = $("#userName").val();
+			    	info2 = encodeURI(info2);
+			    	$.post("/ChildMath/page/check.do?method=checkUsername&username=" + info2, function(data){
+			    		if(data == "1"){
+			    			$("#userName_error").empty();
+							$("#userName_error").append("用户名已被注册");
+			    		}else if(data == "0"){
+			    			var form = document.forms[0];
+							form.action = "insertUser.do?method=insertUser";
+							form.method = "post";
+							form.submit();
+			    		}
+			    	});
+	    		}
+	    	});
+		 };
+	
+		$(document).ready(function(){
+		
+			$("#email").focus(function(){
+				$("#email_error").empty();
+			});
+			$("#userName").focus(function(){
+				$("#userName_error").empty();
+			});
+			$("#pwd").focus(function(){
+				$("#pwd_error").empty();
+			});
+			$("#pwd2").focus(function(){
+				$("#pwd2_error").empty();
+			});
+
+			$.isEmail = function(){ //判断输入是否是邮箱
+				var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+				var email=$("#email").val();
+				if(!reg.test(email)){
+					return false;
+				}else{
+					return true;
+				}
+			};
+			//判断表单填写是否正确
+			$.isRight= function(){  
+				if(!$.isEmail()){
+					$("#email_error").empty();
+					$("#email_error").append("请正确填写邮箱");
+					return false;
+				}else if($("#userName").val() == ""){
+					$("#userName_error").empty();
+					$("#userName_error").append("请填写用户名");
+					return false;
+				}else if($("#pwd").val() == ""){
+					$("#pwd_error").empty();
+					$("#pwd_error").append("请填写密码");
+					return false;
+				}else if($("#pwd2").val() == ""){
+					$("#pwd2_error").empty();
+					$("#pwd2_error").append("请确认密码");
+					return false;
+				}else if($("#pwd").val() != $("#pwd2").val()){
+					$("#pwd2_error").empty();
+					$("#pwd2_error").append("两次密码不一致");
+					return false;
+				}else{
+					return true;
+				}
+			};
+			
+			//点击注册按钮
+			$("#registButton").click(function(){
+				if($.isRight()){
+					$.validateusername();
+				}
+			});
+			//点击直接登录按钮
+			$("#login_btn").click(function(){
+          		location.href="login.html";
+        	});
+		});
+	</script>
+</head>
+<body>
+<div id="main_body">
+	<div id="logo_body">
+		<div id="logo_img_box"></div>
+		<div class="logo_font"></div>
+	</div>
+	<div id="login_body">
+		<div id="regist_img"></div>
+		<div id="head_and_body">
+			<div id="login_head_box">
+				账号注册
+			</div>
+			<div id="login_box">
+			<form action="" enctype="multipart/form-data" method="post" name="form1">	
+				<input type="text" placeholder="邮箱地址" name="email"  id="email" />
+				</input>
+				<div id="email_error" class="error"></div>				
+				<input type="text" placeholder="用户名" name="userName"  id="userName" />
+				</input>
+				<div id="userName_error" class="error"></div>				
+				<input type="password" placeholder="密码" name="password" id="pwd">
+				</input>
+				<div id="pwd_error" class="error"></div>				
+				<input type="password" placeholder="确认密码" id="pwd2"></input>
+				<div id="pwd2_error" class="error"></div>				
+				<select placeholder="现在所在的年级" name="grade" >
+					<option value="1">一年级</option>
+					<option value="2">二年级</option>
+					<option value="3">三年级</option>
+					<option value="4">四年级</option>
+					<option value="5">五年级</option>
+					<option value="6">六年级</option>
+				</select>
+				<div class="error"></div>
+				<div>
+					<input type="button" value="立即注册" id="registButton"></input>
+				</div>
+				</form>
+				<div id="login_btn">直接登录</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+	<title>➕➖✖️➗我会算 登录</title>
+	<style type="text/css">
+		/*最大块*/
+		#main_body{
+			position: absolute;
+			left: 0;
+			top: 0;
+			min-width: 1200px;
+			width:100%;
+			height:100%;
+			background-image: url(../picResources/background.png);
+			background-size:100% 100%;
+			display: block;
+			margin: 0;
+			padding: 0;
+		}
+		/*中间最大块*/
+		#login_body{
+			width:800px;
+			height:460px;
+			margin:0 auto;
+			/*background-color:#eeeeee;*/
+			margin-top:15px;
+		}
+		/*上部的logo*/
+		#logo_body{
+			width:800px;
+			height:50px;
+			/*background-color:#eeeeee;*/
+			margin:0 auto;
+		}
+		#logo_body div{
+			display: inline-block;
+		}
+		#logo_img_box{
+			height: 40px;
+			width: 40px;
+			background-image: url(../picResources/logo.png);
+			background-size: 100% 100%;
+			float: right;
+			margin-top: 80px;
+			margin-right: 255px;
+		}
+		.logo_font{
+			height: 40px;
+			width: 110px;
+			background-image: url(../picResources/logo_font.png);
+			background-size: 100% 100%;
+			float: right;
+			margin-top: 90px;
+			margin-right: -175px;
+		}
+		/*包含表单的部分*/
+		#login_box{
+			width:230px;
+			height:180px;
+			/*background-color:#dddddd;
+			
+			margin-left:650px;*/
+			margin:0 auto;
+			margin-top:20px;		
+		}
+		form{
+			width:230px;
+			height:180px;
+			/*background-color:#dddddd;
+			margin-top:150px;
+			margin-left:650px;*/
+			margin:0 auto;	
+		}
+		/*输入框*/
+		input.typein{
+			width: 78%;
+			height: 15%;
+			margin-left: 8px;
+			border-radius:5px;
+			outline:none;
+			padding-left:15px;
+			padding-right: 15px;
+			font-family: 黑体;
+			font-size:1em;
+			border: solid 1px #C0C0C0;
+		}
+		input.typein:hover{
+			background-color:#eeeeee;
+		}
+		input.typein:focus{
+			border-color:#808A87;
+		}
+		/*提交按钮*/
+		input[type=button]{
+			width:65px;
+			height:26px;
+			border-radius:20px;
+			margin-left:10px;
+			margin-top:25px;
+			outline:none;
+			font-family: 黑体;
+			font-size:1em;
+			font-weight: bold;
+			border: none;
+		}
+		#loginButton{
+			background-color: #9AE49D;
+			border: solid 1px #3D9140;
+			color: #ffffff;
+			width: 90%;
+			width: 92%;
+			height: 30px;
+			margin-left: 8px;
+			margin-top: 0px;
+			border-radius: 5px;
+		}
+		#registButton{
+			background-color:#F5F5F5;
+			border: solid 1px #C0C0C0;
+			color:#c0c0c0;
+		}
+		input[type=button]:hover{
+			cursor: pointer;
+		}
+		#loginButton:active{
+			background-color: #308014;
+		}
+		#registButton:active{
+			background-color: #E6E6FA;
+		}
+		/*忘记密码、注册新用户的链接*/
+		a{
+			width: 40%;
+			height: 20px;
+			text-decoration: none;
+			outline: none;
+			float: left;
+			margin-left: 142px;
+			margin-top: 8px;
+			color: #708069;
+			line-height: 20px;
+			font-weight: bold;
+			font-size: 0.8em;
+		}
+	    /*登陆注册的头部*/
+		#login_head_box{
+			width: 230px;
+			height: 45px;
+			font-size:1.2em;
+			color: #5d6160;
+			margin:0 auto;
+			text-align: center;
+			line-height: 45px;
+			font-family: 黑体;
+			font-weight: bold;
+			border-bottom: solid 1px #C0C0C0;
+		}
+		/*登陆注册整块*/
+		#head_and_body{
+			width: 260px;
+			height: 270px;
+			float: left;
+			/*background-color: #00ff00;*/
+			margin-left: 150px;
+			margin-top: 18px;
+			background-image: url(../picResources/circle_angle.png);
+			background-size: 100% 100%;
+		}
+	    /*登录旁边的图片*/
+		#welcome_img{
+			width: 260px;
+			height: 260px;
+			float: left;
+			background-image: url(../picResources/logo_in.png);
+			background-size: 100% 100%;
+			margin-top: 80px;
+			margin-left: 65px;
+		}
+		/*底部图片*/
+		#footer{
+			width: 800px;
+			height: 130px;
+			position: fixed;
+			bottom: 0px;
+			/*float: left;
+			margin-top: 100px;*/
+			background-image: url(../picResources/footer.png);
+			background-size: 100% 100%;
+		}
+		/*错误信息*/
+		#email_error, #pwd_error{
+			width: 80%;
+			height: 20px;
+			font-family: 黑体;
+			color: #ff0000;
+			font-size: 0.8em;
+			text-align:left;
+			margin-left: 15px;
+			line-height: 25px;
+		}
+	</style>
+	<script src="../js/jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			$("#email").focus(function(){
+				$("#email_error").empty();
+			});
+			$("#pwd").focus(function(){
+				$("#pwd_error").empty();
+			});
+
+			$.isRight= function(){  //判断表单填写是否正确
+				var pwd = $("#pwd").val();
+				var email = $("#email").val();
+				if(email == ""){
+					$("#email_error").empty();
+					$("#email_error").append("请填写用户名/邮箱");
+					return false;
+				}else if(pwd == ""){
+					$("#pwd_error").empty();
+					$("#pwd_error").append("请填写密码");
+					return false;
+				}else{
+					return true;
+				}
+			}
+			/*
+			$("#registButton").click(function(){ //点击注册
+				location.href="regist.html";
+			});
+			*/
+			$("#loginButton").click(function(){ //点击登录
+				if($.isRight()){
+					var form = document.forms[0];
+					form.action = "getUser.do?method=getUserList";
+					form.method = "post";
+					form.submit();
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+<div id="main_body">
+	<div id="logo_body">
+		<div id="logo_img_box"></div>
+		<div class="logo_font"></div>
+	</div>
+	<div id="login_body">
+		<div id="welcome_img"></div>
+		<div id="head_and_body">
+			<div id="login_head_box">
+				账号登录
+			</div>
+			<div id="login_box">
+			<form action="" enctype="multipart/form-data" method="post" name="form1">
+
+				<input type="text" class="typein" placeholder="用户名/邮箱地址" name="email" id="email"></input>
+				<div id="email_error"></div>
+				
+				<input type="password" class="typein" placeholder="密码" name="password" id="pwd"></input>
+				<div id="pwd_error"></div>
+				<div>
+					<input type="button" value="登录" id="loginButton"></input>
+
+					<!--<input type="button" value="注册" id="registButton"></input>-->
+
+				</div>
+				<div>
+					<a href="findPwd1.jsp">忘记密码?</a>
+					</br>
+					<a href="regist.html">新用户注册...</a>
+				</div>
+				
+				</form>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</div>
+</div>
+</body>
+</html>
