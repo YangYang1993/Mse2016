@@ -302,7 +302,7 @@
 				*/
 				$("#content_box").load("self_learn.jsp");
 			break;
-			case 2: //加载我的练习页
+			case 2: //加载每日练习页
 				/*
 				$("#head_pic_box").css("background-image","url(../picResources/login_0038_head-bottom.png)");
 				$("#self_mark").css("background-color","transparent");

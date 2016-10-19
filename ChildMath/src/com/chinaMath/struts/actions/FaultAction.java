@@ -3,6 +3,7 @@ package com.chinaMath.struts.actions;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -35,7 +36,8 @@ import com.chinaMath.hibernate.dao.RecordDAO;
 import com.chinaMath.struts.forms.FaultForm;
 import com.chinaMath.struts.forms.UserForm;
 import com.chinaMath.hibernate.dao.UserDAO;
-//��ȡ��ǰʱ��
+
+//锟斤拷取锟斤拷前时锟斤拷
 //import java.util.Date;
 //import java.text.SimpleDateFormat;
 
@@ -45,8 +47,8 @@ public class FaultAction extends DispatchAction{
 	FaultDAO faultDAO;
 	RecordDAO recordDAO;
 	HonourDAO honourDAO;
-	//��¼����txt�ļ����
-	int i = 0;
+	//锟斤拷录锟斤拷锟斤拷txt锟侥硷拷锟斤拷锟
+	int fid = 0;
 	//UserDAO userDAO;
 	public FaultDAO getFaultDAO() {
 		return faultDAO;
@@ -68,7 +70,7 @@ public class FaultAction extends DispatchAction{
 	public RecordDAO getRecordDAO() {
 		return recordDAO;
 	}
-	//��������Ȿ����ť����ת������ҳ����ʾ����
+	//锟斤拷锟斤拷锟斤拷锟斤拷獗撅拷锟斤拷锟脚ワ拷锟斤拷锟阶拷锟斤拷锟斤拷锟揭筹拷锟斤拷锟绞撅拷锟斤拷锟
 	public ActionForward getFaultFile(ActionMapping mapping,ActionForm form,HttpServletRequest request,HttpServletResponse response)throws Exception{
 		/*UserForm userForm = (UserForm)form;
 		User user = userDAO.getUserByUserName(userForm.getUserName());
@@ -77,11 +79,11 @@ public class FaultAction extends DispatchAction{
 		int totalPage = 0;
 		int userID = Integer.parseInt(request.getParameter("userID"));
 		
-		//��ǰҳ����ǰ̨��ȡ
+		//锟斤拷前页锟斤拷锟斤拷前台锟斤拷取
 		int currentPage = Integer.parseInt(request.getParameter("currentPage"));
-		//�洢��ǰҳ����Ŀ
+		//锟芥储锟斤拷前页锟斤拷锟斤拷目
 		List<String> operand = new ArrayList<String>();
-		//�洢��ǰҳ�Ĵ�
+		//锟芥储锟斤拷前页锟侥达拷
 		List<String> results = new ArrayList<String>();
 		Fault fault =  faultDAO.getFaultByUserID(userID);
 		String fileAddr = fault.getFileAddr();
@@ -105,14 +107,14 @@ public class FaultAction extends DispatchAction{
 		HttpSession session = request.getSession();
 		int totalPage = 0;
 		int userID = Integer.parseInt(request.getParameter("userID"));
-		//��ǰҳ����ǰ̨��ȡ
+		//锟斤拷前页锟斤拷锟斤拷前台锟斤拷取
 		int currentPage = Integer.parseInt(request.getParameter("currentPage"));
-		//ɾ������ţ���ǰ̨��ȡ
+		//删锟斤拷锟斤拷锟斤拷牛锟斤拷锟角疤拷锟饺
 		int deleteNum = Integer.parseInt(request.getParameter("deletedNum"));
 		deleteNum = (currentPage - 1) * 12 + deleteNum +1 ;
-		//�洢��ǰҳ����Ŀ
+		//锟芥储锟斤拷前页锟斤拷锟斤拷目
 		List<String> operand = new ArrayList<String>();
-		//�洢��ǰҳ�Ĵ�
+		//锟芥储锟斤拷前页锟侥达拷
 		List<String> results = new ArrayList<String>();
 		Fault fault = new Fault();
 		fault = (Fault) faultDAO.getFaultByUserID(userID);
@@ -126,7 +128,7 @@ public class FaultAction extends DispatchAction{
 		session.setAttribute("currentPage", currentPage);
 		session.setAttribute("operand", operand);
 		session.setAttribute("results", results);
-		//ɾ����ˢ�µ�ǰҳ
+		//删锟斤拷锟斤拷刷锟铰碉拷前页
 		ActionForward forward = new ActionForward();
 		forward = mapping.findForward("successDeletedFault");
 		return forward;
@@ -136,7 +138,16 @@ public class FaultAction extends DispatchAction{
 		HttpSession session = request.getSession();
 		ActionForward forward = null;
 
-		//���⣬��ǰ̨���
+		String userIDStr = request.getParameter("userId");
+        
+		//锟斤拷锟缴达拷锟斤拷锟侥硷拷锟斤拷锟斤拷锟斤拷锟侥硷拷锟斤拷锟斤拷
+		String fileAddr = "fault-" + userIDStr + "-" + fid + ".txt";
+		System.out.println(fileAddr);
+		File file = new File("/Users/yangyang/Mse2016/ChildMath/WebRoot/faultFile/"+fileAddr);
+		createFile(file);
+		
+		java.io.FileOutputStream out = new java.io.FileOutputStream(file);
+		//锟斤拷锟解，锟斤拷前台锟斤拷锟
 		String info = request.getParameter("wrongInfo");
 		//info = new String(info.getBytes("ISO-8859-1"),"utf-8");
 		JSONArray jsonArray = JSONArray.fromObject(info);
@@ -146,17 +157,15 @@ public class FaultAction extends DispatchAction{
             stringArray[i] = jObject.get("qst").toString();
 
             System.out.println(stringArray[i]);
+            out.write((stringArray[i]+"\n").getBytes("gbk"));
+
         }
-        String userIDStr = request.getParameter("userId");
-
-        System.out.println(userIDStr);
-
         int userID = Integer.parseInt(userIDStr);
 		int numOfFaults = jsonArray.size();
 		int numOfCorrects = 20-numOfFaults;
 
 		//int timeForPractice = Integer.parseInt(request.getParameter("time"));
-		//���ɴ����ļ��������ļ�����
+		
 		/*
 		String lujing = "/Mse2016/ChildMath/WebRoot/faultFile";
 		File folder = new File(lujing);
@@ -165,28 +174,28 @@ public class FaultAction extends DispatchAction{
 			folder.getParentFile().mkdirs();
 		}
 		*/
-			System.out.println("000002");
-			String fileAddr = "fault-" + userIDStr + "-" + i + ".txt";
-			File file = new File("/Mse2016/ChildMath/WebRoot/faultFile" + fileAddr);
-			createFile(file);
-			System.out.println(fileAddr);
 			
+
 			Fault fault = new Fault();
 			fault.setUserID(userID);
 			fault.setFileAddr(fileAddr);
 			faultDAO.insertFault(fault);
-			i++;
+
+			out.flush();
+			out.close();
+			fid++;
+			System.out.println(fid);
 		
 		
 		/*
-        //����ļ��в����ڣ��½��ļ���
+        //锟斤拷锟斤拷募锟斤拷胁锟斤拷锟斤拷冢锟斤拷陆锟斤拷募锟斤拷锟
 		File folder = new File("/Mse2016/ChildMath/WebRoot/faultFile");
 		if (!(folder.exists() && folder.isDirectory())){
 			System.out.println("000001");
 			folder.mkdirs();
 		}
 		File file = null;
-		//����û�û�д����ļ����½������ļ�
+		//锟斤拷锟斤拷没锟矫伙拷写锟斤拷锟斤拷募锟斤拷锟斤拷陆锟斤拷锟斤拷锟斤拷募锟
 		if(faultDAO.getFaultByUserID(userID) == null){
 			
 			System.out.println("000002");
@@ -198,20 +207,20 @@ public class FaultAction extends DispatchAction{
 			fault.setFileAddr(fileAddr);
 			faultDAO.insertFault(fault);
 		}
-		//����ȡ���û��Ĵ����ļ���ַ
+		//锟斤拷锟斤拷取锟斤拷锟矫伙拷锟侥达拷锟斤拷锟侥硷拷锟斤拷址
 		else {
 			System.out.println("000003");
 			Fault fault = faultDAO.getFaultByUserID(userID);
 			String fileAddr = fault.getFileAddr();
 			file = new File(fileAddr);
 		}
-		//���û��Ĵ����ļ��в������
+		//锟斤拷锟矫伙拷锟侥达拷锟斤拷锟侥硷拷锟叫诧拷锟斤拷锟斤拷锟
 		for (String str: stringArray){
 			addToTxt(str, file);
 		}
 		*/
 		/*
-		//��������
+		//锟斤拷锟斤拷锟斤拷锟斤拷
 		int honourOf90Right = 1;
 		int honourOf100Right = 2;
 		int honourOf12sPerQ = 3;
@@ -229,14 +238,14 @@ public class FaultAction extends DispatchAction{
 		recordDAO.insertRecord(record);
 		Honour honour = new Honour();
 		honour.setUserID(userID);
-		//����1
+		//锟斤拷锟斤拷1
 		if (numOfFaults > 0 && numOfFaults < 3 ){
 			if (honourDAO.getHonourByHonourTypeAndUserID(userID, honourOf90Right) == null){
 				honour.setHonourType(honourOf90Right);
 				honourDAO.insertHonour(honour);
 			}
 		}
-		//����2
+		//锟斤拷锟斤拷2
 		else if (numOfFaults == 0 ){
 			if (honourDAO.getHonourByHonourTypeAndUserID(userID, honourOf100Right) == null){
 				honour.setHonourType(honourOf100Right);
@@ -244,14 +253,14 @@ public class FaultAction extends DispatchAction{
 			}
 		}
 		if (numOfCorrects != 0){
-			//����3
+			//锟斤拷锟斤拷3
 			if (timeForPractice/numOfCorrects <= 12 && timeForPractice/numOfCorrects >6 ){
 				if (honourDAO.getHonourByHonourTypeAndUserID(userID, honourOf12sPerQ) == null){
 					honour.setHonourType(honourOf12sPerQ);
 					honourDAO.insertHonour(honour);
 				}
 			}
-			//����4
+			//锟斤拷锟斤拷4
 			else if (timeForPractice/numOfCorrects <= 6 ){
 				if (honourDAO.getHonourByHonourTypeAndUserID(userID, honourOf6sPerQ) == null){
 					honour.setHonourType(honourOf6sPerQ);
@@ -259,14 +268,14 @@ public class FaultAction extends DispatchAction{
 				}
 			}
 		}
-		//����5
+		//锟斤拷锟斤拷5
 		if (timeForPractice >0 && timeForPractice <= 120 ){
 			if (honourDAO.getHonourByHonourTypeAndUserID(userID, honourOfLt120s) == null){
 				honour.setHonourType(honourOfLt120s);
 				honourDAO.insertHonour(honour);
 			}
 		}
-		//����6
+		//锟斤拷锟斤拷6
 		else if (timeForPractice <= 300 ){
 			if (honourDAO.getHonourByHonourTypeAndUserID(userID, honourOfLt300s) == null){
 				honour.setHonourType(honourOfLt300s);
@@ -277,18 +286,18 @@ public class FaultAction extends DispatchAction{
 		return forward;
 	}
 	
-	//��ҳ��ʾ����
+	//锟斤拷页锟斤拷示锟斤拷锟斤拷
 	public static int readFaultByPage(int currentPage, File file, List<String> operand, List<String> results){
 		int totalPage = 0;
-		//ÿҳ��ʾ������
+		//每页锟斤拷示锟斤拷锟斤拷锟斤拷
 		int pageSize = 12;
-		//��������
+		//锟斤拷锟斤拷锟斤拷锟斤拷
 		int totalFileLine = 0;
-		//��ҳ��
+		//锟斤拷页锟斤拷
 		
 		FileReader fileReader = null;
 		
-		//�õ���������
+		//锟矫碉拷锟斤拷锟斤拷锟斤拷锟斤拷
 		if (file.exists()){
 			
 			try {
@@ -319,14 +328,14 @@ public class FaultAction extends DispatchAction{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			//�õ��ļ���ҳ��
+			//锟矫碉拷锟侥硷拷锟斤拷页锟斤拷
 			if (totalFileLine % pageSize == 0){
 				totalPage = totalFileLine / pageSize;
 			}
 			else{
 				totalPage = totalFileLine / pageSize + 1;
 			}
-			//��ʼ��ȡ
+			//锟斤拷始锟斤拷取
 			try {
 				fileReader = new FileReader(file);
 			} catch (FileNotFoundException e) {
@@ -335,7 +344,7 @@ public class FaultAction extends DispatchAction{
 			}
 			buffer=new BufferedReader(fileReader); 
 			tempString = null;
-			//��ȡ��ǰҳǰһҳ�����ݣ�������ȡ������bufferָ��ǰҳ��
+			//锟斤拷取锟斤拷前页前一页锟斤拷锟斤拷锟捷ｏ拷锟斤拷锟斤拷锟斤拷取锟斤拷锟斤拷锟斤拷buffer指锟斤拷前页锟斤拷
 			for (int i = 0; i < (currentPage - 1) * pageSize; i ++){
 				try {
 					buffer.readLine();
@@ -344,7 +353,7 @@ public class FaultAction extends DispatchAction{
 					e.printStackTrace();
 				}
 			}
-			//��ȡ��ǰҳ������
+			//锟斤拷取锟斤拷前页锟斤拷锟斤拷锟斤拷
 			try {
 				for (int k = 0; k < pageSize&&(tempString=buffer.readLine())!=null; k++){
 					splitt (tempString, k, operand, results);
@@ -386,7 +395,7 @@ public class FaultAction extends DispatchAction{
 		List<String> lists = new ArrayList<String>();
 		int i = 0;
 		//deletedLine += 1;
-		//���ļ�����������list�������汻ɾ��һ��
+		//锟斤拷锟侥硷拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷list锟斤拷锟斤拷锟斤拷锟芥被删锟斤拷一锟斤拷
 		try {
             Scanner in = new Scanner(file);
   
@@ -413,7 +422,7 @@ public class FaultAction extends DispatchAction{
 			} catch (IOException e) {
 				System.out.println(e);
 				e.printStackTrace();
-			} //Ȼ���ļ�д��
+			} //然锟斤拷锟侥硷拷写锟斤拷
 		}
 		try {
 			bufferWriter.flush();
@@ -512,7 +521,7 @@ public static void addToTxt(String str, File file) throws IOException{
 				bufferWriter.write(strr + "\r\n");
 			} catch (IOException e) {
 				e.printStackTrace();
-			} //Ȼ���ļ�д��
+			} //然锟斤拷锟侥硷拷写锟斤拷
 		}
 		try {
 			bufferWriter.flush();

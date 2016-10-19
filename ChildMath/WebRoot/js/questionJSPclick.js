@@ -64,21 +64,6 @@ $(document).ready(function(){
 			}
 		}
 
-		/*
-		var wrongArray = JSON.stringify(wrongInfo);
-		//var w = JSON.stringify(wrongQuestion);
-		//var r = JSON.stringify(wrongAnswer);
-		//var a = JSON.stringify(rightAnswer);
-		//输出错题内容
-		//console.log("wrongQuestion",w);
-		//console.log("wrongAnswer",r);
-		//console.log("rightAnswer",a);
-		//console.log("wrongArray",wrongArray);
-
-		$.post("/ChildMath/page/addFaults.do?method=addFaults",
-				{wrong: wrongArray,time: needTime, 
-			userId: parseInt($("#qst_userId").html())});
-		*/
 	});
 	
 	//添加错题
@@ -136,6 +121,7 @@ $(document).ready(function(){
 			userId: parseInt($("#qst_userId").html())});
 		console.log("wrong",wrongInfo);
 		alert("本次错题已保存至错题本～");
+		$.loadPage(2);
 	});
 /***************一年级******************/
 	$("#qst_1_0").click(function(){
