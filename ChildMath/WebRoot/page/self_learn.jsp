@@ -51,42 +51,42 @@ int grade = user.getGrade();
 <div id="learn_video_box">
 	
 		<div class="learn_video" >
-			<img src="../picResources/temp1.png" width="180px" height="180px">
+			<img src="../picResources/jia.jpg" width="190px" height="150px">
 			<div class="learn_level">
 				<a href="video.jsp">加法运算</a>
 			</div>
 		</div>
 		
 		<div class="learn_video">
-			<img src="../picResources/temp2.png" width="180px" height="180px">
+			<img src="../picResources/jian.jpg" width="190px" height="150px">
 			<div class="learn_level">
 				<a href="video.jsp">减法运算</a>
 			</div>
 		</div>
 			
 		<div class="learn_video">
-			<img src="../picResources/temp3.png" width="180px" height="180px">
+			<img src="../picResources/cheng.jpg" width="190px" height="150px">
 			<div class="learn_level">
 				<a href="video.jsp">乘法运算</a>
 			</div>
 		</div>
 			
 		<div class="learn_video">
-			<img src="../picResources/temp4.png" width="180px" height="180px">
+			<img src="../picResources/chu.jpg" width="190px" height="150px">
 			<div class="learn_level">
 				<a href="video.jsp">除法运算</a>
 			</div>
 		</div>
 			
 		<div class="learn_video">
-			<img src="../picResources/temp5.png" width="180px" height="180px">
+			<img src="../picResources/fenshu.jpg" width="190px" height="150px">
 			<div class="learn_level">
 				<a href="video.jsp">分数运算</a>
 			</div>
 		</div>
 			
 		<div class="learn_video">
-			<img src="../picResources/temp6.png" width="180px" height="180px">
+			<img src="../picResources/hunhe.jpg" width="190px" height="150px">
 			<div class="learn_level">
 				<a href="video.jsp">混合运算</a>
 			</div>

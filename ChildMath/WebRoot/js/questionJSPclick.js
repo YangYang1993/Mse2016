@@ -49,10 +49,10 @@ $(document).ready(function(){
 		for(var i=0;i<answer.length;i++){
 			if($("#qst_ans" + i).val() != "" && $("#qst_ans" + i).val() == answer[i]){
 				$("#qst_mark" + i).css("background-image", 
-				"url(../picResources/p_0001_5.png)");
+				"url(../picResources/right.png)");
 			}else{
 				$("#qst_mark" + i).css("background-image", 
-				"url(../picResources/p_0000_6.png)");
+				"url(../picResources/wrong.png)");
 				var wrongArray = {qst:question[i]+""+$("#qst_ans" + i).val()+""+answer[i]};
 				var wrongQ = {qst:question[i]};
 				var wrongA = {wans:$("#qst_ans" + i).val()};
@@ -130,8 +130,9 @@ $(document).ready(function(){
 
 	//点击保存错题按钮	
 	$("#add_fault").click(function(){
+		var wrongArray = JSON.stringify(wrongInfo);
 		$.post("/ChildMath/page/addFaults.do?method=addFaults",
-				{wrongInfo: wrongInfo, 
+				{wrongInfo: wrongArray,
 			userId: parseInt($("#qst_userId").html())});
 		console.log("wrong",wrongInfo);
 		alert("本次错题已保存至错题本～");
