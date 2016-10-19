@@ -35,12 +35,18 @@ import com.chinaMath.hibernate.dao.RecordDAO;
 import com.chinaMath.struts.forms.FaultForm;
 import com.chinaMath.struts.forms.UserForm;
 import com.chinaMath.hibernate.dao.UserDAO;
+//获取当前时间
+//import java.util.Date;
+//import java.text.SimpleDateFormat;
+
 
 
 public class FaultAction extends DispatchAction{
 	FaultDAO faultDAO;
 	RecordDAO recordDAO;
 	HonourDAO honourDAO;
+	//纪录错题txt文件编号
+	int i = 0;
 	//UserDAO userDAO;
 	public FaultDAO getFaultDAO() {
 		return faultDAO;
@@ -131,23 +137,80 @@ public class FaultAction extends DispatchAction{
 		ActionForward forward = null;
 
 		//错题，从前台获得
-		//String[] faults = {"33+33=66","99+1=100"};
 		String info = request.getParameter("wrongInfo");
-		System.out.println(info);
 		//info = new String(info.getBytes("ISO-8859-1"),"utf-8");
 		JSONArray jsonArray = JSONArray.fromObject(info);
 		String[] stringArray = new String[jsonArray.size()];
         for( int i = 0 ; i<jsonArray.size() ; i++ ){
         	JSONObject jObject = (JSONObject)jsonArray.getJSONObject(i);
             stringArray[i] = jObject.get("qst").toString();
-            //System.out.println(stringArray[i]);
+
+            System.out.println(stringArray[i]);
         }
         String userIDStr = request.getParameter("userId");
-        //System.out.println(userIDStr);
-		int userID = Integer.parseInt(userIDStr);
+
+        System.out.println(userIDStr);
+
+        int userID = Integer.parseInt(userIDStr);
 		int numOfFaults = jsonArray.size();
 		int numOfCorrects = 20-numOfFaults;
-		int timeForPractice = Integer.parseInt(request.getParameter("time"));
+
+		//int timeForPractice = Integer.parseInt(request.getParameter("time"));
+		//生成错题文件并存入文件夹中
+		/*
+		String lujing = "/Mse2016/ChildMath/WebRoot/faultFile";
+		File folder = new File(lujing);
+		if (!folder.getParentFile().exists()) {
+			System.out.println("000001");
+			folder.getParentFile().mkdirs();
+		}
+		*/
+			System.out.println("000002");
+			String fileAddr = "fault-" + userIDStr + "-" + i + ".txt";
+			File file = new File("/Mse2016/ChildMath/WebRoot/faultFile" + fileAddr);
+			createFile(file);
+			System.out.println(fileAddr);
+			
+			Fault fault = new Fault();
+			fault.setUserID(userID);
+			fault.setFileAddr(fileAddr);
+			faultDAO.insertFault(fault);
+			i++;
+		
+		
+		/*
+        //如果文件夹不存在，新建文件夹
+		File folder = new File("/Mse2016/ChildMath/WebRoot/faultFile");
+		if (!(folder.exists() && folder.isDirectory())){
+			System.out.println("000001");
+			folder.mkdirs();
+		}
+		File file = null;
+		//如果用户没有错题文件，新建错题文件
+		if(faultDAO.getFaultByUserID(userID) == null){
+			
+			System.out.println("000002");
+			String fileAddr = "/Mse2016/ChildMath/WebRoot/faultFile/fault-" + userIDStr + ".txt";
+			file = new File(fileAddr);
+			createFile(file);
+			Fault fault = new Fault();
+			fault.setUserID(userID);
+			fault.setFileAddr(fileAddr);
+			faultDAO.insertFault(fault);
+		}
+		//否则，取得用户的错题文件地址
+		else {
+			System.out.println("000003");
+			Fault fault = faultDAO.getFaultByUserID(userID);
+			String fileAddr = fault.getFileAddr();
+			file = new File(fileAddr);
+		}
+		//向用户的错题文件中插入错题
+		for (String str: stringArray){
+			addToTxt(str, file);
+		}
+		*/
+		/*
 		//荣誉类型
 		int honourOf90Right = 1;
 		int honourOf100Right = 2;
@@ -210,32 +273,7 @@ public class FaultAction extends DispatchAction{
 				honourDAO.insertHonour(honour);
 			}
 		}
-		//如果文件夹不存在，新建文件夹
-		File folder = new File("/Mse2016/ChildMath/WebRoot/faultFile");
-		if (!(folder.exists() && folder.isDirectory())){
-			folder.mkdirs();
-		}
-		File file = null;
-		//如果用户没有错题文件，新建错题文件
-		if(faultDAO.getFaultByUserID(userID) == null){
-			String fileAddr = "/Mse2016/ChildMath/WebRoot/faultFile/fault-" + userIDStr + ".txt";
-			file = new File(fileAddr);
-			createFile(file);
-			Fault fault = new Fault();
-			fault.setUserID(userID);
-			fault.setFileAddr(fileAddr);
-			faultDAO.insertFault(fault);
-		}
-		//否则，取得用户的错题文件地址
-		else {
-			Fault fault = faultDAO.getFaultByUserID(userID);
-			String fileAddr = fault.getFileAddr();
-			file = new File(fileAddr);
-		}
-		//向用户的错题文件中插入错题
-		for (String str: stringArray){
-			addToTxt(str, file);
-		}
+		*/
 		return forward;
 	}
 	
