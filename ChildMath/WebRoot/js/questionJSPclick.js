@@ -34,18 +34,13 @@ $(document).ready(function(){
 	
 	//点击提交按钮后
 	$("#qst_submit").click(function(){
-		var needTime = totalSec;
 		timer.stop();
-		totalSec = 0;
-		totalMin = 0;
-		nowSec = 0;
 		
 		$(".qst_qst_type").removeAttr("disabled");
 		$(".qst_ans").attr("disabled","disabled");
 		$("#qst_submit").css("visibility","hidden");
 		$("#qst_wrong").css("visibility","visible");
 		$("#qst_again").css("visibility","visible");
-		//var wrongArray = new Array();
 		for(var i=0;i<answer.length;i++){
 			if($("#qst_ans" + i).val() != "" && $("#qst_ans" + i).val() == answer[i]){
 				$("#qst_mark" + i).css("background-image", 
@@ -53,7 +48,8 @@ $(document).ready(function(){
 			}else{
 				$("#qst_mark" + i).css("background-image", 
 				"url(../picResources/wrong.png)");
-				var wrongArray = {qst:question[i]+""+$("#qst_ans" + i).val()+""+answer[i]};
+				var wrongArray = {qst:"题目："+question[i]+"&nbsp;&nbsp;&nbsp;&nbsp;所写答案："+$("#qst_ans" + i).val()
+								  +"&nbsp;&nbsp;&nbsp;&nbsp;正确答案："+answer[i]};
 				var wrongQ = {qst:question[i]};
 				var wrongA = {wans:$("#qst_ans" + i).val()};
 				var rightA = {rans:answer[i]};
@@ -81,10 +77,6 @@ $(document).ready(function(){
 			"</div><div><input type='text' id='qst_ans" + thisFaultNum 
 			+"' class='qst_ans' value="+result+"></input></div><div class='show_ans'><span id='right_ans"
 			+ thisFaultNum + "'>正确答案: "+ answer + "</span></div></div>");
-			/*<div><input type='button' value='查看答案' id='check_ans" 
-			+ thisFaultNum + "' class='check_ans' ></input></div>
-			<div><input type='button' value='删除错题' id='remove_qst"
-			+ thisFaultNum + "' class='remove_qst'></input></div>*/	
 			thisFaultNum ++;
 
 		};
@@ -103,7 +95,7 @@ $(document).ready(function(){
 	});
 	//点击查看错题按钮后
 	$("#qst_wrong").click(function(){
-		//$.loadPage(6);
+
 		$("#qst_qst_body").empty();
 		$("#qst_wrong").css("visibility","hidden");
 		$("#qst_again").css("visibility","hidden");
@@ -115,13 +107,18 @@ $(document).ready(function(){
 
 	//点击保存错题按钮	
 	$("#add_fault").click(function(){
+		var needTime = totalSec;		
+		totalSec = 0;
+		totalMin = 0;
+		nowSec = 0;
+
 		var wrongArray = JSON.stringify(wrongInfo);
 		$.post("/ChildMath/page/addFaults.do?method=addFaults",
-				{wrongInfo: wrongArray,
+				{wrongInfo: wrongArray,time:needTime,
 			userId: parseInt($("#qst_userId").html())});
 		console.log("wrong",wrongInfo);
 		alert("本次错题已保存至错题本～");
-		$.loadPage(2);
+		$.loadPage(4);
 	});
 /***************一年级******************/
 	$("#qst_1_0").click(function(){

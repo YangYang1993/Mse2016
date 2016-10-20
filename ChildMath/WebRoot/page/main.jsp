@@ -150,12 +150,8 @@
 	}
 	/*页末*/
 	#footer_box{
-		/*
-		width: 800px;
-		height: 120px;
-		background-color: #eeeeee;
-		margin-top: 20px;
-		border-top: solid 1px #C0C0C0;*/
+		position: relative;
+		bottom: 5px;
 	}
 	#group_info{
 		width: 800px;
@@ -302,13 +298,13 @@
 				*/
 				$("#content_box").load("self_learn.jsp");
 			break;
-			case 2: //加载每日练习页
+			case 2: //加载错题本页
 				/*
 				$("#head_pic_box").css("background-image","url(../picResources/login_0038_head-bottom.png)");
 				$("#self_mark").css("background-color","transparent");
 				$("#practice_mark").css("background-color","#007fb2");
 				*/
-				$("#content_box").load("self_practice.jsp");
+				$("#content_box").load("fault_book.jsp");
 			break;
 			case 3: //加载个人信息页
 				/*
@@ -324,32 +320,13 @@
 			break;
 			case 5:  //加载自我挑战页
 				$("#content_box").load("challenge.jsp");
-			break;
-			case 6:  //加载错题本页
-				$("#content_box").load("fault_book.jsp");
-			/*
-			case -1:  //加载视频页
-				$("#content_box").load("video.jsp");
-			break;
-			*/
+			break; 
+				
 		}
 	};
 
 	$(document).ready(function(){
 		$.loadPage(4);
-		/*
-		$("#personal_info").click(function(){
-			$.loadPage(0);
-		});
-
-		$("#self_box").click(function(){
-			$.loadPage(1);
-		});
-
-		$("#practice_box").click(function(){
-			$.loadPage(2);
-		});	
-		*/
 	});
 </script>
 </head>
@@ -382,7 +359,7 @@
 		<div class="learn_box" id="my_practice" onclick="$.loadPage(4)">
 			<div class="function_font">每日练习</div>
 		</div>
-		<div class="learn_box" id="fault_book" onclick="$.loadPage(6)">
+		<div class="learn_box" id="fault_book" onclick="$.loadPage(2)">
 			<div class="function_font">&nbsp;&nbsp;错题本</div>
 		</div>
 		<div class="learn_box" id="my_honor" onclick="$.loadPage(0)">

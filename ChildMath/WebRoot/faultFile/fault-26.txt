@@ -1,0 +1,3 @@
+题目：14 &divide; 7 = &nbsp;&nbsp;所写答案：&nbsp;&nbsp;正确答案：2
+题目：56 &divide; 8 = &nbsp;&nbsp;所写答案：&nbsp;&nbsp;正确答案：7
+题目：54 &divide; 6 = &nbsp;&nbsp;所写答案：8&nbsp;&nbsp;正确答案：9
