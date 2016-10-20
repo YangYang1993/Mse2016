@@ -78,7 +78,7 @@
 		height: 35px;
 		margin: 0 auto;
 		margin-top: 5px;
-		padding-left: 50px;
+		padding-left: 20px;
 		padding-right: 0;
 		border-bottom: solid 1px #c0c0c0;
 		text-align: left;

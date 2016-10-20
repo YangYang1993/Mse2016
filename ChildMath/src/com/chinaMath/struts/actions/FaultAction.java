@@ -37,18 +37,12 @@ import com.chinaMath.struts.forms.FaultForm;
 import com.chinaMath.struts.forms.UserForm;
 import com.chinaMath.hibernate.dao.UserDAO;
 
-//锟斤拷取锟斤拷前时锟斤拷
-//import java.util.Date;
-//import java.text.SimpleDateFormat;
-
-
 
 public class FaultAction extends DispatchAction{
 	FaultDAO faultDAO;
 	RecordDAO recordDAO;
 	HonourDAO honourDAO;
-	//锟斤拷录锟斤拷锟斤拷txt锟侥硷拷锟斤拷锟
-	int fid = 0;
+	
 	//UserDAO userDAO;
 	public FaultDAO getFaultDAO() {
 		return faultDAO;
@@ -70,7 +64,7 @@ public class FaultAction extends DispatchAction{
 	public RecordDAO getRecordDAO() {
 		return recordDAO;
 	}
-	//锟斤拷锟斤拷锟斤拷锟斤拷獗撅拷锟斤拷锟脚ワ拷锟斤拷锟阶拷锟斤拷锟斤拷锟揭筹拷锟斤拷锟绞撅拷锟斤拷锟
+	//閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹鐛楁拝鎷烽敓鏂ゆ嫹閿熻剼銉嫹閿熸枻鎷烽敓闃额亷鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鎻鎷烽敓鏂ゆ嫹閿熺粸鎾呮嫹閿熸枻鎷烽敓
 	public ActionForward getFaultFile(ActionMapping mapping,ActionForm form,HttpServletRequest request,HttpServletResponse response)throws Exception{
 		/*UserForm userForm = (UserForm)form;
 		User user = userDAO.getUserByUserName(userForm.getUserName());
@@ -79,11 +73,11 @@ public class FaultAction extends DispatchAction{
 		int totalPage = 0;
 		int userID = Integer.parseInt(request.getParameter("userID"));
 		
-		//锟斤拷前页锟斤拷锟斤拷前台锟斤拷取
+		//閿熸枻鎷峰墠椤甸敓鏂ゆ嫹閿熸枻鎷峰墠鍙伴敓鏂ゆ嫹鍙
 		int currentPage = Integer.parseInt(request.getParameter("currentPage"));
-		//锟芥储锟斤拷前页锟斤拷锟斤拷目
+		//閿熻姤鍌ㄩ敓鏂ゆ嫹鍓嶉〉閿熸枻鎷烽敓鏂ゆ嫹鐩
 		List<String> operand = new ArrayList<String>();
-		//锟芥储锟斤拷前页锟侥达拷
+		//閿熻姤鍌ㄩ敓鏂ゆ嫹鍓嶉〉閿熶茎杈炬嫹
 		List<String> results = new ArrayList<String>();
 		Fault fault =  faultDAO.getFaultByUserID(userID);
 		String fileAddr = fault.getFileAddr();
@@ -107,14 +101,14 @@ public class FaultAction extends DispatchAction{
 		HttpSession session = request.getSession();
 		int totalPage = 0;
 		int userID = Integer.parseInt(request.getParameter("userID"));
-		//锟斤拷前页锟斤拷锟斤拷前台锟斤拷取
+		//閿熸枻鎷峰墠椤甸敓鏂ゆ嫹閿熸枻鎷峰墠鍙伴敓鏂ゆ嫹鍙
 		int currentPage = Integer.parseInt(request.getParameter("currentPage"));
-		//删锟斤拷锟斤拷锟斤拷牛锟斤拷锟角疤拷锟饺
+		//鍒犻敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹鐗涢敓鏂ゆ嫹閿熻鐤ゎ煉鎷烽敓楗
 		int deleteNum = Integer.parseInt(request.getParameter("deletedNum"));
 		deleteNum = (currentPage - 1) * 12 + deleteNum +1 ;
-		//锟芥储锟斤拷前页锟斤拷锟斤拷目
+		//閿熻姤鍌ㄩ敓鏂ゆ嫹鍓嶉〉閿熸枻鎷烽敓鏂ゆ嫹鐩
 		List<String> operand = new ArrayList<String>();
-		//锟芥储锟斤拷前页锟侥达拷
+		//閿熻姤鍌ㄩ敓鏂ゆ嫹鍓嶉〉閿熶茎杈炬嫹
 		List<String> results = new ArrayList<String>();
 		Fault fault = new Fault();
 		fault = (Fault) faultDAO.getFaultByUserID(userID);
@@ -128,7 +122,7 @@ public class FaultAction extends DispatchAction{
 		session.setAttribute("currentPage", currentPage);
 		session.setAttribute("operand", operand);
 		session.setAttribute("results", results);
-		//删锟斤拷锟斤拷刷锟铰碉拷前页
+		//鍒犻敓鏂ゆ嫹閿熸枻鎷峰埛閿熼摪纰夋嫹鍓嶉〉
 		ActionForward forward = new ActionForward();
 		forward = mapping.findForward("successDeletedFault");
 		return forward;
@@ -139,15 +133,8 @@ public class FaultAction extends DispatchAction{
 		ActionForward forward = null;
 
 		String userIDStr = request.getParameter("userId");
-        
-		//锟斤拷锟缴达拷锟斤拷锟侥硷拷锟斤拷锟斤拷锟斤拷锟侥硷拷锟斤拷锟斤拷
-		String fileAddr = "fault-" + userIDStr + "-" + fid + ".txt";
-		System.out.println(fileAddr);
-		File file = new File("/Users/yangyang/Mse2016/ChildMath/WebRoot/faultFile/"+fileAddr);
-		createFile(file);
-		
-		java.io.FileOutputStream out = new java.io.FileOutputStream(file);
-		//锟斤拷锟解，锟斤拷前台锟斤拷锟
+
+		//閿熸枻鎷烽敓瑙ｏ紝閿熸枻鎷峰墠鍙伴敓鏂ゆ嫹閿
 		String info = request.getParameter("wrongInfo");
 		//info = new String(info.getBytes("ISO-8859-1"),"utf-8");
 		JSONArray jsonArray = JSONArray.fromObject(info);
@@ -156,71 +143,44 @@ public class FaultAction extends DispatchAction{
         	JSONObject jObject = (JSONObject)jsonArray.getJSONObject(i);
             stringArray[i] = jObject.get("qst").toString();
 
-            System.out.println(stringArray[i]);
-            out.write((stringArray[i]+"\n").getBytes("gbk"));
-
         }
         int userID = Integer.parseInt(userIDStr);
 		int numOfFaults = jsonArray.size();
 		int numOfCorrects = 20-numOfFaults;
-
-		//int timeForPractice = Integer.parseInt(request.getParameter("time"));
-		
-		/*
-		String lujing = "/Mse2016/ChildMath/WebRoot/faultFile";
-		File folder = new File(lujing);
-		if (!folder.getParentFile().exists()) {
-			System.out.println("000001");
-			folder.getParentFile().mkdirs();
-		}
-		*/
-			
-
-			Fault fault = new Fault();
-			fault.setUserID(userID);
-			fault.setFileAddr(fileAddr);
-			faultDAO.insertFault(fault);
-
-			out.flush();
-			out.close();
-			fid++;
-			System.out.println(fid);
-		
-		
-		/*
-        //锟斤拷锟斤拷募锟斤拷胁锟斤拷锟斤拷冢锟斤拷陆锟斤拷募锟斤拷锟
-		File folder = new File("/Mse2016/ChildMath/WebRoot/faultFile");
+		int timeForPractice = Integer.parseInt(request.getParameter("time"));
+        //閿熸枻鎷烽敓鏂ゆ嫹鍕熼敓鏂ゆ嫹鑳侀敓鏂ゆ嫹閿熸枻鎷峰啟閿熸枻鎷烽檰閿熸枻鎷峰嫙閿熸枻鎷烽敓
+		File folder = new File("/Users/yangyang/Mse2016/ChildMath/WebRoot/faultFile/");
 		if (!(folder.exists() && folder.isDirectory())){
-			System.out.println("000001");
 			folder.mkdirs();
 		}
 		File file = null;
-		//锟斤拷锟斤拷没锟矫伙拷写锟斤拷锟斤拷募锟斤拷锟斤拷陆锟斤拷锟斤拷锟斤拷募锟
+		//閿熸枻鎷烽敓鏂ゆ嫹娌￠敓鐭紮鎷峰啓閿熸枻鎷烽敓鏂ゆ嫹鍕熼敓鏂ゆ嫹閿熸枻鎷烽檰閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷峰嫙閿
 		if(faultDAO.getFaultByUserID(userID) == null){
 			
-			System.out.println("000002");
-			String fileAddr = "/Mse2016/ChildMath/WebRoot/faultFile/fault-" + userIDStr + ".txt";
-			file = new File(fileAddr);
+			String fileAddr = "fault-" + userIDStr + ".txt";
+			System.out.println(fileAddr);
+			file = new File("/Users/yangyang/Mse2016/ChildMath/WebRoot/faultFile/"+fileAddr);
 			createFile(file);
+			
 			Fault fault = new Fault();
 			fault.setUserID(userID);
 			fault.setFileAddr(fileAddr);
 			faultDAO.insertFault(fault);
 		}
-		//锟斤拷锟斤拷取锟斤拷锟矫伙拷锟侥达拷锟斤拷锟侥硷拷锟斤拷址
+		//閿熸枻鎷烽敓鏂ゆ嫹鍙栭敓鏂ゆ嫹閿熺煫浼欐嫹閿熶茎杈炬嫹閿熸枻鎷烽敓渚ョ》鎷烽敓鏂ゆ嫹鍧
 		else {
-			System.out.println("000003");
 			Fault fault = faultDAO.getFaultByUserID(userID);
-			String fileAddr = fault.getFileAddr();
-			file = new File(fileAddr);
+			//String fileAddr = fault.getFileAddr();
+			String fileAddr = "fault-" + userIDStr + ".txt";
+			file = new File("/Users/yangyang/Mse2016/ChildMath/WebRoot/faultFile/"+fileAddr);
 		}
-		//锟斤拷锟矫伙拷锟侥达拷锟斤拷锟侥硷拷锟叫诧拷锟斤拷锟斤拷锟
+		//閿熸枻鎷烽敓鐭紮鎷烽敓渚ヨ揪鎷烽敓鏂ゆ嫹閿熶茎纭锋嫹閿熷彨璇ф嫹閿熸枻鎷烽敓鏂ゆ嫹閿
 		for (String str: stringArray){
 			addToTxt(str, file);
 		}
-		*/
-		/*
-		//锟斤拷锟斤拷锟斤拷锟斤拷
+		
+		
+		//閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹
 		int honourOf90Right = 1;
 		int honourOf100Right = 2;
 		int honourOf12sPerQ = 3;
@@ -238,14 +198,14 @@ public class FaultAction extends DispatchAction{
 		recordDAO.insertRecord(record);
 		Honour honour = new Honour();
 		honour.setUserID(userID);
-		//锟斤拷锟斤拷1
+		//閿熸枻鎷烽敓鏂ゆ嫹1
 		if (numOfFaults > 0 && numOfFaults < 3 ){
 			if (honourDAO.getHonourByHonourTypeAndUserID(userID, honourOf90Right) == null){
 				honour.setHonourType(honourOf90Right);
 				honourDAO.insertHonour(honour);
 			}
 		}
-		//锟斤拷锟斤拷2
+		//閿熸枻鎷烽敓鏂ゆ嫹2
 		else if (numOfFaults == 0 ){
 			if (honourDAO.getHonourByHonourTypeAndUserID(userID, honourOf100Right) == null){
 				honour.setHonourType(honourOf100Right);
@@ -253,14 +213,14 @@ public class FaultAction extends DispatchAction{
 			}
 		}
 		if (numOfCorrects != 0){
-			//锟斤拷锟斤拷3
+			//閿熸枻鎷烽敓鏂ゆ嫹3
 			if (timeForPractice/numOfCorrects <= 12 && timeForPractice/numOfCorrects >6 ){
 				if (honourDAO.getHonourByHonourTypeAndUserID(userID, honourOf12sPerQ) == null){
 					honour.setHonourType(honourOf12sPerQ);
 					honourDAO.insertHonour(honour);
 				}
 			}
-			//锟斤拷锟斤拷4
+			//閿熸枻鎷烽敓鏂ゆ嫹4
 			else if (timeForPractice/numOfCorrects <= 6 ){
 				if (honourDAO.getHonourByHonourTypeAndUserID(userID, honourOf6sPerQ) == null){
 					honour.setHonourType(honourOf6sPerQ);
@@ -268,36 +228,37 @@ public class FaultAction extends DispatchAction{
 				}
 			}
 		}
-		//锟斤拷锟斤拷5
+		//閿熸枻鎷烽敓鏂ゆ嫹5
 		if (timeForPractice >0 && timeForPractice <= 120 ){
 			if (honourDAO.getHonourByHonourTypeAndUserID(userID, honourOfLt120s) == null){
 				honour.setHonourType(honourOfLt120s);
 				honourDAO.insertHonour(honour);
 			}
 		}
-		//锟斤拷锟斤拷6
+		//閿熸枻鎷烽敓鏂ゆ嫹6
 		else if (timeForPractice <= 300 ){
 			if (honourDAO.getHonourByHonourTypeAndUserID(userID, honourOfLt300s) == null){
 				honour.setHonourType(honourOfLt300s);
 				honourDAO.insertHonour(honour);
 			}
 		}
-		*/
+		
+		
 		return forward;
 	}
 	
-	//锟斤拷页锟斤拷示锟斤拷锟斤拷
+	//閿熸枻鎷烽〉閿熸枻鎷风ず閿熸枻鎷烽敓鏂ゆ嫹
 	public static int readFaultByPage(int currentPage, File file, List<String> operand, List<String> results){
 		int totalPage = 0;
-		//每页锟斤拷示锟斤拷锟斤拷锟斤拷
+		//姣忛〉閿熸枻鎷风ず閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷
 		int pageSize = 12;
-		//锟斤拷锟斤拷锟斤拷锟斤拷
+		//閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹
 		int totalFileLine = 0;
-		//锟斤拷页锟斤拷
+		//閿熸枻鎷烽〉閿熸枻鎷
 		
 		FileReader fileReader = null;
 		
-		//锟矫碉拷锟斤拷锟斤拷锟斤拷锟斤拷
+		//閿熺煫纰夋嫹閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹
 		if (file.exists()){
 			
 			try {
@@ -328,14 +289,14 @@ public class FaultAction extends DispatchAction{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			//锟矫碉拷锟侥硷拷锟斤拷页锟斤拷
+			//閿熺煫纰夋嫹閿熶茎纭锋嫹閿熸枻鎷烽〉閿熸枻鎷
 			if (totalFileLine % pageSize == 0){
 				totalPage = totalFileLine / pageSize;
 			}
 			else{
 				totalPage = totalFileLine / pageSize + 1;
 			}
-			//锟斤拷始锟斤拷取
+			//閿熸枻鎷峰閿熸枻鎷峰彇
 			try {
 				fileReader = new FileReader(file);
 			} catch (FileNotFoundException e) {
@@ -344,7 +305,7 @@ public class FaultAction extends DispatchAction{
 			}
 			buffer=new BufferedReader(fileReader); 
 			tempString = null;
-			//锟斤拷取锟斤拷前页前一页锟斤拷锟斤拷锟捷ｏ拷锟斤拷锟斤拷锟斤拷取锟斤拷锟斤拷锟斤拷buffer指锟斤拷前页锟斤拷
+			//閿熸枻鎷峰彇閿熸枻鎷峰墠椤靛墠涓〉閿熸枻鎷烽敓鏂ゆ嫹閿熸嵎锝忔嫹閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷峰彇閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷穊uffer鎸囬敓鏂ゆ嫹鍓嶉〉閿熸枻鎷
 			for (int i = 0; i < (currentPage - 1) * pageSize; i ++){
 				try {
 					buffer.readLine();
@@ -353,7 +314,7 @@ public class FaultAction extends DispatchAction{
 					e.printStackTrace();
 				}
 			}
-			//锟斤拷取锟斤拷前页锟斤拷锟斤拷锟斤拷
+			//閿熸枻鎷峰彇閿熸枻鎷峰墠椤甸敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹
 			try {
 				for (int k = 0; k < pageSize&&(tempString=buffer.readLine())!=null; k++){
 					splitt (tempString, k, operand, results);
@@ -395,7 +356,7 @@ public class FaultAction extends DispatchAction{
 		List<String> lists = new ArrayList<String>();
 		int i = 0;
 		//deletedLine += 1;
-		//锟斤拷锟侥硷拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷list锟斤拷锟斤拷锟斤拷锟芥被删锟斤拷一锟斤拷
+		//閿熸枻鎷烽敓渚ョ》鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹list閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鑺ヨ鍒犻敓鏂ゆ嫹涓敓鏂ゆ嫹
 		try {
             Scanner in = new Scanner(file);
   
@@ -418,11 +379,11 @@ public class FaultAction extends DispatchAction{
 		}
 		for(String strr : lists){
 			try {
-				bufferWriter.write(strr + "\r\n");
+				bufferWriter.write(strr + "\n");
 			} catch (IOException e) {
 				System.out.println(e);
 				e.printStackTrace();
-			} //然锟斤拷锟侥硷拷写锟斤拷
+			} //鐒堕敓鏂ゆ嫹閿熶茎纭锋嫹鍐欓敓鏂ゆ嫹
 		}
 		try {
 			bufferWriter.flush();
@@ -455,7 +416,7 @@ public static void addToTxt(String str, File file) throws IOException{
 		BufferedWriter writer = new BufferedWriter(fileWriter);
 		try {
 			if (!isInFile(file, str)){
-				writer.write(str + "\r\n");
+				writer.write(str + "\n");
 				//System.out.println("writed");
 				writer.close();
 			}
@@ -521,7 +482,7 @@ public static void addToTxt(String str, File file) throws IOException{
 				bufferWriter.write(strr + "\r\n");
 			} catch (IOException e) {
 				e.printStackTrace();
-			} //然锟斤拷锟侥硷拷写锟斤拷
+			} //鐒堕敓鏂ゆ嫹閿熶茎纭锋嫹鍐欓敓鏂ゆ嫹
 		}
 		try {
 			bufferWriter.flush();
