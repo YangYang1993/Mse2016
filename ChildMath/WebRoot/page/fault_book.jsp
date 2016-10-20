@@ -12,15 +12,16 @@
 	#show_fault{
 		font-size: 1.2em;
 		width: 355px;
-		margin: 0 auto;
-		height:450px;
+		margin: 20px auto;
+		/*
+		height:	410px;
+		*/
 	}
-	/*
 	#put_out{
 		width: 70px;
 		height: 25px;
-		float: right;
-		margin-right: 40px;
+		position: relative;
+		left: 700px;
 		color: #ffffff;
 		font-family: 黑体;
 		outline: none;
@@ -28,7 +29,6 @@
 		border-radius: 10px;
 		border: solid 1px #416c4e;
 	}
-	*/
 </style>
 <script src="../js/createMathMethods.js"></script>
 <script src="../js/challenge.js"></script>
@@ -45,6 +45,7 @@
 			user = (User)session.getAttribute("user");
 		}
 		int userId = user.getUserID();
+
         File file = new File("/Users/yangyang/Mse2016/ChildMath/WebRoot/faultFile/fault-" + userId +".txt");  
         FileReader fr = new FileReader(file);  //字符输入流  
         BufferedReader br = new BufferedReader(fr);  //使文件可按行读取并具有缓冲功能  
@@ -58,7 +59,7 @@
     %>  
     <div >
     	<!--
-    	<a href="'../faultFile/fault-' + <%=userId%> +'.txt'"><button id="put_out">导出错题</button></a>
+    	<a href="../faultFile/fault-" + userId + ".txt"><button id="put_out">导出错题</button></a>
 		-->
     	<div id="show_fault"> 
         	<%=strB%>

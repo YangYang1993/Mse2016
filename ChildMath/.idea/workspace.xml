@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f674be05-76b7-4d4a-8763-5c1a3e39c9bb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebRoot/page/self_practice.jsp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/js/createMathMethods.js" afterPath="$PROJECT_DIR$/WebRoot/js/createMathMethods.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/js/questionJSPclick.js" afterPath="$PROJECT_DIR$/WebRoot/js/questionJSPclick.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/page/fault_book.jsp" afterPath="$PROJECT_DIR$/WebRoot/page/fault_book.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/page/main.jsp" afterPath="$PROJECT_DIR$/WebRoot/page/main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebRoot/page/question.jsp" afterPath="$PROJECT_DIR$/WebRoot/page/question.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chinaMath/struts/actions/FaultAction.java" afterPath="$PROJECT_DIR$/src/com/chinaMath/struts/actions/FaultAction.java" />
     </list>
     <ignored path="ChildMath.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,8 +40,8 @@
       <file leaf-file-name="FaultAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/chinaMath/struts/actions/FaultAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="195" column="26" selection-start-line="195" selection-start-column="26" selection-end-line="195" selection-end-column="26" />
+            <state relative-caret-position="150">
+              <caret line="192" column="33" selection-start-line="192" selection-start-column="33" selection-end-line="192" selection-end-column="33" />
               <folding>
                 <element signature="e#1395#1396#0" expanded="true" />
                 <element signature="e#1417#1418#0" expanded="true" />
@@ -1051,7 +1046,7 @@
       <workItem from="1476518638104" duration="1304000" />
       <workItem from="1476605463397" duration="298000" />
       <workItem from="1476843678398" duration="6666000" />
-      <workItem from="1476935271135" duration="4524000" />
+      <workItem from="1476935271135" duration="5743000" />
     </task>
     <servers />
   </component>
@@ -1067,11 +1062,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78930000" />
+    <option name="totallyTimeSpent" value="80149000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="124" y="38" width="1099" height="670" extended-state="0" />
-    <editor active="false" />
+    <frame x="124" y="38" width="1099" height="670" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1083,7 +1078,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41430947" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41430947" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1656,8 +1651,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/chinaMath/struts/actions/FaultAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="195" column="26" selection-start-line="195" selection-start-column="26" selection-end-line="195" selection-end-column="26" />
+        <state relative-caret-position="150">
+          <caret line="192" column="33" selection-start-line="192" selection-start-column="33" selection-end-line="192" selection-end-column="33" />
           <folding>
             <element signature="e#1395#1396#0" expanded="true" />
             <element signature="e#1417#1418#0" expanded="true" />

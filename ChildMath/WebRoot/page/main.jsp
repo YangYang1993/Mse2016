@@ -150,12 +150,8 @@
 	}
 	/*页末*/
 	#footer_box{
-		/*
-		width: 800px;
-		height: 120px;
-		background-color: #eeeeee;
-		margin-top: 20px;
-		border-top: solid 1px #C0C0C0;*/
+		position: relative;
+		bottom: 5px;
 	}
 	#group_info{
 		width: 800px;
