@@ -130,19 +130,19 @@ List<Integer> listObjc = (List<Integer>)session.getAttribute("min");
 <logic:present name="honour">
        <logic:iterate id="honour" name="honour">
           <logic:equal name="honour" property="honourType" value="1">
-                             <img src="../picResources/honour1.png" style="width: 70px; height: 70px; margin: 1 auto">
+                             <img src="../picResources/honour1.jpg" style="width: 70px; height: 70px; margin: 1 auto">
           </logic:equal>
           <logic:equal name="honour" property="honourType" value="2">
-                              <img src="../picResources/honour2.png" style="width: 70px; height: 70px; margin: 1 auto">
+                              <img src="../picResources/honour2.jpg" style="width: 70px; height: 70px; margin: 1 auto">
           </logic:equal>
           <logic:equal name="honour" property="honourType" value="3" >
-                              <img src="../picResources/honour3.png" style="width: 70px; height: 70px; margin: 1 auto">
+                              <img src="../picResources/honour3.jpg" style="width: 70px; height: 70px; margin: 1 auto">
           </logic:equal>
           <logic:equal name="honour" property="honourType" value="4">
-                              <img src="../picResources/honour4.png" style="width: 70px; height: 70px; margin: 1 auto">
+                              <img src="../picResources/honour4.jpg" style="width: 70px; height: 70px; margin: 1 auto">
           </logic:equal>
           <logic:equal name="honour" property="honourType" value="5">
-                              <img src="../picResources/honour5.png" style="width: 70px; height: 70px; margin: 1 auto">
+                              <img src="../picResources/honour5.jpg" style="width: 70px; height: 70px; margin: 1 auto">
           </logic:equal>
           </logic:iterate>
           </logic:present>

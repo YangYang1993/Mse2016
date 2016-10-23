@@ -206,7 +206,7 @@
 		text-align: center;*/
 	}
 	#qst_min{
-		margin-top: 28px;
+		margin-top: 25px;
 	}
 	#qst_sec{
 		margin-top: 52px;

@@ -11,7 +11,7 @@
 <style type="text/css">
 	#show_fault{
 		font-size: 1.2em;
-		width: 355px;
+		width: 600px;
 		margin: 20px auto;
 		/*
 		height:	410px;
