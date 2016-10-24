@@ -49,6 +49,15 @@
 			margin-left:650px;*/
 			margin:0 auto;		
 		}
+		.logo_font{
+			height: 40px;
+			width: 110px;
+			background-image: url(../picResources/logo_font.png);
+			background-size: 100% 100%;
+			float: right;
+			margin-top: 75px;
+			margin-right: -170px;
+		}
 		/*输入框*/
 		input[type=text],input[type=password]{
 			width:80%;
@@ -201,6 +210,7 @@
 <div id="main_body">
 	<div id="logo_body">
 		<div id="logo_img_box"></div>
+		<div class="logo_font"></div>
 	</div>
 	<div id="login_body">
 		<div id="welcome_img"></div>

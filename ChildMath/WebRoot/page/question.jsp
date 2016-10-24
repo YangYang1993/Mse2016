@@ -183,7 +183,7 @@
 	#qst_time{
 		position: relative;
 		left: 55px;
-		top: -85px;
+		top: -60px;
 		z-index: 6;
 		width: 100px;
 		height: 100px;
